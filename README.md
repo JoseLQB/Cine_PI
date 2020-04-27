@@ -3,4 +3,4 @@ Proyecto Integrado 2ºDAW
 
 (en proceso)
 
-Para llevar a cabo este proyecto se utilizarán las tecnologías PHP, javascript, jquery, HTML, CSS y bootstrap.
+Para llevar a cabo este proyecto se utilizarán las tecnologías PHP, mysql, javascript, jquery, HTML, CSS y bootstrap.
