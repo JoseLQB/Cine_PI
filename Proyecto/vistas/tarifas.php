@@ -8,12 +8,12 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <title>Document</title>
-
     <link rel="stylesheet" href="../assets/styles/style.css">
 </head>
 
 <body>
 
+</div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="muestra.php">CINES PI</a>
@@ -52,26 +52,8 @@
             </div>
         </div>
     </nav><br><br><br>
-    <section class="row justify-content-around" id="centro">
-        <div class="container cont1">
-            <div class="row movie-list">
-                <?php
-                require_once("../bdd/Cine.php");
-                $consulta = Cartelera::consulta();
-                while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
-
-                    echo "<div class='col-sm my-3'><div class='card cartel'>
-                    <a href='compra.php'><img src='" . $reg['cartel'] . "' alt='' srcset=''></a>
-                        <div class='card-body'><h5 class='card-title'>" . $reg['titulo'] . " (" . $reg['anEstreno'] . ")" . "</h5>
-                        </div></div></div>";
-                }
-
-                ?>
-            </div>
-
-        </div>
-        </div>
-
+    <section>
+        <h1>Tarifas Disponibles</h1>
     </section>
 
 
