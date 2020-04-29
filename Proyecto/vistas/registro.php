@@ -27,6 +27,7 @@ $conexion = CineDB::conectar(); ?>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block">Registrarse</buttom>
                         </div>
+                            <a href="muestra.php">Volver</a>
                     </form>
                     <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
                 </article>

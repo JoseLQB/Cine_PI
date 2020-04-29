@@ -1,7 +1,37 @@
 img{
-    width: 300px;
+    width: 60px;
 }
 iframe{
     width: 550px;
 
+}
+/*Estilos del nav superior*/
+button:focus {
+    outline: 0;
+}
+
+.navbar .dropdown-menu .form-control {
+    width: 200px;
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    img{
+        width:100px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    img{
+        width:200px;
+    }   
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    img{
+        width:348px;
+    }   
 }
