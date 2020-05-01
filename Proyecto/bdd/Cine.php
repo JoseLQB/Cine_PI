@@ -13,6 +13,18 @@ class Cartelera{
         return $consulta;
 
     }
+    
+    public function portada(){
+        $consulta = Cartelera::consulta();
+        while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            echo"<div class='col-sm my-3'><div class='card cartel'>
+            <a href='compra.php?varID=".$reg["idPelicula"]." '><img class='' src='" . $reg['cartel'] . "' alt='' srcset=''></a>
+                <div class='card-body'><h5 class='card-title'>" . $reg['titulo'] . " (" . $reg['anEstreno'] . ")" . "</h5>
+                </div></div></div>";
+        }
+    }
+
+
     //Muestra los datos de las películas
     public function datos(){      
         $consulta = Cartelera::consulta();
@@ -25,42 +37,76 @@ class Cartelera{
         }
     }
     //--Métodos para mostrar los datos uno a uno
-    public function getTitulo(){  
+
+
+    public function getTitulo($id){  
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
-            $titulo= $reg["titulo"];
+            if($reg["idPelicula"]==$id){
+                $titulo= $reg["titulo"];
+
+            }
         }
         return $titulo;
     }
-    public function getFecha(){  
+
+    
+    public function getCartel($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
-            $fecha= $reg["anEstreno"];
-        }
-        return $fecha;
-    }
-    public function getCartel(){  
-        $consulta = Cartelera::consulta();
-        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
-            $cartel= $reg["cartel"];
+            if($reg["idPelicula"]==$id){
+                $cartel= $reg["cartel"];
+
+            }
         }
         return $cartel;
     }
-    public function getTrailer(){  
+    public function getFecha($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
-            $trailer= $reg["trailer"];
+            if($reg["idPelicula"]==$id){
+                $fecha= $reg["anEstreno"];
+            }
+        }
+        return $fecha;
+    }
+
+    public function getTrailer($id){ 
+        $consulta = Cartelera::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idPelicula"]==$id){
+                $trailer= $reg["trailer"];
+            }
         }
         return $trailer;
     }
-    public function getSinopsis(){  
+    public function getSinopsis($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
-            $sinopsis= $reg["sinopsis"];
+            if($reg["idPelicula"]==$id){
+                $sinopsis= $reg["sinopsis"];
+            }
         }
         return $sinopsis;
     }
-
+    public function getPais($id){ 
+        $consulta = Cartelera::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idPelicula"]==$id){
+                $pais= $reg["pais"];
+            }
+        }
+        return $pais;
+    }
+    public function getDirector($id){ 
+        $consulta = Cartelera::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idPelicula"]==$id){
+                $director= $reg["director"];
+            }
+        }
+        return $director;
+    }
 
 }
 
