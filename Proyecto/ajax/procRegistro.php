@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ //comprueba que el metodo sea post
         $array["is_login"]=false;
     }else{
         //no existe
-        $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $pass = $_POST['password'];
         $nombre = $_POST["nombre"];
         $insert = "INSERT INTO usuarios (nombre, mail, pass) VALUES (:nombre, :mail, :pass)";
         $nuevo_usuario = $conexion->prepare($insert);

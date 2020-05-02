@@ -36,23 +36,7 @@
           <!--Formulario de login-->
 
           <li class="dropdown order-1">
-            <a href="registro.php">Registrarse</a>
-            <a href="login.php" class="btn btn-primary" href="#" role="button">Login</a>
-            <ul class="dropdown-menu dropdown-menu-right mt-2">
-              <li class="px-3 py-9">
-                <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
-                  <div class="form-group">
-                    <input id="emailInput" placeholder="Email" name="usuario" class="form-control form-control-sm" type="text" required="">
-                  </div>
-                  <div class="form-group">
-                    <input id="passwordInput" placeholder="Password" name="pass" class="form-control form-control-sm" type="text" required="">
-                  </div>
-                  <div class="form-group">
-                    <input type="submit" name="login" class="btn btn-primary btn-block" value="Aceptar">
-                  </div>
-                </form>
-              </li>
-            </ul>
+            <span>Hola <?php echo " " .$_SESSION["usuario"] ?></span>
           </li>
         </ul>
       </div>
@@ -72,7 +56,7 @@
     </div>
     </div>
   </section><br>
-
+  
 </body>
 <footer class="page-footer font-small blue pt-4">
   <div class="container-fluid text-center text-md-left" style="background-color:  rgb(122, 52, 231); color: white;">

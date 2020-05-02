@@ -76,5 +76,35 @@
 
 
 </body>
-
+<footer class="page-footer font-small blue pt-4">
+  <div class="container-fluid text-center text-md-left" style="background-color:  rgb(122, 52, 231); color: white;">
+    <div class="row">
+      <div class="col-md-6 mt-md-0 mt-3">
+        <h5 class="text-uppercase">CINES PI</h5>
+        <p>Aplicación web desarrollada como proyecto integrado de 2º de DAW para el IES Polígono Sur.</p>
+      </div>
+      <hr class="clearfix w-100 d-md-none pb-3">
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">Links de interés</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://github.com/JoseLQB" target="_blank">GitHub &nbsp &nbsp <img class="gitLogo" src="../assets/images/github.png" alt=""> </a>
+          </li>
+          <li>
+            <a href="https://github.com/JoseLQB" target="_blank">Twitter &nbsp &nbsp<img class="ttLogo" src="../assets/images/twitter.png" alt=""> </a>
+          </li>
+          <li>
+            <a href="https://github.com/JoseLQB" target="_blank"> Instagram &nbsp<img class="gitLogo" src="../assets/images/insta.png" alt=""> </a>
+          </li>
+          <li>
+            <a href="https://github.com/JoseLQB" target="_blank"> Facebook &nbsp<img class="gitLogo" src="../assets/images/fb.png" alt=""> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/">Jose Luis Quintanilla Blanco</a>
+  </div>
+</footer>
 </html>

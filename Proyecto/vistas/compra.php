@@ -8,9 +8,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <title>Document</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/proyecciones.js"></script>
     <link rel="stylesheet" href="../assets/styles/style.css">
+    <title>Compra</title>
+
 </head>
 
 <body>
@@ -125,23 +127,68 @@
                         <form action="" method="post">
                         <p>12-12-2021   15:30</p>
                         <p>Cantidad <input type="number" name="" id="" ></p>
-                        <p>Añadir <input type="submit" value="Añadir"></p>
+                        <p>
+                            Sala 1
+                        </p>
+                        <p> <input type="submit" value="Añadir"></p>
+                        </form>
+                        
+                        
+                        
+                        <form action="" method="POST">
                         <p>12-12-2021   17:30</p>
                         <p>Cantidad <input type="number" name="" id="" ></p>
-                        <p>Añadir <input type="submit" value="Añadir"></p>
+                        <p>Sala 2</p>
+
+                        <p> <input type="submit" value="Añadir"></p></form>
+                        <form action="" method="post">
                         <p>12-12-2021   20:30</p>
                         <p>Cantidad <input type="number" name="" id="" ></p>
-                        <p>Añadir <input type="submit" value="Añadir"></p>
+                        <p>Sala 2</p>
+                        <p> <input type="submit" value="Añadir"></p>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
                     </div>
                 </div>
 
             </div>
-        </div>
+        </div><br><br><br>
     </div>
 </body>
+<footer class="page-footer font-small blue pt-4">
 
+  <div class="container-fluid text-center text-md-left" style="background-color:  rgb(122, 52, 231); color: white;">
+
+    <div class="row">
+      <div class="col-md-6 mt-md-0 mt-3">
+        <h5 class="text-uppercase">CINES PI</h5>
+        <p>Proyecto desarrollado como proyecto integrado de 2º de DAW para el IES Polígono Sur.</p>
+
+      </div>
+      <hr class="clearfix w-100 d-md-none pb-3">
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">Links de interés</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://github.com/JoseLQB" target="_blank">GitHub &nbsp &nbsp <img class="gitLogo" src="../assets/images/github.png" alt=""> </a>
+          </li>
+          <li>
+            <a href="https://github.com/JoseLQB" target="_blank">Twitter &nbsp &nbsp<img class="ttLogo" src="../assets/images/twitter.png" alt=""> </a>
+          </li>
+          <li>
+            <a href="https://github.com/JoseLQB" target="_blank"> Instagram &nbsp<img class="gitLogo" src="../assets/images/insta.png" alt=""> </a>
+          </li>
+          <li>
+            <a href="https://github.com/JoseLQB" target="_blank"> Facebook &nbsp<img class="gitLogo" src="../assets/images/fb.png" alt=""> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/">Jose Luis Quintanilla Blanco</a>
+  </div>
+</footer>
 </html>

@@ -30,6 +30,7 @@ $conexion = CineDB::conectar(); ?>
                             <a href="muestra.php">Volver</a>
                     </form>
                     <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
+                    <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>
                 </article>
             </div>
         </div>

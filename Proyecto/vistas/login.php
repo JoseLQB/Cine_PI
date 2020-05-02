@@ -10,12 +10,8 @@ $conexion = CineDB::conectar(); ?>
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
                 <article class="card-body">
-                    <h4 class="card-title mb-4 mt-1 text-center">Acceso</h4>
-                    <form action="POST" class="form_login"><!--
-                        <div class="form-group">
-                            <label>Nombre de usuario</label>
-                            <input type="text" class="form-control" placeholder="Nombre" require>
-                        </div>-->
+                    <h4 class="card-title mb-4 mt-1 text-center">Accede con tu cuenta</h4>
+                    <form action="POST" class="form_registro">
                         <div class="form-group">
                             <label>Email</label>
                             <input type="email" class="form-control" placeholder="Email" require>
@@ -25,10 +21,12 @@ $conexion = CineDB::conectar(); ?>
                             <input type="password" class="form-control" placeholder="Contraseña">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Acceder</buttom>
+                            <button type="submit" class="btn btn-primary btn-block">Registrarse</buttom>
                         </div>
+                            <a href="muestra.php">Volver</a>
                     </form>
                     <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
+                    <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>
                 </article>
             </div>
         </div>

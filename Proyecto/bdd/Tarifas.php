@@ -4,15 +4,17 @@ require_once("CineDB.php");
 
 class Tarifas{
 
-    private $id;
-    private $nombre;
-    private $precio;
+    public $id;
+    public $nombre;
+    public $precio;
+    public $descripcion;
 
 
-    function __construct($id, $nombre, $precio){
+    function __construct($id, $nombre, $precio, $descripcion){
         $this->id = $id;
         $this->nombre = $nombre;
         $this->precio = $precio;
+        $this->descripcion = $descripcion;
 
     }
     public function getId() {
@@ -23,6 +25,9 @@ class Tarifas{
     }  
     public function getPrecio() {
         return $this->precio;
+    }    
+    public function getDescripcion() {
+        return $this->descripcion;
     }  
 
     public static function getTarifas(){
@@ -30,13 +35,12 @@ class Tarifas{
         $query = "SELECT * FROM tarifas";
         $consulta = $conexion->query($query);
         $tarifas=[];
-        while($registro = $consulta->fetchObject()){
-            $tarifas[]= new Tarifas($registro->codTarifa, $registro->nombre, $registro->precio);
+        while($registro = $consulta->fetch(PDO::FETCH_ASSOC)){
+            $tarifas[]= new Tarifas($registro["codTarifa"], $registro["nombre"], $registro["precio"], $registro["descripcion"]);
         }
         return $tarifas;
-
     }
-  
+
 
 
 

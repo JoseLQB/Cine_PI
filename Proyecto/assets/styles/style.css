@@ -1,6 +1,4 @@
-body{
-    background-image: url("../images/fondo1.jpg");
-}
+
 
 .cont1{
     background-color: gray;
@@ -79,4 +77,13 @@ button:focus {
 
 footer{
     background-color: rgb(52, 52, 131);
+}
+
+.gitLogo{
+    width: 20px;
+    height: 20px;
+}
+.ttLogo{
+    width: 35px;
+    height: 20px;
 }
