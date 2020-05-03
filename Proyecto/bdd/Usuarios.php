@@ -1,5 +1,4 @@
 <?php 
-
     require_once("CineDB.php");
     class Usuario{
         
@@ -29,11 +28,6 @@
             return $usuarios;
         }
 
-        public static function compruebaLogin($user, $pass, $location){
-
-
-
-        }
 
     }
 

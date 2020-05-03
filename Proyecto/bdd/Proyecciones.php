@@ -17,16 +17,16 @@ class Proyecciones{
         $this->horaProyeccion = $horaProyeccion;
         $this->codTarifa = $codTarifa;
     }
-    public static function getProyecciones($id){
+    public static function getProyecciones(){
         $conexion = CineDB::conectar();
         $query = "SELECT * FROM proyecciones";
         $consulta = $conexion->query($query);
         $tarifas=[];
         while($registro = $consulta->fetch(PDO::FETCH_ASSOC)){
-            if($registro["idPelicula"]==$id){
-                $tarifas[]= new Proyecciones($registro["idProyeccion"], $registro["idSala"], $registro["idPelicula"], $registro["fechaProyeccion"], $registro["horaProyeccion"], $registro["codtarifa"]);
 
-            }
+            $tarifas[]= new Proyecciones($registro["idProyeccion"], $registro["idSala"], $registro["idPelicula"], $registro["fechaProyeccion"], $registro["horaProyeccion"], $registro["codtarifa"]);
+
+            
         }
         return $tarifas;
     }

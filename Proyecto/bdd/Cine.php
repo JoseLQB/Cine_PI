@@ -107,6 +107,59 @@ class Cartelera{
         }
         return $director;
     }
+    
+    public function nuevaPelicula($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
+        $conexion = CineDB::conectar();
+        $sql = "INSERT INTO pelicula(idPelicula, pais, genero, duracion, anEstreno, sinopsis, titulo, director, trailer, cartel) VALUES(:idPelicula, :pais, :genero, :duracion, :anEstreno, :sinopsis, :titulo, :director, :trailer, :cartel)";
+        $sentencia = $conexion->prepare($sql);
+        $sentencia->bindParam(':idPelicula', $idPelicula);
+        $sentencia->bindParam(':pais', $pais);
+        $sentencia->bindParam(':genero', $genero);
+        $sentencia->bindParam(':duracion', $duracion);
+        $sentencia->bindParam(':anEstreno', $anEstreno);
+        $sentencia->bindParam(':sinopsis', $sinopsis);
+        $sentencia->bindParam(':titulo', $titulo);
+        $sentencia->bindParam(':director', $director);
+        $sentencia->bindParam(':trailer', $trailer);
+        $sentencia->bindParam(':cartel', $cartel);
+        $sentencia->execute();
+    }
+    //Elimina a un usuario a partir de su id
+    public function delete($idPelicula){
+        $conexion = CineDB::conectar();
+        $sql = "DELETE FROM pelicula WHERE idPelicula =  :idPelicula";
+        $sentencia = $conexion->prepare($sql);
+        $sentencia->bindParam(':idPelicula', $idPelicula);
+        $sentencia->execute();
+    }
+    //Modifica a un usuario pasándole a la función los nuevos datos
+    public function update($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
+        $conexion = CineDB::conectar();
+        $sql = "UPDATE usuario SET 
+                idPelicula = :idPelicula,
+                pais = :pais,
+                genero = :genero,
+                duracion = :duracion,
+                anEstreno = :anEstreno,
+                sinopsis = :sinopsis,
+                titulo = :titulo,
+                director = :director,
+                trailer = :trailer, 
+                cartel = :cartel WHERE idPelicula = $idPelicula";
+        $sentencia = $conexion->prepare($sql);
+        $sentencia->bindParam(':idPelicula', $idPelicula);
+        $sentencia->bindParam(':pais', $pais);
+        $sentencia->bindParam(':genero', $genero);
+        $sentencia->bindParam(':duracion', $duracion);
+        $sentencia->bindParam(':anEstreno', $anEstreno);
+        $sentencia->bindParam(':sinopsis', $sinopsis);
+        $sentencia->bindParam(':titulo', $titulo);
+        $sentencia->bindParam(':director', $director);
+        $sentencia->bindParam(':trailer', $trailer);
+        $sentencia->bindParam(':cartel', $cartel);
+        $sentencia->execute();
+        
+    }
 
 }
 

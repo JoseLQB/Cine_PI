@@ -76,7 +76,12 @@ button:focus {
 }
 
 footer{
-    background-color: rgb(52, 52, 131);
+    background-color: rgb(27, 27, 27);
+    color: white;
+}
+
+.footcent{
+    background: rgb(77, 77, 77); 
 }
 
 .gitLogo{
@@ -87,3 +92,16 @@ footer{
     width: 35px;
     height: 20px;
 }
+
+#linkies {
+    padding: 2px 1px 0;
+  }
+  
+  #linkies:link {
+    color: #7bca3b;
+  }
+  
+  #linkies:visited {
+    color: rgb(190, 211, 174);
+  }
+
