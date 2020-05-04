@@ -44,6 +44,6 @@
   </div>
 </div>
 <div class="footer-copyright text-center py-3">© 2020 Copyright:
-  <a href="https://mdbootstrap.com/">Jose Luis Quintanilla Blanco</a>
+  <a href="https://github.com/JoseLQB">Jose Luis Quintanilla Blanco</a>
 </div>
 </footer>

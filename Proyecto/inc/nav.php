@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
+<script src="../js/efectos.js"></script>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " id="menu" role="navigation">
     <div class="container">
       <a class="navbar-brand" href="muestra.php">CINES PI</a>
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
