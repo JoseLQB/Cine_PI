@@ -12,7 +12,7 @@
     &nbsp &nbsp Redirigiendo...
 
     <script type="text/javascript">
-        setTimeout("window.location='muestra.php'", 4000);
+        setTimeout("window.location='muestra.php'", 3000);
     </script>
 </body>
 

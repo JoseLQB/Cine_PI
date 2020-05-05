@@ -1,16 +1,13 @@
 
-
+.cartelera{
+    background: url("../images/fondo.jpg");
+}
 .cont1{
     background-color: gray;
     border-radius: 5px;
 }
-/*
-.cartel{
-    background-color: rgb(223, 223, 223);
-}
-*/
 img{
-    width: 600px;
+    width: 370px;
     border-radius: 5px;
 }
 
@@ -41,24 +38,9 @@ button:focus {
     background-color: honeydew;
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
-
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    img{
-        width: 348px;
-        height: 480px;
-
-    }
+.map{
+    width: 300px;
+    height: 300px;
 }
 
 .header2 {
@@ -94,8 +76,8 @@ footer{
 }
 
 #linkies {
-    padding: 2px 1px 0;
-  }
+padding: 2px 1px 0;
+}
   
   #linkies:link {
     color: #7bca3b;
@@ -111,4 +93,32 @@ footer{
     top: 0; 
     width: 100%;
     transition: top 0.3s; 
-  }
+}
+
+/* ----------   Media query  ------------------- */
+
+
+@media only screen and (min-width: 600px) {
+    img{
+        width: 690px;
+    }
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+}
+
+
+@media only screen and (min-width: 992px) {
+    img{width: 348px;
+        height: 480px;
+    }
+
+    
+    .map{
+        width: 650px;
+        height: 600px;
+    }
+}

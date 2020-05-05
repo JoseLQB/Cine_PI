@@ -11,7 +11,8 @@ $conexion = CineDB::conectar(); ?>
 
 <title>Login</title>
 
-<body>
+<?php include_once("../inc/nav.php") ?>
+<body class="cartelera">
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
@@ -76,7 +77,7 @@ $conexion = CineDB::conectar(); ?>
                 </article>
             </div>
         </div>
-    </div>
+    </div><br><br><br>
 </body>
-
+<?php include_once("../inc/footer.php"); ?>
 </html>

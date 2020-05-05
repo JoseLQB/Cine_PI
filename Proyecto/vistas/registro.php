@@ -11,8 +11,8 @@ $conexion = CineDB::conectar(); ?>
 
     <title>Registro</title>
 </head>
-
-<body>
+<?php include_once("../inc/nav.php") ?>
+<body class="cartelera">
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
@@ -73,7 +73,7 @@ $conexion = CineDB::conectar(); ?>
                         echo '<center><h3><font color="green">¡Usuario Registrado!</font></h3></center><br>';
                     }
                 } else {
-                    echo "<font color='red'>El usuario ya existe</font>";
+                    echo '<center><h3><font color="green">¡Usuario Registrado!</font></h3></center><br>';
                 }
             } catch (PDOException $e) {
                 echo 'Error: ' . $e->getMessage();
@@ -83,7 +83,8 @@ $conexion = CineDB::conectar(); ?>
         echo "<font color='red'>Introduce todos los datos</font>";
     }
 
-    ?>
+    ?><br><br>
 </body>
+<?php include_once("../inc/footer.php"); ?>
 
 </html>

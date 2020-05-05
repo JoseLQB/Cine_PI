@@ -8,10 +8,19 @@ session_start(); ?>
 
   <title>Cartelera</title>
 </head>
+<style>
+  #slider {
+    margin-left: 200px;
+    margin-right: 200px;
+    height: 500px;
+  }
+</style>
 
-<body>
+<body class="cartelera">
+  <!--Slide-->
 
 
+  
   <?php include_once("../inc/nav.php") ?>
 
   <section class="row justify-content-around" id="centro">

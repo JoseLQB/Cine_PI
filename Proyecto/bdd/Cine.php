@@ -24,18 +24,6 @@ class Cartelera{
         }
     }
 
-
-    //Muestra los datos de las películas
-    public function datos(){      
-        $consulta = Cartelera::consulta();
-        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
-            echo $reg["titulo"]. " (".$reg["anEstreno"].")<br>";
-            echo '<img src="'.$reg["cartel"].'" alt="">';
-            echo '<iframe width="560" height="315" src="'.$reg["trailer"].'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'."<br>";
-            echo $reg["sinopsis"]. "<br>";
-            echo '<input type="button" value="COMPRAR"><br>';
-        }
-    }
     //--Métodos para mostrar los datos uno a uno
 
 
