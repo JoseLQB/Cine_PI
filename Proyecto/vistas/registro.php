@@ -8,10 +8,8 @@ $conexion = CineDB::conectar(); ?>
 
 <head>
     <?php include_once("../inc/head.php"); ?>
-
     <title>Registro</title>
 </head>
-<?php include_once("../inc/nav.php") ?>
 <body class="cartelera">
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
@@ -85,6 +83,5 @@ $conexion = CineDB::conectar(); ?>
 
     ?><br><br>
 </body>
-<?php include_once("../inc/footer.php"); ?>
 
 </html>
