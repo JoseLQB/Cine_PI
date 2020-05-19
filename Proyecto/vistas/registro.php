@@ -71,7 +71,7 @@ $conexion = CineDB::conectar(); ?>
                         echo '<center><h3><font color="green">¡Usuario Registrado!</font></h3></center><br>';
                     }
                 } else {
-                    echo '<center><h3><font color="green">¡Usuario Registrado!</font></h3></center><br>';
+                    echo '<center><h3><font color="green">¡Usuario Registraaaaado!</font></h3></center><br>';
                 }
             } catch (PDOException $e) {
                 echo 'Error: ' . $e->getMessage();

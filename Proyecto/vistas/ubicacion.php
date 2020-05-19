@@ -10,9 +10,6 @@ session_start(); ?>
 </head>
 
 <body>
-
-
-
   <?php include_once("../inc/nav.php"); ?>
   <div class="container ub">
     <div class="row">

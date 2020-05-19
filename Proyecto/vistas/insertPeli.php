@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+if (!isset($_SESSION["usuario"])) {
+    header("location:muestra.php");
+}
 require_once("../bdd/CineDB.php");
 $conexion = CineDB::conectar(); ?>
 <!DOCTYPE html>
@@ -11,7 +14,7 @@ $conexion = CineDB::conectar(); ?>
 
     <title>Registro</title>
 </head>
-<?php include_once("../inc/nav.php") ?>
+
 <body class="cartelera">
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
@@ -49,20 +52,16 @@ $conexion = CineDB::conectar(); ?>
                         </div>
                         <div class="form-group">
                             <label>Tráiler</label>
-                            <input type="text" name="ano" class="form-control" placeholder="https://www.youtube.com/embed/**********">
+                            <input type="text" name="trailer" class="form-control" placeholder="https://www.youtube.com/embed/**********">
                         </div>
                         <div class="form-group">
                             <label>Cartel</label>
-                            <input type="text" name="ano" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Año de estreno</label>
-                            <input type="text" name="ano" class="form-control" placeholder="">
+                            <input type="text" name="cartel" class="form-control" placeholder="">
                         </div>
                         <div class="form-group">
                             <button type="submit" name="insert" class="btn btn-primary btn-block">Insertar</buttom>
                         </div>
-                        <a href="muestra.php">Volver</a>
+                        <a href="administracion.php">Volver</a>
                     </form>
                     <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
                     <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>
@@ -71,9 +70,20 @@ $conexion = CineDB::conectar(); ?>
         </div>
     </div>
     <?php
-
+    $fetch = 0;
+    if (isset($_POST["insert"])) {
+        require_once("../bdd/CineDB.php");
+        require_once("../bdd/Cine.php");
+        $conn = CineDB::conectar();
+        Cartelera::nuevaPelicula("", $_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
+        $fetch = 1;
+    } else {
+        echo "<font color='red'>Introduce todos los datos</font>";
+    }
+    if($fetch == 1){
+        echo '<center><h3><font color="green">¡Nuevo título insertado!</font></h3></center><br>';
+    }
     ?><br><br>
 </body>
-<?php include_once("../inc/footer.php"); ?>
 
 </html>
