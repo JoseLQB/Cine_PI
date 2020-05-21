@@ -58,6 +58,16 @@ class Cartelera{
         }
         return $fecha;
     }
+    
+    public function getGenero($id){ 
+        $consulta = Cartelera::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idPelicula"]==$id){
+                $fecha= $reg["genero"];
+            }
+        }
+        return $fecha;
+    }
 
     public function getTrailer($id){ 
         $consulta = Cartelera::consulta();

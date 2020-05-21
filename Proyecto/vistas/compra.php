@@ -27,6 +27,13 @@ session_start(); ?>
             ?>
           </dd>
           <dt>
+            Género
+          </dt>
+          <dd>
+            <?php
+            echo "<p>" . Cartelera::getGenero($id) . "</p>";
+            ?>
+          </dd><dt>
             Pais
           </dt>
           <dd>
