@@ -1,5 +1,5 @@
 # Cine_PI
-Proyecto Integrado impuesto por el profesorado de 2º de DAW del IES Polígono Sur (Sevilla)
+Proyecto Integrado propuesto por el profesorado de 2º de DAW del IES Polígono Sur (Sevilla)
 
 (Actualmente en proceso)
 
