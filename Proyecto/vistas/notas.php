@@ -80,3 +80,11 @@ if (!isset($_SESSION["usuario"])) {
     </script>
 
 </body>
+<!--
+SELECT COUNT(idUsuario) FROM `reserva` WHERE idProyeccion = 111
+El resultado de esta consulta se restará al número de aforo de cada sala para obtener el total
+
+
+
+
+-->

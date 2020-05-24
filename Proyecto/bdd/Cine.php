@@ -23,9 +23,27 @@ class Cartelera{
                 </div></div></div>";
         }
     }
+    public function getListado(){
+        $consulta = Cartelera::consulta();
+        while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            echo"<ul><li>".$reg["idPelicula"].  " -- ". $reg["titulo"]."</li></ul>";
+        }
+    }
+    
+    public function getIDs(){
+        $consulta = Cartelera::consulta();
+        while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            echo $reg["idPelicula"];
+        }
+    }
+    public function getTitulos(){
+        $consulta = Cartelera::consulta();
+        while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            echo $reg["titulo"];
+        }
+    }
 
     //--Métodos para mostrar los datos uno a uno
-
 
     public function getTitulo($id){  
         $consulta = Cartelera::consulta();
