@@ -30,10 +30,25 @@ class Proyecciones{
         }
         return $tarifas;
     }
-    public static function getProyeccionesById($idProyeccion){
 
+    
+    public function consulta(){
+        $conexion = CineDB::conectar();
+        $select = "SELECT * FROM proyecciones";
+        $consulta= $conexion->query($select);
 
+        return $consulta;
 
+    }
+    public function getTitulo($id){  
+        $consulta = Proyecciones::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idPelicula"]==$id){
+                $titulo= $reg["idProyeccion"];
+
+            }
+        }
+        return $titulo;
     }
 
 
@@ -66,6 +81,41 @@ class Proyecciones{
         $sentencia1->execute();
         $sentencia2->execute();
         $sentencia->execute();
+    }
+    public function deletebyProy($idPelicula, $idProyeccion){
+        $conexion = CineDB::conectar();
+        $sql1 = "DELETE FROM reserva WHERE idProyeccion IN (SELECT `idProyeccion` FROM `proyecciones` WHERE  idPelicula =  :idPelicula)";
+        $sql2 = "DELETE FROM valoracion WHERE idPelicula =  :idPelicula";
+        $sql = "DELETE FROM proyecciones WHERE idProyeccion =  :idProyeccion";
+        $sentencia1 = $conexion->prepare($sql1);
+        $sentencia2 = $conexion->prepare($sql2);
+        $sentencia = $conexion->prepare($sql);
+        $sentencia1->bindParam(':idPelicula', $idPelicula);
+        $sentencia2->bindParam(':idPelicula', $idPelicula);
+        $sentencia->bindParam(':idProyeccion', $idProyeccion);
+        $sentencia1->execute();
+        $sentencia2->execute();
+        $sentencia->execute();
+    }
+    public function update($idProyeccion, $idSala,  $idPelicula, $fechaProyeccion, $horaProyeccion, $codTarifa){
+        $conexion = CineDB::conectar();
+        $sql = "UPDATE proyecciones SET 
+                idProyeccion = :idProyeccion,
+                idSala = :idSala,
+                idPelicula = :idPelicula,
+                fechaProyeccion = :fechaProyeccion,
+                horaProyeccion = :horaProyeccion,
+                codTarifa = :codTarifa 
+                WHERE idProyeccion = $idProyeccion";
+        $sentencia = $conexion->prepare($sql);
+        $sentencia->bindParam(':idProyeccion', $idProyeccion);
+        $sentencia->bindParam(':idSala', $idSala);
+        $sentencia->bindParam(':idPelicula', $idPelicula);
+        $sentencia->bindParam(':fechaProyeccion', $fechaProyeccion);
+        $sentencia->bindParam(':horaProyeccion', $horaProyeccion);
+        $sentencia->bindParam(':codTarifa', $codTarifa);
+        $sentencia->execute();
+        
     }
 
 

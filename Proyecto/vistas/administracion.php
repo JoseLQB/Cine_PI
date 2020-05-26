@@ -31,22 +31,19 @@ if (!isset($_SESSION["usuario"])) {
                 <h3 class="text-center">¿Qué quieres hacer?</h3>
             </div><br>
             <div class="row">
-                <div class="col-sm-3 text-center">
+                <div class="col-sm-4 text-center">
                     <a href="adminsertPeli.php"><button type="button" class="btn btn-primary btn-lg">Insertar Película</button></a>
                 </div>
-                <div class="col-sm-3 text-center">
-                    <a href="adminBorrarPeli.php"><button type="button" class="btn btn-primary btn-lg">Borrar Película</button></a>
+                <div class="col-sm-4 text-center">
+                    <a href="adminBorrarPeli.php"><button type="button" class="btn btn-primary btn-lg">Borrar | Actualizar</button></a>
                 </div>
-                <div class="col-sm-3 text-center">
-                    <a href="adminsertPeli.php"><button type="button" class="btn btn-primary btn-lg">Editar Película</button></a>
-                </div>
-                <div class="col-sm-3 text-center">
+                <div class="col-sm-4 text-center">
                     <a href="adminListado.php"><button type="button" class="btn btn-primary btn-lg">Ver Listado</button></a>
                 </div>
             </div><br><br><hr><br>
         </div>
         <div class="container" style="background-color:yellow">
-            <div class="row">
+            <div class="row ">
                 <div class="col-sm-12">
                     <h1 class=" text-center">ADMINISTRACIÓN DE PROYECCIONES</h1>
                 </div><br>
@@ -55,16 +52,13 @@ if (!isset($_SESSION["usuario"])) {
                 <h3 class="text-center">¿Qué quieres hacer?</h3>
             </div><br>
             <div class="row">
-                <div class="col-sm-3 text-center">
+                <div class="col-sm-4 text-center">
                     <a href="admininsertProy.php"><button type="button" class="btn btn-primary btn-lg">Insertar Proyeccón</button></a>
                 </div>
-                <div class="col-sm-3 text-center">
-                    <a href="adminBorraProy.php"><button type="button" class="btn btn-primary btn-lg">Borrar Proyección</button></a>
+                <div class="col-sm-4 text-center">
+                    <a href="adminBorraProy.php"><button type="button" class="btn btn-primary btn-lg">Borrar | Actualizar</button></a>
                 </div>
-                <div class="col-sm-3 text-center">
-                    <a href="insertPeli.php"><button type="button" class="btn btn-primary btn-lg">Editar Proyección</button></a>
-                </div>
-                <div class="col-sm-3 text-center">
+                <div class="col-sm-4 text-center">
                     <button type="button" class="btn btn-primary btn-lg">Ver Todas</button>
                 </div>
             </div><br>

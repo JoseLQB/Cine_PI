@@ -91,6 +91,16 @@ class Cartelera{    public $idPelicula;
         }
         return $titulo;
     }
+    public function getDuracion($id){  
+        $consulta = Cartelera::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idPelicula"]==$id){
+                $duracion= $reg["duracion"];
+
+            }
+        }
+        return $duracion;
+    }
 
     
     public function getCartel($id){ 
@@ -187,7 +197,7 @@ class Cartelera{    public $idPelicula;
     //Modifica a un usuario pasándole a la función los nuevos datos
     public function update($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
         $conexion = CineDB::conectar();
-        $sql = "UPDATE usuario SET 
+        $sql = "UPDATE pelicula SET 
                 idPelicula = :idPelicula,
                 pais = :pais,
                 genero = :genero,
