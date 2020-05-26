@@ -24,7 +24,7 @@
   
   <?php include_once("../inc/nav.php") ?>
 
-  <section class="row justify-content-around" id="centro">
+  <section class="justify-content-around" id="centro">
     <div class="container cont1">
       <div class="row movie-list">
         <?php

@@ -20,7 +20,7 @@ if (!isset($_SESSION["usuario"])) {
 
     <?php include_once("../inc/nav.php") ?>
 
-    <section class="row " id="centro">
+    <section class=" " id="centro">
         <div class="container" style="background-color:yellow">
             <div class="row">
                 <div class="col-sm-12">
@@ -35,7 +35,7 @@ if (!isset($_SESSION["usuario"])) {
                     <a href="adminsertPeli.php"><button type="button" class="btn btn-primary btn-lg">Insertar Película</button></a>
                 </div>
                 <div class="col-sm-3 text-center">
-                    <button type="button" class="btn btn-primary btn-lg">Borrar Película</button>
+                    <a href="adminBorrarPeli.php"><button type="button" class="btn btn-primary btn-lg">Borrar Película</button></a>
                 </div>
                 <div class="col-sm-3 text-center">
                     <a href="adminsertPeli.php"><button type="button" class="btn btn-primary btn-lg">Editar Película</button></a>
@@ -56,10 +56,10 @@ if (!isset($_SESSION["usuario"])) {
             </div><br>
             <div class="row">
                 <div class="col-sm-3 text-center">
-                    <a href="adminsertPeli.php"><button type="button" class="btn btn-primary btn-lg">Insertar Proyeccón</button></a>
+                    <a href="admininsertProy.php"><button type="button" class="btn btn-primary btn-lg">Insertar Proyeccón</button></a>
                 </div>
                 <div class="col-sm-3 text-center">
-                    <button type="button" class="btn btn-primary btn-lg">Borrar Proyección</button>
+                    <a href="adminBorraProy.php"><button type="button" class="btn btn-primary btn-lg">Borrar Proyección</button></a>
                 </div>
                 <div class="col-sm-3 text-center">
                     <a href="insertPeli.php"><button type="button" class="btn btn-primary btn-lg">Editar Proyección</button></a>

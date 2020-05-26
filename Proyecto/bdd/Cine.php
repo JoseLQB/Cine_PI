@@ -2,10 +2,32 @@
 
 require_once("CineDB.php");
 
-class Cartelera{
+class Cartelera{    public $idPelicula;
+    public $pais;
+    public $genero;
+    public $duracion;
+    public $anEstreno;
+    public $simopsis;
+    public $titulo;
+    public $director;
+    public $trailer;
+    public $cartel;
 
+    function __construct($idPelicula, $pais, $genero, $duracion, $anEstreno, $simopsis, $titulo, $director, $trailer, $cartel){
+        $this->idPelicula = $idPelicula;
+        $this->pais = $pais;
+        $this->genero = $genero;
+        $this->duracion = $duracion;
+        $this->anEstreno = $anEstreno;
+        $this->simopsis = $simopsis;
+        $this->titulo = $titulo;
+        $this->director = $director;
+        $this->trailer = $trailer;
+        $this->cartel = $cartel;
+    }
+
+    //Consulta genérica de todos los campos de la tabla
     public function consulta(){
-    
         $conexion = CineDB::conectar();
         $select = "SELECT * FROM pelicula";
         $consulta= $conexion->query($select);
@@ -13,6 +35,20 @@ class Cartelera{
         return $consulta;
 
     }
+
+    public static function creaListado(){
+        $conexion = CineDB::conectar();
+        $query = "SELECT * FROM pelicula";
+        $consulta = $conexion->query($query);
+        $tarifas=[];
+        while($registro = $consulta->fetch(PDO::FETCH_ASSOC)){
+
+            $cartel[]= new Cartelera($registro["idPelicula"], $registro["pais"], $registro["genero"], $registro["duracion"], $registro["anEstreno"], $registro["sinopsis"], $registro["titulo"], $registro["director"], $registro["trailer"], $registro["cartel"]);     
+        }
+        return $cartel;
+    }
+
+
     
     public function portada(){
         $consulta = Cartelera::consulta();

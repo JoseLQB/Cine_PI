@@ -20,7 +20,7 @@ $conexion = CineDB::conectar(); ?>
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
                 <article class="card-body">
-                    <h5>Películas:</h5>
+                    <h4>Películas para borrar proyecciones</h4>
                     <?php
 
                     require_once("../bdd/CineDB.php"); 
@@ -29,12 +29,12 @@ $conexion = CineDB::conectar(); ?>
                     $lista  = Cartelera::creaListado();
                     ?> <ul><?php
                     foreach ($lista as $k) {
-                       echo "<li><hr>". $k->idPelicula . " - ".$k->titulo."</li>";
+                       echo "<li><a href='adminBorraProyForm.php?varID=".$k->idPelicula." '>".$k->idPelicula . " - ".$k->titulo."</a></li>";
                     }
 
                     ?><hr></ul>
                     <a href="administracion.php">Volver</a>
-
+                  <!--  <a href='compra.php?varID=".$reg["idPelicula"].-->
                 </article>
             </div>
         </div>
