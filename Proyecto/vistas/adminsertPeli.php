@@ -5,6 +5,7 @@ if (!isset($_SESSION["usuario"])) {
     header("location:muestra.php");
 }
 require_once("../bdd/CineDB.php");
+require_once("../bdd/Cine.php");
 $conexion = CineDB::conectar(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +13,10 @@ $conexion = CineDB::conectar(); ?>
 <head>
     <?php include_once("../inc/head.php"); ?>
 
-    <title>Registro</title>
+    <title>Insertar película</title>
 </head>
 
-<body class="cartelera">
+<body class="admin">
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
@@ -72,8 +73,6 @@ $conexion = CineDB::conectar(); ?>
     <?php
     $fetch = 0;
     if (isset($_POST["insert"])) {
-        require_once("../bdd/CineDB.php");
-        require_once("../bdd/Cine.php");
         $conn = CineDB::conectar();
         Cartelera::nuevaPelicula("", $_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
         $fetch = 1;

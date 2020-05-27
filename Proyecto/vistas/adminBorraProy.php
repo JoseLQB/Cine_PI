@@ -5,6 +5,7 @@ if (!isset($_SESSION["usuario"])) {
     header("location:muestra.php");
 }
 require_once("../bdd/CineDB.php");
+require_once("../bdd/Cine.php");
 $conexion = CineDB::conectar(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@ $conexion = CineDB::conectar(); ?>
     <title>Registro</title>
 </head>
 
-<body class="cartelera">
+<body class="admin">
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
@@ -23,8 +24,6 @@ $conexion = CineDB::conectar(); ?>
                     <h4>Películas para borrar proyecciones</h4>
                     <?php
 
-                    require_once("../bdd/CineDB.php"); 
-                    require_once("../bdd/Cine.php");
                     $conn = CineDB::conectar();
                     $lista  = Cartelera::creaListado();
                     ?> <ul><?php

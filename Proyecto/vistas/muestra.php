@@ -8,13 +8,11 @@
   <?php include_once("../inc/head.php") ?>
 
   <title>Cartelera</title>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="../js/cartelera.js"></script>
 </head>
 <style>
-  #slider {
-    margin-left: 200px;
-    margin-right: 200px;
-    height: 500px;
-  }
 </style>
 
 <body class="cartelera">
@@ -32,6 +30,7 @@
         require_once("../bdd/Cine.php");
         echo Cartelera::portada();
         ?>
+        
       </div>
     </div>
     </div>

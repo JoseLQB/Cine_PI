@@ -48,6 +48,8 @@ class Cartelera{    public $idPelicula;
         return $cartel;
     }
 
+    
+
 
     
     public function portada(){

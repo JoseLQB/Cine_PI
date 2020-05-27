@@ -12,10 +12,10 @@ $conexion = CineDB::conectar(); ?>
 <head>
     <?php include_once("../inc/head.php"); ?>
 
-    <title>Registro</title>
+    <title>Listado de películas</title>
 </head>
 
-<body class="cartelera">
+<body class="admin">
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">

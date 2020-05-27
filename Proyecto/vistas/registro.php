@@ -50,7 +50,6 @@ $conexion = CineDB::conectar(); ?>
         $pass = $_POST["pass"];
         $mail = $_POST["mail"];
         $passc = $_POST["passc"];
-        require_once("../bdd/CineDB.php");
         $conn = CineDB::conectar();
         if ($pass == $passc) {
             try {

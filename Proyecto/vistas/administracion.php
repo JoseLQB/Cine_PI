@@ -10,10 +10,10 @@ if (!isset($_SESSION["usuario"])) {
 <head>
     <?php include_once("../inc/head.php") ?>
 
-    <title>Cartelera</title>
+    <title>Administración</title>
 </head>
 
-<body class="cartelera">
+<body class="admin">
     <!--Slide-->
 
 
@@ -21,10 +21,10 @@ if (!isset($_SESSION["usuario"])) {
     <?php include_once("../inc/nav.php") ?>
 
     <section class=" " id="centro">
-        <div class="container" style="background-color:yellow">
+        <div class="container" style="background-color:white">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1 class=" text-center">ADMINISTRACIÓN DE CARTELERA</h1>
+                   <br> <h1 class=" text-center">ADMINISTRACIÓN DE CARTELERA</h1>
                 </div><br>
             </div><br>
             <div class="col-sm-12">
@@ -42,7 +42,7 @@ if (!isset($_SESSION["usuario"])) {
                 </div>
             </div><br><br><hr><br>
         </div>
-        <div class="container" style="background-color:yellow">
+        <div class="container" style="background-color:white">
             <div class="row ">
                 <div class="col-sm-12">
                     <h1 class=" text-center">ADMINISTRACIÓN DE PROYECCIONES</h1>
@@ -61,7 +61,7 @@ if (!isset($_SESSION["usuario"])) {
                 <div class="col-sm-4 text-center">
                     <button type="button" class="btn btn-primary btn-lg">Ver Todas</button>
                 </div>
-            </div><br>
+            </div><br><br>
         </div>
     
     </section><br>

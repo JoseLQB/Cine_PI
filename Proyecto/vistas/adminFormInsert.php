@@ -6,6 +6,7 @@ if (!isset($_SESSION["usuario"])) {
 }
 require_once("../bdd/CineDB.php");
 require_once("../bdd/Cine.php");
+require_once("../bdd/Proyecciones.php");
 $conexion = CineDB::conectar(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,10 +14,10 @@ $conexion = CineDB::conectar(); ?>
 <head>
     <?php include_once("../inc/head.php"); ?>
 
-    <title>Registro</title>
+    <title>Insertar proyección</title>
 </head>
 
-<body class="cartelera">
+<body class="admin">
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
@@ -64,9 +65,6 @@ $conexion = CineDB::conectar(); ?>
     <?php
     $fetch = 0;
     if (isset($_POST["insert"])) {
-        require_once("../bdd/CineDB.php");
-        require_once("../bdd/Cine.php");
-        require_once("../bdd/Proyecciones.php");
         $conn = CineDB::conectar();
         Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"], $_POST["idPelicula"], $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"], );
         $fetch = 1;
