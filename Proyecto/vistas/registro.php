@@ -53,7 +53,7 @@ $conexion = CineDB::conectar(); ?>
         $conn = CineDB::conectar();
         if ($pass == $passc) {
             try {
-                $sql = "INSERT INTO usuarios (idUsuario, nombre, mail, pass) VALUES (NULL, :nombre, :mail, :pass)";
+                $sql = "INSERT INTO usuarios (idUsuario, nombre, mail, pass, admin) VALUES (NULL, :nombre, :mail, :pass, 0)";
                 $sql2 = "SELECT nombre FROM usuarios";
                 $result2 = $conn->query($sql2);
                 $regs = $result2->fetchAll(PDO::FETCH_OBJ);
