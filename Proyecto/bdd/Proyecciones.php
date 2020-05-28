@@ -24,15 +24,13 @@ class Proyecciones{
         $tarifas=[];
         while($registro = $consulta->fetch(PDO::FETCH_ASSOC)){
 
-            $tarifas[]= new Proyecciones($registro["idProyeccion"], $registro["idSala"], $registro["idPelicula"], $registro["fechaProyeccion"], $registro["horaProyeccion"], $registro["codtarifa"]);
-
-            
+            $tarifas[]= new Proyecciones($registro["idProyeccion"], $registro["idSala"], $registro["idPelicula"], $registro["fechaProyeccion"], $registro["horaProyeccion"], $registro["codtarifa"]);  
         }
         return $tarifas;
     }
 
     
-    public function consulta(){
+    public static function consulta(){
         $conexion = CineDB::conectar();
         $select = "SELECT * FROM proyecciones";
         $consulta= $conexion->query($select);
@@ -40,7 +38,9 @@ class Proyecciones{
         return $consulta;
 
     }
-    public function getTitulo($id){  
+
+
+    public static function getTitulo($id){  
         $consulta = Proyecciones::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
             if($reg["idPelicula"]==$id){
@@ -52,7 +52,7 @@ class Proyecciones{
     }
 
 
-    public function nuevaProyeccion($idProyeccion, $idSala,  $idPelicula, $fechaProyeccion, $horaProyeccion, $codTarifa){
+    public static function nuevaProyeccion($idProyeccion, $idSala,  $idPelicula, $fechaProyeccion, $horaProyeccion, $codTarifa){
         $conexion = CineDB::conectar();
         $sql = "INSERT INTO proyecciones(idProyeccion, idSala, idPelicula, fechaProyeccion, horaProyeccion, codTarifa) VALUES(:idProyeccion, :idSala, :idPelicula, :fechaProyeccion, :horaProyeccion, :codTarifa)";
         $sentencia = $conexion->prepare($sql);
@@ -67,7 +67,7 @@ class Proyecciones{
 
 
     //Borra proyecciones de una película en concreto a partir de una id
-    public function delete($idPelicula){
+    public static function delete($idPelicula){
         $conexion = CineDB::conectar();
         $sql1 = "DELETE FROM reserva WHERE idProyeccion IN (SELECT `idProyeccion` FROM `proyecciones` WHERE  idPelicula =  :idPelicula)";
         $sql2 = "DELETE FROM valoracion WHERE idPelicula =  :idPelicula";
@@ -82,7 +82,8 @@ class Proyecciones{
         $sentencia2->execute();
         $sentencia->execute();
     }
-    public function deletebyProy($idPelicula, $idProyeccion){
+
+    public static function deletebyProy($idPelicula, $idProyeccion){
         $conexion = CineDB::conectar();
         $sql1 = "DELETE FROM reserva WHERE idProyeccion IN (SELECT `idProyeccion` FROM `proyecciones` WHERE  idPelicula =  :idPelicula)";
         $sql2 = "DELETE FROM valoracion WHERE idPelicula =  :idPelicula";
@@ -97,7 +98,9 @@ class Proyecciones{
         $sentencia2->execute();
         $sentencia->execute();
     }
-    public function update($idProyeccion, $idSala,  $idPelicula, $fechaProyeccion, $horaProyeccion, $codTarifa){
+
+
+    public static function update($idProyeccion, $idSala,  $idPelicula, $fechaProyeccion, $horaProyeccion, $codTarifa){
         $conexion = CineDB::conectar();
         $sql = "UPDATE proyecciones SET 
                 idProyeccion = :idProyeccion,
@@ -114,13 +117,20 @@ class Proyecciones{
         $sentencia->bindParam(':fechaProyeccion', $fechaProyeccion);
         $sentencia->bindParam(':horaProyeccion', $horaProyeccion);
         $sentencia->bindParam(':codTarifa', $codTarifa);
-        $sentencia->execute();
-        
+        $sentencia->execute();    
     }
 
+    //Funciones para calcular el aforo disponible en una sala
 
 
 }
 
 
+/*
+SELECT COUNT(idUsuario) FROM `reserva` WHERE idProyeccion = 111
+El resultado de esta consulta se restará al número de aforo de cada sala para obtener el total
+
+
+
+*/
 ?>

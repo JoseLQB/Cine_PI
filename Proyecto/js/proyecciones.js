@@ -22,11 +22,11 @@ $(document).ready(function () {
                 var p =$("<p>").text(e.fechaProyeccion + " " + e.horaProyeccion);
                 form.append(p);
                 var p2 =$("<p>")
-                var span = $("<span>").text("Cantidad ");
+                var span = $("<span>");
                 form.append(p2);
                 p2.append(span);
-                var input = $("<input>").attr("type", "number");
-                span.append(input);
+                var hidden = $("<input>").attr("type", "hidden").attr("value", e.idProyeccion).attr("name", "idPr");
+                span.append(hidden);
                 var p3 = $("<p>").text("Sala " + e.idSala);
                 form.append(p3);
                 var p4 = $("<p>");

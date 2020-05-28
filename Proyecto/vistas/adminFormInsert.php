@@ -29,27 +29,33 @@ $conexion = CineDB::conectar(); ?>
                     <form action="adminFormInsert.php?<?php echo "varID=".$_GET["varID"]; ?>" method="post" class="form_insert">
                         <div class="form-group">
                             <label>ID de la Proyección</label>
-                            <input type="text" class="form-control" name="idProyeccion" placeholder="" require>
+                            <input type="text" class="form-control" name="idProyeccion" placeholder="" required>
                         </div>
                         <div class="form-group">
                             <label>Sala</label>
-                            <input type="text" name="idSala" class="form-control" placeholder="" require>
+                            <input type="text" name="idSala" class="form-control" placeholder="" required>
                         </div>
                         <div class="form-group">
                             <label>ID Pelicula</label>
-                            <input type="text" name="idPelicula" class="form-control" placeholder="" disabled value="<?php echo $_GET["varID"] ?>" require>
+                            <input type="text" name="idPelicula" class="form-control" placeholder="" disabled value="<?php echo $_GET["varID"] ?>" required>
                         </div>
                         <div class="form-group">
                             <label>Fecha de la proyección</label>
-                            <input type="date" name="fechaProyeccion" class="form-control" placeholder="">
+                            <input type="date" name="fechaProyeccion" class="form-control" placeholder=""  required>
                         </div>
                         <div class="form-group">
                             <label>Hora de la proyección</label>
-                            <input type="time" name="horaProyeccion" class="form-control" placeholder="">
+                            <input type="time" name="horaProyeccion" class="form-control" placeholder=""  required>
                         </div>
                         <div class="form-group">
-                            <label>Tarifa</label>
-                            <input type="text" name="codTarifa" class="form-control" placeholder="">
+                            <label>Tarifa</label><br>
+                            <select name="codTarifa">
+                                <option value="NORMAL">Normal</option> 
+                                <option value="MATINA">Matinal</option> 
+                                <option value="ESPECT">Día del espectador</option>
+                                <option value="PAREJA">Día de la pareja</option> 
+                                <option value="SALA3D">Sala 3D</option> 
+                            </select>
                         </div>
                         <div class="form-group">
                             <button type="submit" name="insert" class="btn btn-primary btn-block">Insertar</buttom>

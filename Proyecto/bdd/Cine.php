@@ -2,7 +2,8 @@
 
 require_once("CineDB.php");
 
-class Cartelera{    public $idPelicula;
+class Cartelera{    
+    public $idPelicula;
     public $pais;
     public $genero;
     public $duracion;
@@ -27,7 +28,7 @@ class Cartelera{    public $idPelicula;
     }
 
     //Consulta genérica de todos los campos de la tabla
-    public function consulta(){
+    public static function consulta(){
         $conexion = CineDB::conectar();
         $select = "SELECT * FROM pelicula";
         $consulta= $conexion->query($select);
@@ -48,20 +49,20 @@ class Cartelera{    public $idPelicula;
         return $cartel;
     }
 
-    public function getListado(){
+    public static function getListado(){
         $consulta = Cartelera::consulta();
         while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
             echo"<ul><li>".$reg["idPelicula"].  " -- ". $reg["titulo"]."</li></ul>";
         }
     }
     
-    public function getIDs(){
+    public static function getIDs(){
         $consulta = Cartelera::consulta();
         while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
             echo $reg["idPelicula"];
         }
     }
-    public function getTitulos(){
+    public static function getTitulos(){
         $consulta = Cartelera::consulta();
         while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
             echo $reg["titulo"];
@@ -70,7 +71,7 @@ class Cartelera{    public $idPelicula;
 
     //--Métodos para mostrar los datos uno a uno
 
-    public function getTitulo($id){  
+    public static function getTitulo($id){  
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
             if($reg["idPelicula"]==$id){
@@ -80,7 +81,7 @@ class Cartelera{    public $idPelicula;
         }
         return $titulo;
     }
-    public function getDuracion($id){  
+    public static function getDuracion($id){  
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
             if($reg["idPelicula"]==$id){
@@ -92,7 +93,7 @@ class Cartelera{    public $idPelicula;
     }
 
     
-    public function getCartel($id){ 
+    public static function getCartel($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
             if($reg["idPelicula"]==$id){
@@ -102,7 +103,7 @@ class Cartelera{    public $idPelicula;
         }
         return $cartel;
     }
-    public function getFecha($id){ 
+    public static function getFecha($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
             if($reg["idPelicula"]==$id){
@@ -112,7 +113,7 @@ class Cartelera{    public $idPelicula;
         return $fecha;
     }
     
-    public function getGenero($id){ 
+    public static function getGenero($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
             if($reg["idPelicula"]==$id){
@@ -122,7 +123,7 @@ class Cartelera{    public $idPelicula;
         return $fecha;
     }
 
-    public function getTrailer($id){ 
+    public static function getTrailer($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
             if($reg["idPelicula"]==$id){
@@ -131,7 +132,7 @@ class Cartelera{    public $idPelicula;
         }
         return $trailer;
     }
-    public function getSinopsis($id){ 
+    public static function getSinopsis($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
             if($reg["idPelicula"]==$id){
@@ -140,7 +141,7 @@ class Cartelera{    public $idPelicula;
         }
         return $sinopsis;
     }
-    public function getPais($id){ 
+    public static function getPais($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
             if($reg["idPelicula"]==$id){
@@ -149,7 +150,7 @@ class Cartelera{    public $idPelicula;
         }
         return $pais;
     }
-    public function getDirector($id){ 
+    public static function getDirector($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
             if($reg["idPelicula"]==$id){
@@ -159,14 +160,15 @@ class Cartelera{    public $idPelicula;
         return $director;
     }
 
-    public function getMedia($id){
+    //Saca la media de cada película a partir de su id
+    public static function getMedia($id){
         $conexion = CineDB::conectar();
         $sql="SELECT AVG(valoracion) FROM valoracion WHERE idPelicula =$id";
-        $consulta = $conexion->query($sql)->fetchAll();
-        return $consulta[0];
+        $consulta =  $conexion->query($sql)->fetchAll()[0];
+        return $consulta;
     }
     
-    public function nuevaPelicula($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
+    public static function nuevaPelicula($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
         $conexion = CineDB::conectar();
         $sql = "INSERT INTO pelicula(idPelicula, pais, genero, duracion, anEstreno, sinopsis, titulo, director, trailer, cartel) VALUES(:idPelicula, :pais, :genero, :duracion, :anEstreno, :sinopsis, :titulo, :director, :trailer, :cartel)";
         $sentencia = $conexion->prepare($sql);
@@ -183,7 +185,7 @@ class Cartelera{    public $idPelicula;
         $sentencia->execute();
     }
     //Elimina a un usuario a partir de su id
-    public function delete($idPelicula){
+    public static function delete($idPelicula){
         $conexion = CineDB::conectar();
         $sql = "DELETE FROM pelicula WHERE idPelicula =  :idPelicula";
         $sentencia = $conexion->prepare($sql);
@@ -191,7 +193,7 @@ class Cartelera{    public $idPelicula;
         $sentencia->execute();
     }
     //Modifica a un usuario pasándole a la función los nuevos datos
-    public function update($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
+    public static function update($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
         $conexion = CineDB::conectar();
         $sql = "UPDATE pelicula SET 
                 idPelicula = :idPelicula,
@@ -218,6 +220,9 @@ class Cartelera{    public $idPelicula;
         $sentencia->execute();
         
     }
+
+
+    
 
 }
 

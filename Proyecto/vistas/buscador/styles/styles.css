@@ -1,0 +1,48 @@
+.sec-busca{
+    background-image: url("../../../assets/images/fondoAdmin.png");
+}
+
+img{
+    border-radius:1%;
+}
+.cont-busca{
+    background-image: url("../../../assets/images/fondoAdmin.png");
+}
+
+.admin{
+    background-image: url("../../../assets/images/fondoAdmin.png");
+}
+
+.caja1{
+    background-color: aliceblue;
+}
+
+footer{
+    background-color: rgb(27, 27, 27);
+    color: white;
+}
+
+.footcent{
+    background: rgb(77, 77, 77); 
+}
+
+.gitLogo{
+    width: 20px;
+    height: 20px;
+}
+.ttLogo{
+    width: 22px;
+    height: 19px;
+}
+
+#linkies {
+padding: 2px 1px 0;
+}
+  
+  #linkies:link {
+    color: #7bca3b;
+  }
+  
+  #linkies:visited {
+    color: rgb(190, 211, 174);
+  }

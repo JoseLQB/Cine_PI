@@ -36,7 +36,7 @@ session_start();
                             </div>
                             <div class="form-group">
                                 <label>Correo</label>
-                                <input type="text" name="correo" class="form-control" placeholder="" value="" require>
+                                <input type="text" name="correo" id="correo" class="form-control" placeholder="" value="" require>
                             </div>
                             <div class="form-group">
                                 <label>Motivo del mensaje</label>
@@ -44,10 +44,10 @@ session_start();
                             </div>
                             <div class="form-group">
                                 <label>Tu mensaje</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="mensaje"></textarea>
+                                <textarea class="form-control" id="text" rows="3" name="mensaje"></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" name="enviar" class="btn btn-primary btn-block">Enviar</buttom>
+                                <button type="submit" name="enviar" id="enviar" class="btn btn-primary btn-block">Enviar</buttom>
                             </div>
                             <a href="administracion.php">Volver</a>
                         </form>

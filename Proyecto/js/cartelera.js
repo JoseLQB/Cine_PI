@@ -5,16 +5,14 @@ $(document).ready(function () {
         success: function (data) {
 			var json = JSON.parse(data);
             console.log(json);
-            //alert("HOLA");
             cartelera(json);
         }
     });
 
-    ///Genera el contenido de la cartelera
+    ///Genera el contenido de la cartelera para la página principal
 
     function cartelera(json){
         json.forEach(e => {
-            //alert(e.idPelicula);
             var div1 = $("<div>");
             div1.attr("class", "col-sm my-3");
             $(".movie-list").append(div1);
@@ -33,8 +31,6 @@ $(document).ready(function () {
             var h5 = $("<h5>").text(e.titulo+ "(" + e.anEstreno + ")");
             h5.attr("class", "card-title");
             div3.append(h5);
-
-
         });
     }
 });

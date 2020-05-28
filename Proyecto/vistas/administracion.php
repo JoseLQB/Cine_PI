@@ -24,7 +24,7 @@ if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
         <div class="container" style="background-color:white">
             <div class="row">
                 <div class="col-sm-12">
-                    <br><a href="http://localhost/DAW2/buscaPelis/view/vista.php" target="_blank" class=" text-center"><h3>Buscador</h3></a>
+                    <br><a href="buscador/buscar.php" target="_blank" class=" text-center"><h3>Buscador de ayuda</h3></a>
                    <br> <h1 class=" text-center">ADMINISTRACIÓN DE CARTELERA</h1>
                 </div><br>
             </div><br>

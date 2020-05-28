@@ -99,6 +99,18 @@ padding: 2px 1px 0;
     width: 100%;
     transition: top 0.3s; 
 }
+/*Estilos del buscador*/
+.sec-busca{
+    background-color: beige;
+}
+
+img{
+    border-radius:1%;
+}
+.cont-busca{
+    background-color: beige;
+}
+
 
 /* ----------   Media query  ------------------- */
 

@@ -127,9 +127,6 @@ session_start(); ?>
       </div>
     <?php
     }
-    if(isset($_POST["comprar"])){
-      echo "HOLAAAA";
-    }
 
     ?><br><br><br>
   </div>

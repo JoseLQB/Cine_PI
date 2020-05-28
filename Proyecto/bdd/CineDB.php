@@ -2,7 +2,7 @@
 
 class CineDB{
     
-    public function conectar(){
+    public static function conectar(){
         try{
             $conn = new PDO( "mysql:host=localhost;dbname=cinepi", "root", "");
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

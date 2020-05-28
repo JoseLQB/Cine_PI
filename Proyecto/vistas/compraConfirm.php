@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once("../bdd/Cine.php"); 
-require_once("../bdd/Proyecciones.php"); ?>
+require_once("../bdd/Proyecciones.php");
+require_once("../bdd/Reserva.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,15 +28,26 @@ require_once("../bdd/Proyecciones.php"); ?>
             $titulo = Cartelera::getTitulo($id);
             echo "<h5>" . $titulo . "<br>" ;
             echo Cartelera::getFecha($id);
+            echo "<br>Proyección: ".$_POST["idPr"];
 
             ?>
           </dd>
           <dd>
             <p>Tarifa aplicable:</p>
 
+
           </dd>
           <dd>
             <p>Cantidad:</p>
+            <p>
+            <?php 
+            $idSala = Reserva::getSala($_POST["idPr"])[0];
+            $aforo = Reserva::getAforo($idSala)[0];
+            $resto= Reserva::getResto($_POST["idPr"])[0];
+            $total = $aforo - $resto;
+            echo "Quedan " .  $total . "/". $aforo." asientos disponibles.";
+            ?>
+            </p>
 
           </dd>
           <dd>

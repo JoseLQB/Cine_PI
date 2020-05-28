@@ -42,43 +42,44 @@ $conexion = CineDB::conectar(); ?>
                         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_insert">
                             <div class="form-group">
                                 <label>ID</label>
-                                <input type="text" class="form-control" name="id" placeholder="" value="<?php echo $_POST["idOc"]?>" require>
+                                <input type="text" class="form-control" name="idDis" placeholder="" value="<?php echo $_POST["idOc"]?>" disabled required>
+                                <input type="hidden" class="form-control" name="id" placeholder="" value="<?php echo $_POST["idOc"]?>" require>
                             </div>
                             <div class="form-group">
                                 <label>Título</label>
-                                <input type="text" class="form-control" name="titulo" placeholder="" value="<?php echo Cartelera::getTitulo($_POST["idOc"])?>" require>
+                                <input type="text" class="form-control" name="titulo" placeholder="" value="<?php echo Cartelera::getTitulo($_POST["idOc"])?>" required>
                             </div>
                             <div class="form-group">
                                 <label>Director</label>
-                                <input type="text" name="director" class="form-control"  placeholder="" value="<?php echo Cartelera::getDirector($_POST["idOc"])?>" require>
+                                <input type="text" name="director" class="form-control"  placeholder="" value="<?php echo Cartelera::getDirector($_POST["idOc"])?>" required>
                             </div>
                             <div class="form-group">
                                 <label>Sinopsis</label>
-                                <textarea class="form-control" id="" rows="3" name="genero" placeholder="" value="" ><?php echo Cartelera::getSinopsis($_POST["idOc"])?></textarea>
+                                <textarea class="form-control" id="" rows="3" name="genero" placeholder="" value="" required ><?php echo Cartelera::getSinopsis($_POST["idOc"])?></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Pais</label>
-                                <input type="text" name="pais" class="form-control"  placeholder="" value="<?php echo Cartelera::getPais($_POST["idOc"])?>"  require>
+                                <input type="text" name="pais" class="form-control"  placeholder="" value="<?php echo Cartelera::getPais($_POST["idOc"])?>"  required>
                             </div>
                             <div class="form-group">
                                 <label>Año de estreno</label>
-                                <input type="text" name="ano" class="form-control" placeholder="" value="<?php echo Cartelera::getFecha($_POST["idOc"])?>">
+                                <input type="text" name="ano" class="form-control" placeholder="" required value="<?php echo Cartelera::getFecha($_POST["idOc"])?>">
                             </div>
                             <div class="form-group">
                                 <label>Duración</label>
-                                <input type="text" name="duracion" class="form-control" placeholder="" value="<?php echo Cartelera::getDuracion($_POST["idOc"])?>">
+                                <input type="text" name="duracion" class="form-control" placeholder="" required value="<?php echo Cartelera::getDuracion($_POST["idOc"])?>">
                             </div>
                             <div class="form-group">
                                 <label>Género</label>
-                                <input type="text" name="sinopsis" class="form-control" placeholder="" value="<?php echo Cartelera::getGenero($_POST["idOc"])?>">
+                                <input type="text" name="sinopsis" class="form-control" placeholder="" required value="<?php echo Cartelera::getGenero($_POST["idOc"])?>">
                             </div>
                             <div class="form-group">
                                 <label>Tráiler</label>
-                                <input type="text" name="trailer" class="form-control" placeholder="" value="<?php echo Cartelera::getTrailer($_POST["idOc"])?>">
+                                <input type="text" name="trailer" class="form-control" placeholder="" required value="<?php echo Cartelera::getTrailer($_POST["idOc"])?>">
                             </div>
                             <div class="form-group">
                                 <label>Cartel</label>
-                                <input type="text" name="cartel" class="form-control" placeholder="" value="<?php echo Cartelera::getCartel($_POST["idOc"])?>">
+                                <input type="text" name="cartel" class="form-control" placeholder="" required value="<?php echo Cartelera::getCartel($_POST["idOc"])?>">
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="edit" class="btn btn-warning btn-block">Actualizar</buttom>
