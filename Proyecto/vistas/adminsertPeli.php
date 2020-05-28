@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (!isset($_SESSION["usuario"])) {
+if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
     header("location:muestra.php");
 }
 require_once("../bdd/CineDB.php");

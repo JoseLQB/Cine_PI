@@ -16,7 +16,7 @@ session_start(); ?>
 <?php include_once("../inc/nav.php") ?>
   <div class="container-fluid cont-compra">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-sm-6 col-md-8">
         <dl>
           <dd><br>
             <?php
@@ -50,7 +50,9 @@ session_start(); ?>
             ?>
           </dd>
           <dt>
-            Nota: 10
+                <?php 
+        echo "Nota: " . Cartelera::getMedia($id)[0];
+        ?>
           </dt>
           <dd>
             <br><br>
@@ -74,7 +76,7 @@ session_start(); ?>
 
         </dl>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-6 col-md-4">
         <br><img alt="Bootstrap Image Preview" src="<?php echo Cartelera::getCartel($id); ?>" />
       </div>
 
@@ -125,9 +127,13 @@ session_start(); ?>
       </div>
     <?php
     }
+    if(isset($_POST["comprar"])){
+      echo "HOLAAAA";
+    }
 
     ?><br><br><br>
   </div>
+
 </body>
 <?php include_once("../inc/footer.php") ?>
 

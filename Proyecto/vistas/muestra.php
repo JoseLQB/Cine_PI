@@ -25,12 +25,6 @@
   <section class="justify-content-around" id="centro">
     <div class="container cont1">
       <div class="row movie-list">
-        <?php
-        require_once("../bdd/CineDB.php");
-        require_once("../bdd/Cine.php");
-        echo Cartelera::portada();
-        ?>
-        
       </div>
     </div>
     </div>

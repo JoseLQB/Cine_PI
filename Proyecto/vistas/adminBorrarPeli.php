@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (!isset($_SESSION["usuario"])) {
+if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
     header("location:muestra.php");
 }
 require_once("../bdd/CineDB.php");
@@ -17,41 +17,7 @@ $conexion = CineDB::conectar(); ?>
     <title>Editar película</title>
 </head>
 
-<body class="admin">
-    <div class="container">
-        <div class="row d-flex justify-content-around mt-5">
-            <div class="card col-md-6 col-md-offset-6">
-                <article class="card-body">
-                    <h5>Películas:</h5>
-                    <?php
-
-                    require_once("../bdd/CineDB.php"); 
-                    require_once("../bdd/Cine.php");
-                    $conn = CineDB::conectar();
-                    $lista  = Cartelera::creaListado();
-                    ?> <div class="row"><?php
-                    foreach ($lista as $k) {
-                        ?><?php
-                       echo "<div class='col-md-6'>". $k->idPelicula . " - ".$k->titulo."</div>";
-                       ?>
-                       <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_borra">
-                       
-                       <input type="hidden" name="idOc" value="<?php echo $k->idPelicula ?>">
-                       <button type="submit" name="delete" class="btn btn-danger btn-block">Eliminar</button></form>&nbsp; &nbsp; &nbsp;
-                       <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_borra">
-                       
-                       <input type="hidden" name="idOc" value="<?php echo $k->idPelicula ?>">
-                       <button type="submit" name="update" class="btn btn-warning btn-block">Actualizar</button></form><br><br><?php
-                    }
-
-                    ?></div><hr>
-                    <a href="administracion.php">Volver</a>
-
-                </article>
-            </div>
-        </div>
-    </div><br><br>
-    <?php
+<body class="admin"> <?php
     $fetch = 0;
   //  $id = $_POST["idOc"];
     if (isset($_POST["delete"])) {
@@ -128,18 +94,53 @@ $conexion = CineDB::conectar(); ?>
         <?php
     }
     ?><?php
-    $fetch = 0;
+    $fetch =2;
     if (isset($_POST["edit"])) {
+        $fetch = 0;
         $conn = CineDB::conectar();
         Cartelera::update($_POST["id"],$_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
         $fetch = 1;
-    } else {
-        echo "<font color='red'>Introduce todos los datos</font>";
-    }
+    } 
     if($fetch == 1){
         echo '<center><h3><font color="green">¡Elemento actualizado!</font></h3></center><br>';
+    }else if($fetch==0){
+        echo "<font color='green'>Introduce todos los datos</font>";
     }
     ?>
+    <div class="container">
+        <div class="row d-flex justify-content-around mt-5">
+            <div class="card col-md-6 col-md-offset-6">
+                <article class="card-body">
+                    <h5>Películas:</h5>
+                    <?php
+
+                    require_once("../bdd/CineDB.php"); 
+                    require_once("../bdd/Cine.php");
+                    $conn = CineDB::conectar();
+                    $lista  = Cartelera::creaListado();
+                    ?> <div class="row"><?php
+                    foreach ($lista as $k) {
+                        ?><?php
+                       echo "<div class='col-md-6'>". $k->idPelicula . " - ".$k->titulo."</div>";
+                       ?>
+                       <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_borra">
+                       
+                       <input type="hidden" name="idOc" value="<?php echo $k->idPelicula ?>">
+                       <button type="submit" name="delete" class="btn btn-danger btn-block">Eliminar</button></form>&nbsp; &nbsp; &nbsp;
+                       <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_borra">
+                       
+                       <input type="hidden" name="idOc" value="<?php echo $k->idPelicula ?>">
+                       <button type="submit" name="update" class="btn btn-warning btn-block">Actualizar</button></form><br><br><?php
+                    }
+
+                    ?></div><hr>
+                    <a href="administracion.php">Volver</a>
+
+                </article>
+            </div>
+        </div>
+    </div><br><br>
+   
 </body><br><br>
 
 </html>

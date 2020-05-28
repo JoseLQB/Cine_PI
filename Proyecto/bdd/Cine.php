@@ -48,19 +48,6 @@ class Cartelera{    public $idPelicula;
         return $cartel;
     }
 
-    
-
-
-    
-    public function portada(){
-        $consulta = Cartelera::consulta();
-        while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            echo"<div class='col-sm my-3'><div class='card cartel'>
-            <a href='compra.php?varID=".$reg["idPelicula"]." '><img class='' src='" . $reg['cartel'] . "' alt='' srcset=''></a>
-                <div class='card-body'><h5 class='card-title'>" . $reg['titulo'] . " (" . $reg['anEstreno'] . ")" . "</h5>
-                </div></div></div>";
-        }
-    }
     public function getListado(){
         $consulta = Cartelera::consulta();
         while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -170,6 +157,13 @@ class Cartelera{    public $idPelicula;
             }
         }
         return $director;
+    }
+
+    public function getMedia($id){
+        $conexion = CineDB::conectar();
+        $sql="SELECT AVG(valoracion) FROM valoracion WHERE idPelicula =$id";
+        $consulta = $conexion->query($sql)->fetchAll();
+        return $consulta[0];
     }
     
     public function nuevaPelicula($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){

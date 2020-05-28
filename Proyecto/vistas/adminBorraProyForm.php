@@ -118,7 +118,7 @@ $conexion = CineDB::conectar(); ?>
     $fetch = 0;
     if (isset($_POST["edit"])) {
         $conn = CineDB::conectar();
-        Proyecciones::update($_POST["idProyeccion"], $_POST["idSala"], $_POST["idPelicula"], $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
+        Proyecciones::update($_POST["idProyeccion"], $_POST["idSala"], $_GET["varID"], $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
         $fetch = 1;
     } else if ($fetch == 1) {
         echo '<center><h3><font color="green">¡Elemento actualizado!</font></h3></center><br>';

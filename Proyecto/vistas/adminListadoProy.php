@@ -5,6 +5,7 @@ if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
     header("location:muestra.php");
 }
 require_once("../bdd/CineDB.php");
+require_once("../bdd/Cine.php");
 $conexion = CineDB::conectar(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@ $conexion = CineDB::conectar(); ?>
 <head>
     <?php include_once("../inc/head.php"); ?>
 
-    <title>Listado de películas</title>
+    <title>Listado</title>
 </head>
 
 <body class="admin">
@@ -20,21 +21,19 @@ $conexion = CineDB::conectar(); ?>
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
                 <article class="card-body">
-                    <h5>Películas:</h5>
+                    <h4>Peliculas con poyecciones</h4>
                     <?php
 
-                    require_once("../bdd/CineDB.php"); 
-                    require_once("../bdd/Cine.php");
                     $conn = CineDB::conectar();
                     $lista  = Cartelera::creaListado();
                     ?> <ul><?php
                     foreach ($lista as $k) {
-                       echo "<li><hr>". $k->idPelicula . " - ".$k->titulo."</li>";
+                       echo "<li>".$k->idPelicula . " - ".$k->titulo."</a></li>";
                     }
 
                     ?><hr></ul>
                     <a href="administracion.php">Volver</a>
-
+                  <!--  <a href='compra.php?varID=".$reg["idPelicula"].-->
                 </article>
             </div>
         </div>

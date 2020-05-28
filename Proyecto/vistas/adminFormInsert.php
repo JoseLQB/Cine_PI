@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (!isset($_SESSION["usuario"])) {
+if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
     header("location:muestra.php");
 }
 require_once("../bdd/CineDB.php");
@@ -37,7 +37,7 @@ $conexion = CineDB::conectar(); ?>
                         </div>
                         <div class="form-group">
                             <label>ID Pelicula</label>
-                            <input type="text" name="idPelicula" class="form-control" placeholder="" value="<?php echo $_GET["varID"] ?>" require>
+                            <input type="text" name="idPelicula" class="form-control" placeholder="" disabled value="<?php echo $_GET["varID"] ?>" require>
                         </div>
                         <div class="form-group">
                             <label>Fecha de la proyección</label>
@@ -65,14 +65,15 @@ $conexion = CineDB::conectar(); ?>
     <?php
     $fetch = 0;
     if (isset($_POST["insert"])) {
+        $fetch = 2;
         $conn = CineDB::conectar();
-        Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"], $_POST["idPelicula"], $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"], );
+        Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"],$_GET["varID"] , $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"], );
         $fetch = 1;
-    } else {
-        echo "<font color='red'>Introduce todos los datos</font>";
-    }
+    } 
     if ($fetch == 1) {
-        echo '<center><h3><font color="green">¡Nuevo título insertado!</font></h3></center><br>';
+        echo '<center><h3><font color="green">¡Nueva proyección insertada!</font></h3></center><br>';
+    }else if($fetch ==2) {
+        echo "<font color='red'>Introduce todos los datos</font>";
     }
     ?><br><br>
 </body>

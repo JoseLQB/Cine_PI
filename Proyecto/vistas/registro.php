@@ -76,9 +76,9 @@ $conexion = CineDB::conectar(); ?>
                 echo 'Error: ' . $e->getMessage();
             }
         }
-    } else {
+    } /*else {
         echo "<font color='red'>Introduce todos los datos</font>";
-    }
+    }*/
 
     ?><br><br>
 </body>
