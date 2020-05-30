@@ -94,7 +94,7 @@ require_once "../model/Funciones.php";
 
 
 
-    <section class="row justify-content-around sec-busca" id="centro">
+    <section class=" justify-content-around sec-busca" id="centro">
         <div class="container cont-busca">
             <div class="card">
                 <div class="card-header">
@@ -103,7 +103,7 @@ require_once "../model/Funciones.php";
                 <div class="card-body">
                     <form class=form role="form" autocomplete="off" action="#" method="post">
                         <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Película</label>
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
                             <div class="col-lg-6 text-center">
                                 <input type="text" class="form-control" name="pelicula" id="pelicula" placeholder="Escribe el título original de la plícula" required>
                             </div>

@@ -17,7 +17,7 @@ $(document).ready(function () {
             if(e.idPelicula ==url2[1]){
                 var form = $("<form>");
                 form.attr("method", "post");
-                form.attr("action", "compraConfirm.php?varID="+e.idPelicula);
+                form.attr("action", "compraForm.php?varID="+e.idPelicula);
                 $(".modal-body").append(form);
                 var p =$("<p>").text(e.fechaProyeccion + " " + e.horaProyeccion);
                 form.append(p);
@@ -39,5 +39,5 @@ $(document).ready(function () {
                 p4.append(hr)
             }
         });
-	}
+    }
 });

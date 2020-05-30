@@ -23,41 +23,45 @@ session_start();
     <section class="justify-content-around" id="centro">
 
 
-        <div class="container">
-            <div class="row d-flex justify-content-around mt-5">
-                <div class="card col-md-6 col-md-offset-6">
-                    <article class="card-body">
-                        <h4 class="card-title mb-4 mt-1 text-center">Formulario de contacto</h4>
 
-                        <form action="contacto.php" method="post" class="form_contact">
-                            <div class="form-group">
-                                <label>Nombre</label>
-                                <input type="text" class="form-control" name="nombre" placeholder="" value="" require>
-                            </div>
-                            <div class="form-group">
-                                <label>Correo</label>
-                                <input type="text" name="correo" id="correo" class="form-control" placeholder="" value="" require>
-                            </div>
-                            <div class="form-group">
-                                <label>Motivo del mensaje</label>
-                                <input type="text" name="motivo" class="form-control" placeholder="" value="" require>
-                            </div>
-                            <div class="form-group">
-                                <label>Tu mensaje</label>
-                                <textarea class="form-control" id="text" rows="3" name="mensaje"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" name="enviar" id="enviar" class="btn btn-primary btn-block">Enviar</buttom>
-                            </div>
-                            <a href="administracion.php">Volver</a>
-                        </form>
-                        <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
-                        <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>
-                    </article>
-                </div>
-            </div><br>
-
+        <div class="py-3" >
+    <div class="container">
+      <div class="row rowCont">
+        <div class="col-md-8 p-4">
+          <h1>Contacta con nosotros</h1>
+          <p>Si tienes alguna duda, sugerencia, queja o simplemente quieres decirnos algo, aquí te dejamos las distintas vías de contacto.</p>
         </div>
+      </div>
+      <div class="row rowCont">
+        <div class="col-md-5 p-4">
+          <p>Puedes hacerlo a través de las siguientes vías o rellenando nuestro formulario</p>
+          <p class="lead mt-3"> <b>Teléfono
+          </b> </p>
+          <p> <a href="#">954541123</a> </p>
+          <p> <a href="#">652222545</a> </p>
+          <p class="lead mt-3"> <b>Correo</b> </p>
+          <p> <a href="#">cinepipsur@gmail.com</a> </p>
+          <p> <a href="#">cinepi@cinepi.com</a> </p>
+        </div>
+        <div class="col-md-7 p-4">
+          <h3 class="mb-3">Formulario de contacto</h3>
+          <form action="" method="POST">
+            <div class="form-row">
+              <div class="form-group col-md-6"> <input type="text" class="form-control" id="nombre" placeholder="Nombre"> </div>
+              <div class="form-group col-md-6"> <input type="text" class="form-control" id="apellido" placeholder="Apellido"> </div>
+            </div>
+            <div class="form-group"> <input type="text" class="form-control" id="motivo" placeholder="Motivo del mensaje"> </div>
+            <div class="form-group"> <input type="email" class="form-control" id="correo" placeholder="Correo"> </div>
+            <div class="form-row">
+              <div class="form-group col-md-6"> <input type="number" class="form-control" id="tlf" placeholder="Teléfono de contacto"> </div>
+              <div class="form-group col-md-6"> <input type="text" class="form-control" id="poblacion" placeholder="Población"> </div>
+            </div>
+            <div class="form-group"> <textarea class="form-control" id="mensaje" rows="4" placeholder="Tu mensaje"></textarea> </div> <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
     </section><br>
   

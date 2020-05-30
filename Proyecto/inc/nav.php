@@ -52,8 +52,11 @@
           </li>
         <?php
         } else { ?>
+        <style>
+
+        </style>
           <li class="dropdown order-1">
-            <span class="navbar-brand">Hola <?php echo $_SESSION["usuario"] ?> </span>
+            <span class="navbar-brand"> Hola <a href="perfilUsuario.php" class="goPerfil"><?php echo $_SESSION["usuario"] ?></a> </span>
             <a href="logoff.php">Cerrar Sesion</a>
 
           </li>

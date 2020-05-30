@@ -77,7 +77,7 @@ session_start(); ?>
         </dl>
       </div>
       <div class="col-sm-6 col-md-4">
-        <br><img alt="Bootstrap Image Preview" src="<?php echo Cartelera::getCartel($id); ?>" />
+        <br><img class="img" alt="Bootstrap Image Preview" src="<?php echo Cartelera::getCartel($id); ?>" />
       </div>
 
     </div>
@@ -109,6 +109,7 @@ session_start(); ?>
       </div>
 
     <?php
+    
     } else {
     ?>
       <div class="modal fade" id="myModal" role="dialog">

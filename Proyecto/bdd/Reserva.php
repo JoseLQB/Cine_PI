@@ -31,6 +31,21 @@ class Reserva{
 
     }
 
+    //Función que agrega una compra, se activa cada vez que el usuario realiza una compra
+
+
+
+
+
+    //Función que muestra al usuario las compras que ha hecho
+
+
+
+
+
+
+    //Función que permite al usuario valorar una película
+
 }
 
 
