@@ -21,10 +21,14 @@ require_once("../bdd/Cine.php");?>
 
                 <?php
                 $fetch = 0;
+                echo "hola1";
                 if (isset($_POST["insert"])) {
+                    echo "hola2";
                     $conn = CineDB::conectar();
+                    echo "hola3";
                     Cartelera::nuevaPelicula("", $_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
                     $fetch = 1;
+                    echo "hola4";
                 } 
                 if ($fetch == 1) {
                     echo '<center><h3><font color="green">¡Nuevo título insertado!</font></h3></center><br>';
@@ -77,8 +81,8 @@ require_once("../bdd/Cine.php");?>
                         </div>
                         <a href="administracion.php">Volver</a>
                     </form>
-                    <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
-                    <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>
+                   <!-- <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
+                    <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>-->
                 </article>
         </div>
     </div>
