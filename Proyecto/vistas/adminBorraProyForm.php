@@ -64,7 +64,7 @@ $conexion = CineDB::conectar(); ?>
     } else if (isset($_POST["update"])) {
 
         foreach ($var as $key) {
-            if ($key->idPelicula == $_GET["varID"]) {
+            if ($key->idProyeccion == $_POST["idPr"]) {
     ?>
 
                 <div class="container">

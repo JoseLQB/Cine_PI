@@ -21,7 +21,7 @@ $conexion = CineDB::conectar(); ?>
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
                 <article class="card-body">
-                    <h4>Películas para borrar proyecciones</h4>
+                    <h4>Películas para borrar o actualizar proyecciones</h4>
                     <?php
 
                     $conn = CineDB::conectar();

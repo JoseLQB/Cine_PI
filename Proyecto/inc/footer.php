@@ -4,8 +4,8 @@
 <div class="container-fluid text-center text-md-left footcent">
 
   <div class="row">
-    <div class="col-md-6 mt-md-0 mt-3">
-      <h5 class="text-uppercase">CINES PI</h5>
+    <div class="col-md-6 mt-md-0 mt-3"><br>
+      <h5 class="text-uppercase">CINES PI <img src="../assets/images/pilogo.png" class="logocabecera" alt=""></h5>
       <p>Web desarrollada como proyecto integrado de 2º de DAW para el <a id="linkies" href="https://iespoligonosur.org" target="_blank">IES Polígono Sur</a>.</p>
 
     </div>

@@ -1,29 +1,16 @@
+/* ---- Estilos de la cartelera ---- */
+
 .recuadro{
     background-color: rgb(177, 177, 177);
-    border-radius:6px ;
-}
-.backConf{
-    background: url("../images/fondo.jpg");
-}
-.intConf{
-    background-color: white;
-}
-.cartelera{
-    background: url("../images/fondo.jpg");
 }
 
-.admin{
-    background: url("../images/fondoAdmin.png");
+.logocabecera{
+    width: 40px;
+    height: 30px;
+    
+    filter: invert(100%);
+}
 
-}
-.cont1{
-    background-color: gray;
-    border-radius: 5px;
-}
-.img{
-    width: 370px;
-    border-radius: 5px;
-}
 
 .box-shadow:hover{
     -webkit-box-shadow: 0px 0px 13px 6px rgba(41,36,41,1);
@@ -31,15 +18,86 @@
     box-shadow: 0px 0px 13px 6px rgba(41,36,41,1);
 }
 
-.img:hover .card-title{
-    color: blue;
+
+/* --- Estilos del slider ---- */
+
+.textCarro {
+    color: black;
+    opacity: 1; 
 }
 
+.opa{
+    background-color: whitesmoke;
+    opacity: 0.8; 
+    border-radius: 20px;
+}
+
+.imgCarro{
+    border: rgb(48, 48, 48) 5px solid;
+}
+
+.rowCont{
+    background-color: whitesmoke;
+}
+.slider{
+    display: none;
+}
+
+
+/* ---- Estilos generales ---- */
+
+.backConf{
+    background: url("../images/fondo.jpg");
+}
+.intConf{
+    background-color: white;
+}
+
+.cartelera{
+    background: url("../images/fondo.jpg");
+}
+.img{
+    width: 370px;
+    border-radius: 5px;
+}
 iframe{
     width: 550px;
-
 }
-/*Estilos del nav superior*/
+.cont-compra{
+    background-color: honeydew;
+}
+.map{
+    width: 300px;
+    height: 300px;
+}
+
+
+/* ---- Estilos de la sección del administrador ---- */
+
+.admin{
+    background: url("../images/fondoAdmin.png");
+}
+.cont1{
+    background-color: gray;
+    border-radius: 5px;
+}
+
+/* ---- Estilos del buscador del admin ---- */
+
+.sec-busca{
+    background-color: beige;
+    border-radius: 20px;
+}
+
+.img{
+    border-radius:1%;
+}
+.cont-busca{
+    background-color: beige;
+}
+
+/* ---- Estilos del nav superior ---- */
+
 button:focus {
     outline: 0;
 }
@@ -47,16 +105,6 @@ button:focus {
 .navbar .dropdown-menu .form-control {
     width: 200px;
 }
-
-.cont-compra{
-    background-color: honeydew;
-}
-
-.map{
-    width: 300px;
-    height: 300px;
-}
-
 .header2 {
 	position: fixed;
 	height:100px;
@@ -70,6 +118,23 @@ button:focus {
 .header2 nav {
 	line-height:100px;
 }
+#menu {
+    background-color: #333; 
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    transition: top 0.3s; 
+}     
+.goPerfil:link {
+    color:white;
+}
+
+.goPerfil:visited {
+    color:white;
+}
+
+
+/* ---- Estilos del footer ---- */
 
 footer{
     background-color: rgb(27, 27, 27);
@@ -90,75 +155,18 @@ footer{
 }
 
 #linkies {
-padding: 2px 1px 0;
+    padding: 2px 1px 0;
 }
   
-  #linkies:link {
+#linkies:link {
     color: #7bca3b;
-  }
+}
   
-  #linkies:visited {
+#linkies:visited {
     color: rgb(190, 211, 174);
-  }
-
-#menu {
-    background-color: #333; 
-    position: fixed; 
-    top: 0; 
-    width: 100%;
-    transition: top 0.3s; 
-}
-
-.textCarro {
-    color: black;
-    opacity: 1; 
-  }
-
-  .opa{
-    background-color: whitesmoke;
-    opacity: 0.8; 
-    border-radius: 20px;
-
-  }
-
-  .imgCarro{
-      
-  border: rgb(48, 48, 48) 5px solid;
-  }
-
-  .rowCont{
-    background-color: whitesmoke;
-  }
-/*Estilos del buscador*/
-.sec-busca{
-    background-color: beige;
-    border-radius: 20px;
-}
-
-.img{
-    border-radius:1%;
-}
-.cont-busca{
-    background-color: beige;
 }
 
 
-
-      
-    .goPerfil:link {
-        color:white;
-      }
-      
-      .goPerfil:visited {
-        color:white;
-      }.slider{
-        display: none;
-    }
-/*
-.goPerfil:active, .goPerfil:link{
-    color: rgb(0, 255, 157);
-    text-decoration:none;
-}
 
  
 
@@ -169,26 +177,25 @@ padding: 2px 1px 0;
     .img{
         width: 690px;
     }
-
-
 }
-
-
 @media only screen and (min-width: 768px) {
 
 }
-
-
 @media only screen and (min-width: 992px) {
     .img{width: 348px;
         height: 480px;
-    }    
-
+    }
+    
+    .recuadro{
+        background-color: rgb(177, 177, 177);
+        border-radius:6px ;
+    }  
     
     .map{
         width: 650px;
         height: 600px;
-    }.slider{
+    }
+    .slider{
         display: block;
     }
 }
