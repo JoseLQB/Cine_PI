@@ -179,8 +179,11 @@ class Cartelera{
     }
     
     public static function nuevaPelicula($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
+        echo "bd1";
         $conexion = CineDB::conectar();
+        echo "bd2";
         $sql = "INSERT INTO pelicula(idPelicula, pais, genero, duracion, anEstreno, sinopsis, titulo, director, trailer, cartel) VALUES(:idPelicula, :pais, :genero, :duracion, :anEstreno, :sinopsis, :titulo, :director, :trailer, :cartel)";
+        echo "bd4";
         $sentencia = $conexion->prepare($sql);
         $sentencia->bindParam(':idPelicula', $idPelicula);
         $sentencia->bindParam(':pais', $pais);
@@ -192,6 +195,7 @@ class Cartelera{
         $sentencia->bindParam(':director', $director);
         $sentencia->bindParam(':trailer', $trailer);
         $sentencia->bindParam(':cartel', $cartel);
+        echo "bd5";
         $sentencia->execute();
     }
     //Elimina a un usuario a partir de su id

@@ -3,7 +3,6 @@ session_start();
 if (!isset($_SESSION["usuario"]) || ($_SESSION["admin"] == 0)) {
     header("location:muestra.php");
 }
-require_once("../bdd/CineDB.php");
 require_once("../bdd/Cine.php");?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +23,6 @@ require_once("../bdd/Cine.php");?>
                 echo "hola1";
                 if (isset($_POST["insert"])) {
                     echo "hola2";
-                    $conn = CineDB::conectar();
                     echo "hola3";
                     Cartelera::nuevaPelicula("", $_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
                     $fetch = 1;
