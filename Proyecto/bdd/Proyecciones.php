@@ -28,6 +28,18 @@ class Proyecciones{
         }
         return $tarifas;
     }
+    public static function getProyeccionesById($idProyeccion){
+        $conexion = CineDB::conectar();
+        $query = "SELECT * FROM proyecciones";
+        $consulta = $conexion->query($query);
+        $tarifas=[];
+        while($registro = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($idProyeccion == $registro["idProyeccion"]){
+                $tarifas[]= new Proyecciones($registro["idProyeccion"], $registro["idSala"], $registro["idPelicula"], $registro["fechaProyeccion"], $registro["horaProyeccion"], $registro["codtarifa"]);
+            }  
+        }
+        return $tarifas;
+    }
 
     
     public static function consulta(){
@@ -49,6 +61,48 @@ class Proyecciones{
             }
         }
         return $titulo;
+    }
+
+
+    public static function getFechaProyeccion($id){  
+        $consulta = Proyecciones::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idPelicula"]==$id){
+                $fecha= $reg["fechaProyeccion"];
+
+            }
+        }
+        return $fecha;
+    }
+    public static function getFechaProyeccionByPro($id){  
+        $consulta = Proyecciones::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idProyeccion"]==$id){
+                $fecha= $reg["fechaProyeccion"];
+
+            }
+        }
+        return $fecha;
+    }
+    public static function getHoraProyeccionByPro($id){  
+        $consulta = Proyecciones::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idProyeccion"]==$id){
+                $fecha= $reg["horaProyeccion"];
+
+            }
+        }
+        return $fecha;
+    }
+    public static function getIDPeliByPro($id){  
+        $consulta = Proyecciones::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idProyeccion"]==$id){
+                $fecha= $reg["idPelicula"];
+
+            }
+        }
+        return $fecha;
     }
 
 

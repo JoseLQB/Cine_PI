@@ -160,6 +160,16 @@ class Cartelera{
         return $director;
     }
 
+    public static function getIDbyTitle($titulo){
+        $consulta = Cartelera::consulta();
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["titulo"]==$titulo){
+                $id= $reg["idPelicula"];
+            }
+        }
+        return $id;
+    }
+
     //Saca la media de cada película a partir de su id
     public static function getMedia($id){
         $conexion = CineDB::conectar();

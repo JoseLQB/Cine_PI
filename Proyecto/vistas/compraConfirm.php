@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../bdd/Cine.php"); 
+require_once("../bdd/Cine.php");
 require_once("../bdd/Proyecciones.php");
 require_once("../bdd/Reserva.php"); ?>
 <!DOCTYPE html>
@@ -15,40 +15,64 @@ require_once("../bdd/Reserva.php"); ?>
 
 </head>
 
-<body class="backConf" >
-<?php include_once("../inc/nav.php") ?>
-<div >
+<body class="backConf">
+  <?php include_once("../inc/nav.php") 
+  ?>    <?php 
+
+ if(!isset($_SESSION["cantidad"] ) ){
+  $_SESSION["cantidad"]  = $_POST["cantidad"];
+ }
+
+
+/* $_SESSION["proyeccion"] = $result->nombre;
+ $_SESSION["mail"] = $result->mail;
+ $_SESSION["admin"] = $result->admin;*/
+
+?>
+  <div>
     <div class="container ">
       <div class="row intConf">
         <div class="col-md-4 order-md-2 intConf">
-          <h4 class="d-flex justify-content-between mb-3"> <span class="text-muted"><b>Su compra</b></span> <span class="badge badge-secondary badge-pill"></span> </h4>
+          <h4 class="d-flex justify-content-between mb-3"> <span class="text-muted"><b>Tu compra</b></span> <span class="badge badge-secondary badge-pill"></span> </h4>
           <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between">
               <div>
                 <h6 class="my-0"><b> <?php
-                 echo $_SESSION["titulo"];?></b></h6> <small class="text-muted">Número de sala</small>
+                                      echo $_SESSION["titulo"]; ?></b></h6> <small class="text-muted">Número de sala: <?php echo $_SESSION["sala"] ?></small>
               </div> <span class="text-muted"></span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <div>
-                <h6 class="my-0">22/06/2020</h6> <span class="text-muted">15:54</span>
-              </div> 
+                <h6 class="my-0"><?php echo $_SESSION["fecha"] ?></h6> <span class="text-muted"><?php echo $_SESSION["hora"] ?></span>
+              </div>
             </li>
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
                 <h6 class="my-0"><b>Tarifa</b></h6> <small>ESPECTADOR</small>
-              </div> <span class="text-success">12€</span>
+              </div> <span class="text-success"><?php  echo $_SESSION["precio"] ?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <div>
                 <h7 class="my-0"><b>Cantidad</b></h7> <small class="text-muted"></small>
-              </div> <span class="text-muted">x2</span>
+              </div> <span class="text-muted">x <?php 
+  echo $_SESSION["cantidad"] ; ?></span>
             </li>
-            <li class="list-group-item d-flex justify-content-between"> <span>Total (€)</span> <b>$24</b> </li>
+            <li class="list-group-item d-flex justify-content-between"> <span>Total (€)</span> <b>
+                <?php
+
+                $total = $_SESSION["precio"] *$_SESSION["cantidad"] ;
+                echo $total . "€";
+
+                ?>
+
+
+
+              </b> </li>
           </ul>
         </div>
         <div class="col-md-8 order-md-1">
-          <h4 class="mb-3"><b>Datos de tu compra</b></h4>
+          <form action="compraExito.php" method="POST">
+            <h4 class="mb-3"><b>Datos de tu compra</b></h4>
             <hr class="mb-4">
             <h4 class="mb-3"><b>Forma de pago</b></h4>
             <div class="d-block my-3">
@@ -80,14 +104,17 @@ require_once("../bdd/Reserva.php"); ?>
               </div>
             </div>
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmar compra</button>
+            <button  name="confComprar" class="btn btn-primary btn-lg btn-block" >Confirmar compra</button>
           </form>
           <br>
         </div>
       </div>
     </div><br><br><br>
-  </div>
 
+  </div>
+  <?php
+
+  ?>
 
 </body>
 <?php include_once("../inc/footer.php") ?>

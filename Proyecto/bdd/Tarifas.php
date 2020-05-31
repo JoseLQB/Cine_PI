@@ -41,6 +41,19 @@ class Tarifas{
         return $tarifas;
     }
 
+    public static function getTarifasByCod($cod){
+        $conexion = CineDB::conectar();
+        $query = "SELECT * FROM tarifas";
+        $consulta = $conexion->query($query);
+        $tarifas=[];
+        while($registro = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($cod == $registro["codTarifa"]){
+                $tarifas[]= new Tarifas($registro["codTarifa"], $registro["nombre"], $registro["precio"], $registro["descripcion"]);
+            }
+        }
+        return $tarifas;
+    }
+
 
 
 

@@ -7,6 +7,7 @@ $(document).ready(function () {
     $("#enviar").click(function(){
       sendMail()
     });
+    
 });
 
 //Oculta la barra de menú
@@ -36,3 +37,5 @@ function sendMail() {
 
   window.location.href = link;
 }
+
+

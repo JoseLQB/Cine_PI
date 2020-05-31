@@ -34,7 +34,6 @@ session_start();
       </div>
       <div class="row rowCont">
         <div class="col-md-5 p-4">
-          <p>Puedes hacerlo a través de las siguientes vías o rellenando nuestro formulario</p>
           <p class="lead mt-3"> <b>Teléfono
           </b> </p>
           <p> <a href="#">954541123</a> </p>
