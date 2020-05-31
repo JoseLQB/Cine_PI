@@ -73,7 +73,7 @@ $conexion = CineDB::conectar(); ?>
                             <article class="card-body">
                                 <h4 class="card-title mb-4 mt-1 text-center">Actualizando la proyección número <?php echo $key->idProyeccion ?></h4>
 
-                                <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_insert">
+                                <form action="adminBorraProyForm.php?varID=<?php echo $_GET["varID"]; ?>" method="post" class="form_insert">
                                     <div class="form-group">
                                         <label>ID de la Proyección</label>
                                         <input type="text" class="form-control" name="idProyeccionBlock" placeholder="" value="<?php echo $key->idProyeccion ?>" required disabled>

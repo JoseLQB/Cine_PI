@@ -21,7 +21,7 @@ require_once("../bdd/Cine.php");?>
 
                 <?php
                 $fetch = 0;
-                if (isset($_POST["insert"]) && isset($_POST["titulo"])) {
+                if (isset($_POST["insert"])) {
                     $conn = CineDB::conectar();
                     Cartelera::nuevaPelicula("", $_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
                     $fetch = 1;
@@ -35,7 +35,7 @@ require_once("../bdd/Cine.php");?>
                 </a>
                 <article class="card-body">
                     <h4 class="card-title mb-4 mt-1 text-center">Inserta los datos de la película</h4>
-                    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_insert">
+                    <form action="adminsertPeli.php" method="post" class="form_insert">
                         <div class="form-group">
                             <label>Título</label>
                             <input type="text" class="form-control" name="titulo" placeholder="" required>
