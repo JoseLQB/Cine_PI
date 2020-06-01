@@ -197,6 +197,7 @@ class Cartelera{
         $sentencia->bindParam(':cartel', $cartel);
         echo "bd5";
         $sentencia->execute();
+        echo "bd6";
     }
     //Elimina a un usuario a partir de su id
     public static function delete($idPelicula){
