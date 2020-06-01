@@ -182,7 +182,7 @@ class Cartelera{
         $conexion = CineDB::conectar();
         $sql = "INSERT INTO pelicula(idPelicula, pais, genero, duracion, anEstreno, sinopsis, titulo, director, trailer, cartel) VALUES(:idPelicula, :pais, :genero, :duracion, :anEstreno, :sinopsis, :titulo, :director, :trailer, :cartel)";
         $sentencia = $conexion->prepare($sql);
-        $sentencia->bindParam(':idPelicula', $idPelicula);
+        $sentencia->bindParam(':idPelicula', $idPelicula, PDO::PARAM_INT);
         $sentencia->bindParam(':pais', $pais);
         $sentencia->bindParam(':genero', $genero);
         $sentencia->bindParam(':duracion', $duracion);
