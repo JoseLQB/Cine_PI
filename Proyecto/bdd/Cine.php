@@ -41,7 +41,6 @@ class Cartelera{
         $conexion = CineDB::conectar();
         $query = "SELECT * FROM pelicula";
         $consulta = $conexion->query($query);
-        $tarifas=[];
         while($registro = $consulta->fetch(PDO::FETCH_ASSOC)){
 
             $cartel[]= new Cartelera($registro["idPelicula"], $registro["pais"], $registro["genero"], $registro["duracion"], $registro["anEstreno"], $registro["sinopsis"], $registro["titulo"], $registro["director"], $registro["trailer"], $registro["cartel"]);     
@@ -175,7 +174,11 @@ class Cartelera{
         $conexion = CineDB::conectar();
         $sql="SELECT AVG(valoracion) FROM valoracion WHERE idPelicula =$id";
         $consulta =  $conexion->query($sql)->fetchAll()[0];
-        return $consulta;
+        if($consulta[0] != ""){
+            return $consulta;
+        }else{
+            return "5";
+        }
     }
     
     public static function nuevaPelicula($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
@@ -231,8 +234,6 @@ class Cartelera{
         
     }
 
-
-    
 
 }
 

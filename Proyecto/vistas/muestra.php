@@ -13,7 +13,7 @@
 </head>
 
 <body class="cartelera">
-<?php include_once("../inc/nav.php") ?>
+<?php include_once("../inc/nav.php") ?><br><br>
 <div class="py-12">
       <div class="container">
         <div class="row slider">

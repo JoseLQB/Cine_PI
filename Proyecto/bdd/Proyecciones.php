@@ -50,6 +50,17 @@ class Proyecciones{
         return $consulta;
 
     }
+    public static function consultaIdProy($id){ 
+        $consulta = Proyecciones::consulta();
+        $repeat = 0;
+        while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
+            if($reg["idProyeccion"]==$id){
+                $repeat= 1;
+            }
+        }
+        return $repeat;
+
+    }
 
 
     public static function getTitulo($id){  

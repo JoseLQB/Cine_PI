@@ -111,7 +111,7 @@ $conexion = CineDB::conectar(); ?>
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
-                <article class="card-body">
+                <article class="card-body"><br><a href="buscador/buscar.php" target="_blank" class=" text-center"><h3>Buscador de ayuda</h3></a>
                     <h5>Películas:</h5>
                     <?php
 

@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once("../bdd/CineDB.php");
 $conexion = CineDB::conectar(); ?>
@@ -70,15 +69,15 @@ $conexion = CineDB::conectar(); ?>
                         echo '<center><h3><font color="green">¡Usuario Registrado!</font></h3></center><br>';
                     }
                 } else {
-                    echo '<center><h3><font color="green">¡Usuario Registraaaaado!</font></h3></center><br>';
+                    echo '<center><h3><font color="red">El nombre de usuario ya existe</font></h3></center><br>';
                 }
             } catch (PDOException $e) {
                 echo 'Error: ' . $e->getMessage();
             }
         }
-    } /*else {
-        echo "<font color='red'>Introduce todos los datos</font>";
-    }*/
+    }else {
+        echo "<font color='red'>Las contraseñas no coinciden</font>";
+    }
 
     ?><br><br>
 </body>

@@ -14,7 +14,19 @@ require_once("../bdd/Valoraciones.php");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <body class="csartelera">
-    <?php include_once("../inc/nav.php") ?>
+    <?php include_once("../inc/nav.php") ?><br><br>
+    <?php 
+    
+                      
+    if (isset($_POST["val"])) {
+        $confirm = Valoraciones::getConfirm($_SESSION["id"], $_POST["idPeli"]);
+        if ($confirm == 0) {
+            Valoraciones::insertaValoracion($_SESSION["id"],$_POST["idPeli"], $_POST["valoracion"]);
+        } else if ($confirm == 1) {
+            Valoraciones::update($_SESSION["id"],$_POST["idPeli"], $_POST["valoracion"]);
+        }
+    }
+    ?>
     <div class="container">
         <div class="row intConf">
             <div class="p-4 col-lg-4">
@@ -52,18 +64,17 @@ require_once("../bdd/Valoraciones.php");
                                     }
                                     $lista_simple = array_values(array_unique($tituloNoRepeat));
                                     foreach ($lista_simple as $v) {
-                                        echo "<form action='perfilUsuario.php' method='post'><br><h4 class=''>" . $v;
+                                        echo "<form action='perfilUsuario.php' method='post'><br><h4 class=''>" . $v
                                     ?></h4>
-                    <div class="form-group"> <label>Nota</label> <input type="number" name="valoracion" min="0" max="10" class="form-control" placeholder="2"> </div> <button type="submit" name="val" class="btn mt-4 btn-block btn-outline-dark p-2"><b>Valorar</b></button>
+
+                    <div class="form-group"> <label>Nota</label> <input type="number" name="valoracion" min="0" max="10" class="form-control" placeholder="<?php echo Valoraciones::getVal($_SESSION["id"], Cartelera::getIDbyTitle($v))[0]; ?>"> </div> <button type="submit" name="val" class="btn mt-4 btn-block btn-outline-dark p-2"><b>Valorar</b></button>
+                    <input type="hidden" name="idPeli" value="<?php echo Cartelera::getIDbyTitle($v)  ?>">
                     </form>
                 <?php
-                                    }
-
-                                    if(isset($_POST["val"])){
-                                        Valoraciones::insetaValoracion($_SESSION["id"],Cartelera::getIDbyTitle($v),$_POST["valoracion"]);
-                                    }
+                }
+        
+      
                 ?>
-
             </div>
         </div>
     </div><br><br>

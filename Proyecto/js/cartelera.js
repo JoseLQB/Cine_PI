@@ -41,12 +41,6 @@ $(document).ready(function () {
             div4.append(div5);
             var h4 = $("<h7>").text(e.titulo + " (" + e.anEstreno + ")");
             div5.append(h4);
-
-
-
-            
-            
-            
         })
     }
 });

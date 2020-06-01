@@ -25,7 +25,7 @@ require_once "../model/Funciones.php";
     <script src="../js/efectos.js"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " id="menu" role="navigation">
         <div class="container">
-            <a class="navbar-brand" href="../../muestra.php">CINES PI</a>
+            <a class="navbar-brand" href="../../muestra.php">CINES PI  <img src="../../../assets/images/pilogo.png" class="logocabecera" alt=""></a>
             <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                 &#9776;
             </button>
@@ -137,12 +137,11 @@ require_once "../model/Funciones.php";
         <div class="container-fluid text-center text-md-left footcent">
 
             <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <h5 class="text-uppercase">CINES PI</h5>
-                    <p>Web desarrollada como proyecto integrado de 2º de DAW para el <a id="linkies" href="https://iespoligonosur.org" target="_blank">IES Polígono Sur</a>.</p>
+    <div class="col-md-6 mt-md-0 mt-3"><br>
+      <h5 class="text-uppercase">CINES PI <img src="../../../assets/images/pilogo.png" class="logocabecera" alt=""></h5>
+      <p>Web desarrollada como proyecto integrado de 2º de DAW para el <a id="linkies" href="https://iespoligonosur.org" target="_blank">IES Polígono Sur</a>.</p>
 
-                </div>
-                <hr class="clearfix w-100 d-md-none pb-3">
+    </div> <hr class="clearfix w-100 d-md-none pb-3">
                 <div class="col-md-3 mb-md-0 mb-3">
                     <h5 class="text-uppercase">Links de interés</h5>
                     <ul class="list-unstyled">

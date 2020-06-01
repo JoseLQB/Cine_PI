@@ -20,7 +20,7 @@ if (!isset($_SESSION["cantidad"])) {
 </head>
 
 <body>
-    <?php include_once("../inc/nav.php") ?>
+    <?php include_once("../inc/nav.php") ?><br><br>
 
     <div class="container">
         <?php

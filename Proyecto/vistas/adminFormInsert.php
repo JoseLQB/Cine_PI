@@ -22,13 +22,16 @@ $conexion = CineDB::conectar(); ?>
     if (isset($_POST["insert"])) {
         $fetch = 2;
         $conn = CineDB::conectar();
-        Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"],$_GET["varID"] , $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
-        $fetch = 1;
+        $comprueba = Proyecciones::consultaIdProy($_POST["idProyeccion"]);
+        if($comprueba == 0){
+            Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"],$_GET["varID"] , $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
+            $fetch = 1;
+        }else{
+            echo "<center><h3><font color='red'>Ya existe una proyección con esa ID</font></center><br>";
+        }
     } 
     if ($fetch == 1) {
         echo '<center><h3><font color="green">¡Nueva proyección insertada!</font></h3></center><br>';
-    }else if($fetch ==2) {
-        echo "<font color='red'>Introduce todos los datos</font>";
     }
     ?>
 <body class="admin">

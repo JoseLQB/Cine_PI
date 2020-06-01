@@ -13,7 +13,7 @@ session_start(); ?>
 </head>
 
 <body class="backConf">
-<?php include_once("../inc/nav.php") ?>
+<?php include_once("../inc/nav.php") ?><br><br>
   </div><div class="container ">
       <div class="row mb-3" ></div>
       <div class="row intConf" >

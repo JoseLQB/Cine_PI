@@ -18,7 +18,7 @@ if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
 
 
 
-    <?php include_once("../inc/nav.php") ?>
+    <?php include_once("../inc/nav.php") ?><br><br>
 
     <section class=" " id="centro">
         <div class="container" style="background-color:white">
@@ -43,6 +43,26 @@ if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
                 </div>
             </div><br><br><hr><br>
         </div>
+        <div class="container" style="background-color:white">
+            <div class="row ">
+                <div class="col-sm-12">
+                    <h1 class=" text-center">ADMINISTRACIÓN DE PROYECCIONES</h1>
+                </div><br>
+            </div><br>
+            <div class="col-sm-12">
+                <h3 class="text-center">¿Qué quieres hacer?</h3>
+            </div><br>
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <a href="admininsertProy.php"><button type="button" class="btn btn-primary btn-lg">Insertar Proyeccón</button></a>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="adminBorraProy.php"><button type="button" class="btn btn-primary btn-lg">Borrar | Actualizar</button></a>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="adminListadoProy.php"><button type="button" class="btn btn-primary btn-lg">Ver Todas</button></a>
+                </div>
+            </div><br><br><hr><br>
         <div class="container" style="background-color:white">
             <div class="row ">
                 <div class="col-sm-12">

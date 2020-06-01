@@ -18,7 +18,7 @@ session_start();
 
 
 
-    <?php include_once("../inc/nav.php") ?>
+    <?php include_once("../inc/nav.php") ?><br><br>
 
     <section class="justify-content-around" id="centro">
 

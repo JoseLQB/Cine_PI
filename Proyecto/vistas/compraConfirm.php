@@ -17,7 +17,7 @@ require_once("../bdd/Reserva.php"); ?>
 
 <body class="backConf">
   <?php include_once("../inc/nav.php") 
-  ?>    <?php 
+  ?> <br><br>   <?php 
 
  if(!isset($_SESSION["cantidad"] ) ){
   $_SESSION["cantidad"]  = $_POST["cantidad"];
