@@ -17,6 +17,20 @@ $conexion = CineDB::conectar(); ?>
     <title>Insertar proyección</title>
 </head>
 
+<?php
+    $fetch = 0;
+    if (isset($_POST["insert"])) {
+        $fetch = 2;
+        $conn = CineDB::conectar();
+        Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"],$_GET["varID"] , $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"], );
+        $fetch = 1;
+    } 
+    if ($fetch == 1) {
+        echo '<center><h3><font color="green">¡Nueva proyección insertada!</font></h3></center><br>';
+    }else if($fetch ==2) {
+        echo "<font color='red'>Introduce todos los datos</font>";
+    }
+    ?>
 <body class="admin">
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
@@ -33,7 +47,11 @@ $conexion = CineDB::conectar(); ?>
                         </div>
                         <div class="form-group">
                             <label>Sala</label>
-                            <input type="text" name="idSala" class="form-control" placeholder="" required>
+                            <select name="idSala">
+                                <option value="1">1</option> 
+                                <option value="2">2</option> 
+                                <option value="3">3</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>ID Pelicula</label>
@@ -67,21 +85,7 @@ $conexion = CineDB::conectar(); ?>
                 </article>
             </div>
         </div>
-    </div>
-    <?php
-    $fetch = 0;
-    if (isset($_POST["insert"])) {
-        $fetch = 2;
-        $conn = CineDB::conectar();
-        Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"],$_GET["varID"] , $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"], );
-        $fetch = 1;
-    } 
-    if ($fetch == 1) {
-        echo '<center><h3><font color="green">¡Nueva proyección insertada!</font></h3></center><br>';
-    }else if($fetch ==2) {
-        echo "<font color='red'>Introduce todos los datos</font>";
-    }
-    ?><br><br>
+    </div><br><br>
 </body>
 
 </html>
