@@ -22,12 +22,6 @@
         </li>
         <li>
           <tr>
-            <td><a href="https://twitter.com/QBHeller" target="_blank">Twitter</a></td>
-            <td><img class="ttLogo" src="../assets/images/twitter.png" alt=""></td>
-        </tr>
-        </li>
-        <li>
-          <tr>
             <td><a href="https://github.com/JoseLQB" target="_blank"> Instagram  </a></td>
             <td><img class="gitLogo" src="../assets/images/insta.png"  alt=""></td>
         </tr>
