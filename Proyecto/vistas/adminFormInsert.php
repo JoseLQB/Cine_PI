@@ -22,7 +22,7 @@ $conexion = CineDB::conectar(); ?>
     if (isset($_POST["insert"])) {
         $fetch = 2;
         $conn = CineDB::conectar();
-        Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"],$_GET["varID"] , $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"], );
+        Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"],$_GET["varID"] , $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
         $fetch = 1;
     } 
     if ($fetch == 1) {
@@ -80,8 +80,6 @@ $conexion = CineDB::conectar(); ?>
                         </div>
                         <a href="administracion.php">Volver</a>
                     </form>
-                    <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
-                    <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>
                 </article>
             </div>
         </div>
