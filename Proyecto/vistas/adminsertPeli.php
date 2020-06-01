@@ -1,43 +1,28 @@
 <?php
+
 session_start();
-if (!isset($_SESSION["usuario"]) || ($_SESSION["admin"] == 0)) {
+if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
     header("location:muestra.php");
 }
-require_once("../bdd/Cine.php");?>
+require_once("../bdd/CineDB.php");
+require_once("../bdd/Cine.php");
+$conexion = CineDB::conectar(); ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php include_once("../inc/head.php"); ?>
 
     <title>Insertar película</title>
 </head>
 
-<div class="container">
-    <div class="row d-flex justify-content-around mt-5">
-        <div class="card col-md-6 col-md-offset-6">
-
-            <body class="admin">
-
-                <?php
-                $fetch = 0;
-                echo "hola1";
-                if (isset($_POST["insert"])) {
-                    echo "hola2";
-                    echo "hola3";
-                    Cartelera::nuevaPelicula("", $_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
-                    $fetch = 1;
-                    echo "hola4";
-                } 
-                if ($fetch == 1) {
-                    echo '<center><h3><font color="green">¡Nuevo título insertado!</font></h3></center><br>';
-                }
-                ?>
-                <br><a href="buscador/buscar.php" target="_blank" class=" text-center">
-                    <h3>Buscador de ayuda</h3>
-                </a>
+    <div class="container">
+        <div class="row d-flex justify-content-around mt-5">
+            <div class="card col-md-6 col-md-offset-6">
+<body class="admin"><br><a href="buscador/buscar.php" target="_blank" class=" text-center"><h3>Buscador de ayuda</h3></a>
                 <article class="card-body">
                     <h4 class="card-title mb-4 mt-1 text-center">Inserta los datos de la película</h4>
-                    <form action="adminsertPeli.php" method="post" class="form_insert">
+                    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_insert">
                         <div class="form-group">
                             <label>Título</label>
                             <input type="text" class="form-control" name="titulo" placeholder="" required>
@@ -79,12 +64,25 @@ require_once("../bdd/Cine.php");?>
                         </div>
                         <a href="administracion.php">Volver</a>
                     </form>
-                   <!-- <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
-                    <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>-->
+                    <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
+                    <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>
                 </article>
+            </div>
         </div>
     </div>
-</div><br><br>
+    <?php
+    $fetch = 0;
+    if (isset($_POST["insert"])&& isset($_POST["titulo"])) {
+        $conn = CineDB::conectar();
+        Cartelera::nuevaPelicula("", $_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
+        $fetch = 1;
+    } else {
+        echo "<font color='red'>Introduce todos los datos</font>";
+    }
+    if($fetch == 1){
+        echo '<center><h3><font color="green">¡Nuevo título insertado!</font></h3></center><br>';
+    }
+    ?><br><br>
 </body>
 
 </html>
