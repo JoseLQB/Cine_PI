@@ -38,16 +38,16 @@ $conexion = CineDB::conectar(); ?>
                     ?>
                             <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
 
-                            <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
-                            <button type="submit" name="delete" class="btn btn-danger btn-sm">Eliminar</button></form>
+                                <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
+                                <button type="submit" name="delete" class="btn btn-danger btn-sm">Eliminar</button></form>
                             <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
 
-                            <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
-                            <button type="submit" name="update" class="btn btn-success btn-sm">Actualizar</button></form><br><?php
+                                <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
+                                <button type="submit" name="update" class="btn btn-success btn-sm">Actualizar</button></form><br><?php
 
-                        }
-                    }
-                    ?>
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                                    ?>
                     <hr>
                     </ul>
                     <a href="administracion.php">Volver a administración</a><br>
@@ -81,7 +81,11 @@ $conexion = CineDB::conectar(); ?>
                                     </div>
                                     <div class="form-group">
                                         <label>Sala</label>
-                                        <input type="text" name="idSala" class="form-control" placeholder="" value="<?php echo $key->idSala ?>" required>
+                                        <select name="idSala">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>ID Pelicula</label>
@@ -97,8 +101,15 @@ $conexion = CineDB::conectar(); ?>
                                         <input type="time" name="horaProyeccion" class="form-control" placeholder="" value="<?php echo $key->horaProyeccion ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label>Tarifa</label>
-                                        <input type="text" name="codTarifa" class="form-control" placeholder="" value="<?php echo $key->codTarifa ?>">
+
+                                        <label>Tarifa</label><br>
+                                        <select name="codTarifa">
+                                            <option value="NORMAL">Normal</option>
+                                            <option value="MATINA">Matinal</option>
+                                            <option value="ESPECT">Día del espectador</option>
+                                            <option value="PAREJA">Día de la pareja</option>
+                                            <option value="SALA3D">Sala 3D</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" name="edit" class="btn btn-primary btn-block">Actualizar</buttom>
