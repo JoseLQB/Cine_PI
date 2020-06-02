@@ -53,7 +53,7 @@ $conexion = CineDB::conectar(); ?>
                         </div>
                         <div class="form-group">
                             <label>Tráiler</label>
-                            <input type="text" name="trailer" class="form-control" value="https://www.youtube.com/embed/ required>
+                            <input type="text" name="trailer" class="form-control" value="https://www.youtube.com/embed/" required>
                         </div>
                         <div class="form-group">
                             <label>Cartel</label>
