@@ -31,7 +31,7 @@ session_start(); ?>
             ?></li>
             <li class="my-1">
               <?php 
-              echo "Nota: " . Cartelera::getMedia($id)[0];
+              echo "Nota: " . round(Cartelera::getMedia($id)[0], 2);
               
               ?>
             </li>
