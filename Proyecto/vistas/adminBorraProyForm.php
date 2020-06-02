@@ -20,44 +20,7 @@ $conexion = CineDB::conectar(); ?>
 </head>
 
 <body class="admin">
-    <div class="container">
-        <div class="row d-flex justify-content-around mt-5">
-            <div class="card col-md-6 col-md-offset-6">
-                <article class="card-body">
-                    <h4>Estas son las proyecciones de <?php echo '"' . Cartelera::getTitulo($_GET["varID"]) . '"' ?></h4>
-                    <hr>
-                    <?php
-
-                    require_once("../bdd/Proyecciones.php");
-                    $var = Proyecciones::getProyecciones();
-                    //var_dump($var);
-                    foreach ($var as $key) {
-                        if ($key->idPelicula == $_GET["varID"]) {
-                            echo "<h5>Proyección nº " . $key->idProyeccion . ":</h5> Sala " . $key->idSala . ". Fecha: " . $key->fechaProyeccion . ". Hora: " . $key->horaProyeccion . ". Tarifa activa: " . $key->codTarifa;
-
-                    ?>
-                            <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
-
-                            <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
-                            <button type="submit" name="delete" class="btn btn-danger btn-sm">Eliminar</button></form>
-                            <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
-
-                            <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
-                            <button type="submit" name="update" class="btn btn-success btn-sm">Actualizar</button></form><br><?php
-
-                        }
-                    }
-                    ?>
-                    <hr>
-                    </ul>
-                    <a href="administracion.php">Volver a administración</a><br>
-                    <a href="../index.php">Volver a index</a>
-                    <!--  <a href='compra.php?varID=".$reg["idPelicula"].-->
-                </article>
-            </div>
-        </div>
-    </div>
-    <?php
+<?php
     if (isset($_POST["delete"])) {
         $conn = CineDB::conectar();
         Proyecciones::deletebyProy($_GET["varID"], $_POST["idPr"]);
@@ -114,7 +77,45 @@ $conexion = CineDB::conectar(); ?>
     <?php
             }
         }
-    }
+    }?>
+    <div class="container">
+        <div class="row d-flex justify-content-around mt-5">
+            <div class="card col-md-6 col-md-offset-6">
+                <article class="card-body">
+                    <h4>Estas son las proyecciones de <?php echo '"' . Cartelera::getTitulo($_GET["varID"]) . '"' ?></h4>
+                    <hr>
+                    <?php
+
+                    require_once("../bdd/Proyecciones.php");
+                    $var = Proyecciones::getProyecciones();
+                    //var_dump($var);
+                    foreach ($var as $key) {
+                        if ($key->idPelicula == $_GET["varID"]) {
+                            echo "<h5>Proyección nº " . $key->idProyeccion . ":</h5> Sala " . $key->idSala . ". Fecha: " . $key->fechaProyeccion . ". Hora: " . $key->horaProyeccion . ". Tarifa activa: " . $key->codTarifa;
+
+                    ?>
+                            <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
+
+                            <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
+                            <button type="submit" name="delete" class="btn btn-danger btn-sm">Eliminar</button></form>
+                            <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
+
+                            <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
+                            <button type="submit" name="update" class="btn btn-success btn-sm">Actualizar</button></form><br><?php
+
+                        }
+                    }
+                    ?>
+                    <hr>
+                    </ul>
+                    <a href="administracion.php">Volver a administración</a><br>
+                    <a href="../index.php">Volver a index</a>
+                    <!--  <a href='compra.php?varID=".$reg["idPelicula"].-->
+                </article>
+            </div>
+        </div>
+    </div>
+<?php
 
     $fetch = 0;
     if (isset($_POST["edit"])) {

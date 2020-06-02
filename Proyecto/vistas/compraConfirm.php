@@ -10,7 +10,6 @@ require_once("../bdd/Reserva.php"); ?>
   <?php include_once("../inc/head.php") ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="../js/proyecciones.js"></script>
-
   <title>Compra</title>
 
 </head>
@@ -18,7 +17,6 @@ require_once("../bdd/Reserva.php"); ?>
 <body class="backConf">
   <?php include_once("../inc/nav.php")
   ?> <br><br> <?php
-
               if (!isset($_SESSION["cantidad"])) {
                 $_SESSION["cantidad"]  = $_POST["cantidad"];
               }
@@ -53,14 +51,9 @@ require_once("../bdd/Reserva.php"); ?>
             </li>
             <li class="list-group-item d-flex justify-content-between"> <span>Total (€)</span> <b>
                 <?php
-
                 $total = $_SESSION["precio"] * $_SESSION["cantidad"];
                 echo $total . "€";
-
                 ?>
-
-
-
               </b> </li>
           </ul>
         </div>
