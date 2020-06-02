@@ -3,7 +3,7 @@ $(document).ready(function () {
     var url2=url.split("=");
     $.ajax({
         type: "post",
-        url: "../ajax/procProyecciones.php",
+        url: "../controllers/procProyecciones.php",
         success: function (data) {
             var json = JSON.parse(data);
             console.log(json);

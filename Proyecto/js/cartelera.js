@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "post",
-        url: "../ajax/procCartelera.php",
+        url: "../controllers/procCartelera.php",
         success: function (data) {
 			var json = JSON.parse(data);
             console.log(json);
@@ -34,7 +34,7 @@ $(document).ready(function () {
             div4.append(a1);
             var img1 = $("<img>");
             img1.attr("src", e.cartel);
-            img1.attr("class", "card-img-top")
+            img1.attr("class", "card-img-top zoom")
             a1.append(img1);
             var div5 = $("<div>");
             div5.attr("class", "card-body");

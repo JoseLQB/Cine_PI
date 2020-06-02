@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: "post",
-		url: "../ajax/procTarifas.php",
+		url: "../controllers/procTarifas.php",
 		success: function (data) {
 			var json = JSON.parse(data);
 			infoTarifas(json);

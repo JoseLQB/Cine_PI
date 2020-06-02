@@ -75,8 +75,6 @@ $conexion = CineDB::conectar(); ?>
                 echo 'Error: ' . $e->getMessage();
             }
         }
-    }else {
-        echo "<font color='red'>Las contraseñas no coinciden</font>";
     }
 
     ?><br><br>

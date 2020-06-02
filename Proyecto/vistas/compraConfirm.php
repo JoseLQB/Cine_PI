@@ -16,19 +16,13 @@ require_once("../bdd/Reserva.php"); ?>
 </head>
 
 <body class="backConf">
-  <?php include_once("../inc/nav.php") 
-  ?> <br><br>   <?php 
+  <?php include_once("../inc/nav.php")
+  ?> <br><br> <?php
 
- if(!isset($_SESSION["cantidad"] ) ){
-  $_SESSION["cantidad"]  = $_POST["cantidad"];
- }
-
-
-/* $_SESSION["proyeccion"] = $result->nombre;
- $_SESSION["mail"] = $result->mail;
- $_SESSION["admin"] = $result->admin;*/
-
-?>
+              if (!isset($_SESSION["cantidad"])) {
+                $_SESSION["cantidad"]  = $_POST["cantidad"];
+              }
+              ?>
   <div>
     <div class="container ">
       <div class="row intConf">
@@ -49,18 +43,18 @@ require_once("../bdd/Reserva.php"); ?>
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
                 <h6 class="my-0"><b>Tarifa</b></h6> <small>ESPECTADOR</small>
-              </div> <span class="text-success"><?php  echo $_SESSION["precio"] ?></span>
+              </div> <span class="text-success"><?php echo $_SESSION["precio"] ?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <div>
                 <h7 class="my-0"><b>Cantidad</b></h7> <small class="text-muted"></small>
-              </div> <span class="text-muted">x <?php 
-  echo $_SESSION["cantidad"] ; ?></span>
+              </div> <span class="text-muted">x <?php
+                                                echo $_SESSION["cantidad"]; ?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between"> <span>Total (€)</span> <b>
                 <?php
 
-                $total = $_SESSION["precio"] *$_SESSION["cantidad"] ;
+                $total = $_SESSION["precio"] * $_SESSION["cantidad"];
                 echo $total . "€";
 
                 ?>
@@ -71,7 +65,7 @@ require_once("../bdd/Reserva.php"); ?>
           </ul>
         </div>
         <div class="col-md-8 order-md-1">
-          <form action="compraExito.php" method="POST">
+          <form action="../controllers/enviaMails.php" method="POST">
             <h4 class="mb-3"><b>Datos de tu compra</b></h4>
             <hr class="mb-4">
             <h4 class="mb-3"><b>Forma de pago</b></h4>
@@ -104,18 +98,15 @@ require_once("../bdd/Reserva.php"); ?>
               </div>
             </div>
             <hr class="mb-4">
-            <button  name="confComprar" class="btn btn-primary btn-lg btn-block" >Confirmar compra</button>
+            <button type="submit" name="confComprar" class="btn btn-primary btn-lg btn-block">Confirmar compra</button>
           </form>
           <br>
         </div>
       </div>
     </div><br><br><br>
-
   </div>
   <?php
-
   ?>
-
 </body>
 <?php include_once("../inc/footer.php") ?>
 

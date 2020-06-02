@@ -32,7 +32,7 @@ class Cartelera{
         $conexion = CineDB::conectar();
         $select = "SELECT * FROM pelicula";
         $consulta= $conexion->query($select);
-
+        
         return $consulta;
 
     }

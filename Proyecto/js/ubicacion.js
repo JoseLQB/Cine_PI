@@ -1,16 +1,6 @@
 $(document).ready(function () {
     ubicacion();
 
-
-
-
-
-
-
-
-
-
-
     function ubicacion() {
 
     var calle = "Calle Ruiz de Alarcón Nº2";
