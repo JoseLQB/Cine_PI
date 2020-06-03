@@ -9,10 +9,10 @@ La aplicación ha sido desarrollada como proyecto integrado de Desarrollo de Apl
 Para el desarrollo de la aplicación se han utilizado las tecnologías mysql y php para la parte de servidor, y jquery, bootstrap, html y css para la parte de cliente.
 
 ## Ejecución :rocket:
-Para visualizar la web en local, es necesario tener instalado un servidor local, php y mysql. Para el desarrollo de esta se ha utilizado el paquete xampp, es recomendable, por su sencillez a la hora de intalarlo y configurarlo, utilizar uno similar (xampp, lampp, wampp...).
+Para visualizar la web en local, es necesario tener instalado un servidor local, php y mysql. Para el desarrollo de esta se ha utilizado el paquete xampp. Es recomendable, por su sencillez a la hora de instalar y configurar, utilizar uno similar (xampp, lampp, wampp...).
 
 Dependiendo del paquete usado los directorios pueden cambiar. En el caso de xampp, hay que hacer git clone dentro del directorio xampp/htdocs.
-Si estás usando linux con un servidor apache hacer git commit en /var/www/html/
+Si estás usando linux con un servidor apache hacer git clone en /var/www/html/
 
 ## Acceso :computer:
 La aplicación permite desde el primer momento registrarse como usuario y acceder como tal, pero este no tendrá permisos de administración. Para ello, acceder con los siguientes datos:
