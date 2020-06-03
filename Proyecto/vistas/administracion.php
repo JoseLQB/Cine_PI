@@ -14,10 +14,6 @@ if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
 </head>
 
 <body class="admin">
-    <!--Slide-->
-
-
-
     <?php include_once("../inc/nav.php") ?><br><br>
 
     <section class=" " id="centro">

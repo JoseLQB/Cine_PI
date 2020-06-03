@@ -7,6 +7,9 @@ require_once("../bdd/Reserva.php");
 //Controlamos que se vacíe la sesion "cantidad" para poder rectificar en la compra
 if (isset($_SESSION["cantidad"])) {
     unset($_SESSION["cantidad"]);
+}
+if (!isset($_SESSION["usuario"])) {
+    header("location:muestra.php");
 }?>
 <!DOCTYPE html>
 <html lang="en">

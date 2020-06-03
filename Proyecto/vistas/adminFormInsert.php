@@ -4,7 +4,6 @@ session_start();
 if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
     header("location:muestra.php");
 }
-require_once("../bdd/CineDB.php");
 require_once("../bdd/Cine.php");
 require_once("../bdd/Proyecciones.php");
 $conexion = CineDB::conectar(); ?>
@@ -21,7 +20,6 @@ $conexion = CineDB::conectar(); ?>
     $fetch = 0;
     if (isset($_POST["insert"])) {
         $fetch = 2;
-        $conn = CineDB::conectar();
         $comprueba = Proyecciones::consultaIdProy($_POST["idProyeccion"]);
         if($comprueba == 0){
             Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"],$_GET["varID"] , $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);

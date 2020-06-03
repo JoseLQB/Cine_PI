@@ -4,7 +4,6 @@ session_start();
 if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
     header("location:muestra.php");
 }
-require_once("../bdd/CineDB.php");
 require_once("../bdd/Cine.php");
 $conexion = CineDB::conectar(); ?>
 <!DOCTYPE html>
@@ -23,7 +22,6 @@ $conexion = CineDB::conectar(); ?>
                 <article class="card-body">
                     <h4>Añadir nuevas proyecciones</h4>
                     <?php
-                    $conn = CineDB::conectar();
                     $lista  = Cartelera::creaListado();
                     ?> <ul><?php
                     foreach ($lista as $k) {

@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION["usuario"])) {
+    header("location:muestra.php");
+}
 require_once("../bdd/Cine.php");
 require_once("../bdd/Proyecciones.php");
 require_once("../bdd/Reserva.php"); ?>

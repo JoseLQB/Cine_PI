@@ -1,5 +1,6 @@
 <?php
-session_start(); ?>
+session_start(); 
+require_once("../bdd/Cine.php");?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +21,6 @@ session_start(); ?>
         <div class="p-4 col-lg-8" >
           <h4 class="mb-3"> <?php
             $id = $_GET["varID"];
-            require_once("../bdd/Cine.php");
             $titulo = Cartelera::getTitulo($id);
             echo "<h3>" . $titulo . " (" . Cartelera::getFecha($id) . ")</h3>";
             ?></h4>

@@ -4,7 +4,6 @@ session_start();
 if (!isset($_SESSION["usuario"])) {
     header("location:muestra.php");
 }
-require_once("../bdd/CineDB.php");
 require_once("../bdd/Cine.php");
 require_once("../bdd/Proyecciones.php");
 $conexion = CineDB::conectar(); ?>
@@ -59,7 +58,6 @@ $conexion = CineDB::conectar(); ?>
     </div>
     <?php
     if (isset($_POST["delete"])) {
-        $conn = CineDB::conectar();
         Proyecciones::deletebyProy($_GET["varID"], $_POST["idPr"]);
     } else if (isset($_POST["update"])) {
 
@@ -129,7 +127,6 @@ $conexion = CineDB::conectar(); ?>
 
     $fetch = 0;
     if (isset($_POST["edit"])) {
-        $conn = CineDB::conectar();
         Proyecciones::update($_POST["idProyeccion"], $_POST["idSala"], $_GET["varID"], $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
         $fetch = 1;
     } else if ($fetch == 1) {

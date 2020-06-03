@@ -23,8 +23,6 @@ $conexion = CineDB::conectar(); ?>
                 <article class="card-body">
                     <h4>Peliculas con poyecciones</h4>
                     <?php
-
-                    $conn = CineDB::conectar();
                     $lista  = Cartelera::creaListado();
                     ?> <ul><?php
                     foreach ($lista as $k) {

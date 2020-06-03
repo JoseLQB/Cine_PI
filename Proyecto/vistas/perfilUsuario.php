@@ -2,6 +2,9 @@
 session_start();
 require_once("../bdd/Reserva.php");
 require_once("../bdd/Valoraciones.php");
+if (!isset($_SESSION["usuario"])) {
+    header("location:muestra.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -73,7 +73,6 @@ $conexion = CineDB::conectar(); ?>
     <?php
     $fetch = 0;
     if (isset($_POST["insert"])&& isset($_POST["titulo"])) {
-        $conn = CineDB::conectar();
         Cartelera::nuevaPelicula("", $_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
         $fetch = 1;
     } else {

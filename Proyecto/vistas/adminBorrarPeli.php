@@ -4,7 +4,6 @@ session_start();
 if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
     header("location:muestra.php");
 }
-require_once("../bdd/CineDB.php");
 require_once("../bdd/Cine.php");
 require_once("../bdd/Proyecciones.php");
 $conexion = CineDB::conectar(); ?>
@@ -19,20 +18,16 @@ $conexion = CineDB::conectar(); ?>
 
 <body class="admin"> <?php
     $fetch = 0;
-  //  $id = $_POST["idOc"];
     if (isset($_POST["delete"])) {
         $conn = CineDB::conectar();
         Proyecciones::delete($_POST["idOc"]);
         /** */
         Cartelera::delete($_POST["idOc"]);
         $fetch = 1;
-    }/* else {
-        echo "<font color='red'>Introduce todos los datos</font>";
-    }*/
+    }
     if($fetch == 1){
         echo '<center><h3><font color="red">¡Elemento eliminado!</font></h3></center><br>';
     }else if(isset($_POST["update"])){
-       // echo "hola" . $_POST["idOc"];
         ?>
         <div class="container">
             <div class="row d-flex justify-content-around mt-5">
@@ -98,7 +93,6 @@ $conexion = CineDB::conectar(); ?>
     $fetch =2;
     if (isset($_POST["edit"])) {
         $fetch = 0;
-        $conn = CineDB::conectar();
         Cartelera::update($_POST["id"],$_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
         $fetch = 1;
     } 
@@ -114,10 +108,6 @@ $conexion = CineDB::conectar(); ?>
                 <article class="card-body"><br><a href="buscador/buscar.php" target="_blank" class=" text-center"><h3>Buscador de ayuda</h3></a>
                     <h5>Películas:</h5>
                     <?php
-
-                    require_once("../bdd/CineDB.php"); 
-                    require_once("../bdd/Cine.php");
-                    $conn = CineDB::conectar();
                     $lista  = Cartelera::creaListado();
                     ?> <div class="row"><?php
                     foreach ($lista as $k) {
