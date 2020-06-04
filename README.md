@@ -24,4 +24,9 @@ Contraseña: admin
 Se ha implementado un sistema de búsqueda desarrollado con la api de cine OMDB. 
 Web oficial: [http://www.omdbapi.com/](http://www.omdbapi.com/)
 
+## API phpmAILER: :mailbox:
+
+Para el envío automático de emails, se ha utilizado la api PHPMaier.
+Repositorio de la api: [https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)
+
 
