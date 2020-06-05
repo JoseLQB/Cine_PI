@@ -40,7 +40,7 @@ require_once "../model/Funciones.php";
                     if (isset($_SESSION["admin"])) {
                         if ($_SESSION["admin"] == 1) {
                     ?>
-                            <li class="nav-item"><a href="administracion.php" class="nav-link">Panel de administración</a></li>
+                            <li class="nav-item"><a href="../../administracion.php" class="nav-link">Panel de administración</a></li>
 
                     <?php
 
@@ -71,13 +71,13 @@ require_once "../model/Funciones.php";
 
 
     <section class=" justify-content-around sec-busca" id="centro">
-        <div class="container cont-busca">
+        <div class="container cont-busca"><br><br>
             <div class="card">
                 <div class="card-header">
                     <h3 class="mb-0 text-center">Busca información sobre cualquier película</h3>
                 </div>
                 <div class="card-body">
-                    <form class=form role="form" autocomplete="off" action="#" method="post">
+                    <form class=form role="form" autocomplete="off" action="#d" method="post">
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label"></label>
                             <div class="col-lg-6 text-center">
@@ -93,7 +93,7 @@ require_once "../model/Funciones.php";
                 </div>
                 <div class="offset-2"></div>
                 </form>
-            </div><br>
+            </div><span id="d"></span><br><br>
             <div class="row movie-list caja1">
                 <img class="card-img-top img-busca">
 
@@ -103,9 +103,9 @@ require_once "../model/Funciones.php";
                     $funciones->getPeliculas($_POST['pelicula']);
                 }
                 ?>
-                <h6 class="card-subtitle mb-2 text-muted"></h6>
             </div>
         </div>
+        <br><br>
     </section>
 
     <footer class="page-footer font-small blue pt-4 footer-busca">
