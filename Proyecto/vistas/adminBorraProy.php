@@ -26,7 +26,6 @@ $conexion = CineDB::conectar(); ?>
                     foreach ($lista as $k) {
                        echo "<li><a href='adminBorraProyForm.php?varID=".$k->idPelicula." '>".$k->idPelicula . " - ".$k->titulo."</a></li>";
                     }
-
                     ?><hr></ul>
                     <a href="administracion.php">Volver</a>
                   <!--  <a href='compra.php?varID=".$reg["idPelicula"].-->
