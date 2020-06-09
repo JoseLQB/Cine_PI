@@ -16,6 +16,7 @@
 <?php include_once("../inc/nav.php") ?><br><br>
 <div class="py-12">
       <div class="container">
+        <!-------- Slider publicitario -------->
         <div class="row slider">
           <div class="col-md-12 text-warning text-center  d-flex flex-row-reverse">
             <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
