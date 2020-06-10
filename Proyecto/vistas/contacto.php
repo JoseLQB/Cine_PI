@@ -8,6 +8,7 @@ session_start();
   <?php include_once("../inc/head.php") ?>
 
   <title>Contacto</title>
+  <script src="../js/validaciones.js"></script>
 
 </head>
 <style>
@@ -33,18 +34,18 @@ session_start();
         </div>
         <div class="row rowCont">
           <div class="col-md-5 p-4">
-            <p class="lead mt-3"> <b>Teléfono
+            <p class="lead mt-3">  <img class="phone" src="../assets/images/phone.png" alt=""><b>&nbsp;Teléfono
               </b> </p>
-            <p> <a href="#">954541123</a> </p>
-            <p> <a href="#">652222545</a> </p>
-            <p class="lead mt-3"> <b>Correo</b> </p>
-            <p> <a href="#">cinepipsur@gmail.com</a> </p>
-            <p> <a href="#">cinepi@cinepi.com</a> </p>
+            <p><a href="tel:+34954541123">954541123</a> </p>
+            <p><a href="tel:+34652222570">652222545</a> </p>
+            <p class="lead mt-3">  <img class="mail" src="../assets/images/mail.png" alt=""><b>&nbsp;Correo</b> </p>
+            <p> <a href="mailto:cinepipsur@gmail.com">cinepipsur@gmail.com</a> </p>
+            <p> <a href="mailto:cinepi@cinepi.com">cinepi@cinepi.com</a> </p>
           </div>
           <div class="col-md-7 p-4">
             
           <?php if(isset($_GET["conf"])){echo "<center><h3 class='mb-3' style='color:green'>Mensaje enviado con éxito</h3></center>";}else{echo "";}?>
-            <h3 class="mb-3">Formulario de contacto</h3>
+            <h3 class="mb-3"><img class="form" src="../assets/images/form.png" alt="">&nbsp;Formulario de contacto</h3>
             <form action="../controllers/enviaMails.php" method="POST">
               <div class="form-row">
                 <div class="form-group col-md-6"> <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"> </div>

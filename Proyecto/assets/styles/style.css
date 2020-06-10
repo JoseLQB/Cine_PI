@@ -84,6 +84,7 @@ iframe{
 /* ---- Estilos pantalla de compra ----- */
 .reloj{
     width:20px ;
+    padding-bottom: 3px;
 }
 
 /* ---- Estilos de la sección del administrador ---- */
@@ -108,6 +109,20 @@ iframe{
 }
 .cont-busca{
     background-color: beige;
+}
+
+/* ---- Estilos contactos*/
+
+.phone{
+    width: 25px;
+}
+
+.mail{
+    width: 27px;
+    padding-bottom: 2px;
+}
+.form{
+    width: 35px;
 }
 
 /* ---- Estilos del nav superior ---- */
