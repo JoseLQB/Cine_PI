@@ -24,7 +24,7 @@ require_once("../bdd/Cine.php");?>
             $titulo = Cartelera::getTitulo($id);
             echo "<h3>" . $titulo . " (" . Cartelera::getFecha($id) . ")</h3>";
             ?></h4>
-          <ul class="">
+          <ul class="list">
             <li class="my-1">Género 
             <?php
             echo  Cartelera::getGenero($id) ;
@@ -55,7 +55,7 @@ require_once("../bdd/Cine.php");?>
           </div>
         </div>
         <div class="col-md-4"><br><br><img class="img-fluid d-block" alt="Cartel" src="<?php echo Cartelera::getCartel($id); ?>" /><br><br>
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ver próximas sesiones</button><br><br> </div><br><br>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Comprar ticket</button><br><br> </div><br><br>
       </div>
     </div>
   </div>

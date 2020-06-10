@@ -7,14 +7,29 @@ $(document).ready(function () {
         success: function (data) {
             var json = JSON.parse(data);
             console.log(json);
+            proyeccionesUser(json);
             proyecciones(json);
         }
     });
+    function proyeccionesUser(json){
+        var li = $("<li>");
+        li.attr("class", "my-1 proy").html("<hr><b>Proyecciones:</b>");
+        $(".list").append(li);
+        json.forEach(e =>{
+            if(e.idPelicula ==url2[1]){
+                //Información al usuario
+                var p = $("<p>");
+                p.attr("class", "my-1 proy").html(e.fechaProyeccion + ' - <img class="reloj" src="../assets/images/reloj.png" alt=""> - ' + e.horaProyeccion);
+                $(li).append(p);
 
+            }
+        });
+    }
     //Genera la información de cada proyección
     function proyecciones(json) {
         json.forEach(e => {
             if(e.idPelicula ==url2[1]){
+                //Información del modal
                 var form = $("<form>");
                 form.attr("method", "post");
                 form.attr("action", "compraForm.php?varID="+e.idPelicula);
