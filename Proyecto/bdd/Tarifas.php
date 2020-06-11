@@ -1,21 +1,37 @@
 <?php 
 
+    /**
+     * Tarifas
+     * Clase Tarifas
+     * 
+     * @package      bdd
+     * @author       Jose Luis Quintanilla Blanco
+     * @copyright    Jose Luis Quintanilla Blanco - 2020
+     */
 require_once("CineDB.php");
 
-class Tarifas{
     /**
-     * Tarifa
-     * @author Jose Luis Quintanilla Blanco
-     *
-     * Description: Esta clase contiene los métodos que manejan todo lo referente a los datos de cada tarifa
-     */
-
+     * Esta clase contiene los métodos que manejan todo lo referente a los datos de cada tarifa.
+    */
+class Tarifas{
+    
+    /** @var $id id de la tarifa */
     public $id;
+    /** @var $nombre id de la tarifa */
     public $nombre;
+    /** @var $precio precio que se aplica con la tarifa */
     public $precio;
+    /** @var $descripcion descripcion de la tarifa */
     public $descripcion;
 
-
+    /**
+     * Constructor de calse. Recibe los parámetros necesarios para construir el objeto Tarifas
+     * 
+     * @param int $id id de la tarifa
+     * @param string $nombre nombre de la tarifa
+     * @param string $precio de la tarifa
+     * @param string $descripcion descripción de la tarifa
+     */
     function __construct($id, $nombre, $precio, $descripcion){
         $this->id = $id;
         $this->nombre = $nombre;
@@ -23,19 +39,12 @@ class Tarifas{
         $this->descripcion = $descripcion;
 
     }
-    public function getId() {
-        return $this->id;
-    }  
-    public function getNombre() {
-        return $this->nombre;
-    }  
-    public function getPrecio() {
-        return $this->precio;
-    }    
-    public function getDescripcion() {
-        return $this->descripcion;
-    }  
 
+    /**
+     * Devuelve el objeto tarifas, este contiene todos los datos de las tarifas
+     * 
+     * @return object
+     */
     public static function getTarifas(){
         $conexion = CineDB::conectar();
         $query = "SELECT * FROM tarifas";
@@ -47,6 +56,11 @@ class Tarifas{
         return $tarifas;
     }
 
+    /**
+     * Devuelve el objeto tarifas, este contiene todos los datos de una las tarifa a partir de su código
+     * @param string $cod Codigo de la tarifa
+     * @return object
+     */
     public static function getTarifasByCod($cod){
         $conexion = CineDB::conectar();
         $query = "SELECT * FROM tarifas";

@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1198032832"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1198032832" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Cartelera.html">Cartelera</a></li>
+                                                    <li class="class"><a href="../classes/CineDB.html">CineDB</a></li>
+                                                    <li class="class"><a href="../classes/Proyecciones.html">Proyecciones</a></li>
+                                                    <li class="class"><a href="../classes/Reserva.html">Reserva</a></li>
+                                                    <li class="class"><a href="../classes/Tarifas.html">Tarifas</a></li>
+                                                    <li class="class"><a href="../classes/Usuario.html">Usuario</a></li>
+                                                    <li class="class"><a href="../classes/Valoraciones.html">Valoraciones</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>Cartelera</h1>
+                    <p><em>Esta clase contiene los métodos que manejan todo lo referente a los datos de cada película.</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Cartelera.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_consulta" class="">consulta()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_creaListado" class="">creaListado()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getTitulo" class="">getTitulo()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getDuracion" class="">getDuracion()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getCartel" class="">getCartel()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getFecha" class="">getFecha()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getGenero" class="">getGenero()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getTrailer" class="">getTrailer()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getSinopsis" class="">getSinopsis()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getPais" class="">getPais()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getDirector" class="">getDirector()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getIDbyTitle" class="">getIDbyTitle()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_getMedia" class="">getMedia()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_nuevaPelicula" class="">nuevaPelicula()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_delete" class="">delete()</a><br />
+                                                                    <a href="../classes/Cartelera.html#method_update" class="">update()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Cartelera.html#property_idPelicula" class="">$idPelicula</a><br />
+                                                                    <a href="../classes/Cartelera.html#property_pais" class="">$pais</a><br />
+                                                                    <a href="../classes/Cartelera.html#property_genero" class="">$genero</a><br />
+                                                                    <a href="../classes/Cartelera.html#property_duracion" class="">$duracion</a><br />
+                                                                    <a href="../classes/Cartelera.html#property_anEstreno" class="">$anEstreno</a><br />
+                                                                    <a href="../classes/Cartelera.html#property_simopsis" class="">$simopsis</a><br />
+                                                                    <a href="../classes/Cartelera.html#property_titulo" class="">$titulo</a><br />
+                                                                    <a href="../classes/Cartelera.html#property_director" class="">$director</a><br />
+                                                                    <a href="../classes/Cartelera.html#property_trailer" class="">$trailer</a><br />
+                                                                    <a href="../classes/Cartelera.html#property_cartel" class="">$cartel</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Cine.html"><div class="path-wrapper">Cine.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">bdd</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\Cartelera</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_idPelicula" name="property_idPelicula" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$idPelicula</h3>
+                <pre class="signature">$idPelicula : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                &mdash; id de la película                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_pais" name="property_pais" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$pais</h3>
+                <pre class="signature">$pais : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                &mdash; país de origen de la película                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_genero" name="property_genero" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$genero</h3>
+                <pre class="signature">$genero : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                &mdash; género de la película                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_duracion" name="property_duracion" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$duracion</h3>
+                <pre class="signature">$duracion : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                &mdash; duración de la película                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_anEstreno" name="property_anEstreno" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$anEstreno</h3>
+                <pre class="signature">$anEstreno : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                &mdash; año de estreno de la película                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_simopsis" name="property_simopsis" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$simopsis</h3>
+                <pre class="signature">$simopsis : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                &mdash; sinopsis de la película                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_titulo" name="property_titulo" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$titulo</h3>
+                <pre class="signature">$titulo : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                &mdash; título de la película                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_director" name="property_director" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$director</h3>
+                <pre class="signature">$director : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                &mdash; director de la película                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_trailer" name="property_trailer" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$trailer</h3>
+                <pre class="signature">$trailer : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                &mdash; código que completa la url del tráiler de la película                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_cartel" name="property_cartel" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$cartel</h3>
+                <pre class="signature">$cartel : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                &mdash; url del cartel de la película                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(integer  <span class="argument">$idPelicula</span>, string  <span class="argument">$pais</span>, string  <span class="argument">$genero</span>, integer  <span class="argument">$duracion</span>, integer  <span class="argument">$anEstreno</span>, string  <span class="argument">$simopsis</span>, string  <span class="argument">$titulo</span>, string  <span class="argument">$director</span>, string  <span class="argument">$trailer</span>, string  <span class="argument">$cartel</span>) </pre>
+                <p><em>Constructor de calse. Recibe los parámetros necesarios para construir el objeto Cartelera</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$idPelicula </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$pais </td>
+                                <td><p>nombre del pais</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$genero </td>
+                                <td><p>género de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$duracion </td>
+                                <td><p>duracion de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$anEstreno </td>
+                                <td><p>año de estreno de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$simopsis </td>
+                                <td><p>resumen del argumento de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$titulo </td>
+                                <td><p>título de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$director </td>
+                                <td><p>director de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$trailer </td>
+                                <td><p>codigo de youtube para enlazar el tráiler de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$cartel </td>
+                                <td><p>enlace a la imagen del cartel de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_consulta" name="method_consulta" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">consulta()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">consulta() : object</pre>
+                <p><em>Devuelve una consulta genérica de todos los campos de la tabla películas</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_creaListado" name="method_creaListado" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">creaListado()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">creaListado() : object</pre>
+                <p><em>Devuelve un objeto películas con los datos necesario para construir la cartelera</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTitulo" name="method_getTitulo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTitulo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTitulo(integer  <span class="argument">$id</span>) : array</pre>
+                <p><em>Dado el id de la película, devuelve el título de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDuracion" name="method_getDuracion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDuracion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDuracion(integer  <span class="argument">$id</span>) : array</pre>
+                <p><em>Dado el id de la pelícla, devuelve la duración de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCartel" name="method_getCartel" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCartel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCartel(integer  <span class="argument">$id</span>) : array</pre>
+                <p><em>Dado el id de la pelícla, devuelve el cartel de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFecha" name="method_getFecha" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getFecha()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFecha(integer  <span class="argument">$id</span>) : array</pre>
+                <p><em>Dado el id de la pelícla, devuelve la fecha de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getGenero" name="method_getGenero" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getGenero()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getGenero(integer  <span class="argument">$id</span>) : array</pre>
+                <p><em>Dado el id de la pelícla, devuelve el género de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTrailer" name="method_getTrailer" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTrailer()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTrailer(integer  <span class="argument">$id</span>) : array</pre>
+                <p><em>Dado el id de la pelícla, devuelve el enlace del tráiler de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSinopsis" name="method_getSinopsis" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSinopsis()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSinopsis(integer  <span class="argument">$id</span>) : array</pre>
+                <p><em>Dado el id de la pelícla, devuelve la sinopsis de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getPais" name="method_getPais" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPais()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPais(integer  <span class="argument">$id</span>) : array</pre>
+                <p><em>Dado el id de la pelícla, devuelve el pais de origen de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDirector" name="method_getDirector" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDirector()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDirector(integer  <span class="argument">$id</span>) : array</pre>
+                <p><em>Dado el id de la pelícla, devuelve el director de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getIDbyTitle" name="method_getIDbyTitle" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getIDbyTitle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getIDbyTitle(integer  <span class="argument">$titulo</span>) : array</pre>
+                <p><em>Dado el titulo de la pelícla, devuelve el id de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$titulo </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMedia" name="method_getMedia" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMedia()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMedia(integer  <span class="argument">$id</span>) : integer</pre>
+                <p><em>Dado el id de la pelícla, devuelve la media de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_nuevaPelicula" name="method_nuevaPelicula" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">nuevaPelicula()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">nuevaPelicula(integer  <span class="argument">$idPelicula</span>, string  <span class="argument">$pais</span>, string  <span class="argument">$genero</span>, integer  <span class="argument">$duracion</span>, integer  <span class="argument">$anEstreno</span>, string  <span class="argument">$sinopsis</span>, string  <span class="argument">$titulo</span>, string  <span class="argument">$director</span>, string  <span class="argument">$trailer</span>, string  <span class="argument">$cartel</span>) : void</pre>
+                <p><em>Metodo que inserta una nueva película con todos sus datos</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$idPelicula </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$pais </td>
+                                <td><p>nombre del pais</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$genero </td>
+                                <td><p>género de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$duracion </td>
+                                <td><p>duracion de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$anEstreno </td>
+                                <td><p>año de estreno de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sinopsis </td>
+                                <td><p>resumen del argumento de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$titulo </td>
+                                <td><p>título de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$director </td>
+                                <td><p>director de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$trailer </td>
+                                <td><p>codigo de youtube para enlazar el tráiler de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$cartel </td>
+                                <td><p>enlace a la imagen del cartel de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_delete" name="method_delete" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">delete()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">delete(integer  <span class="argument">$idPelicula</span>) : void</pre>
+                <p><em>Metodo que elimina una película a partir del id de esta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$idPelicula </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_update" name="method_update" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">update()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">update(integer  <span class="argument">$idPelicula</span>, string  <span class="argument">$pais</span>, string  <span class="argument">$genero</span>, integer  <span class="argument">$duracion</span>, integer  <span class="argument">$anEstreno</span>, string  <span class="argument">$sinopsis</span>, string  <span class="argument">$titulo</span>, string  <span class="argument">$director</span>, string  <span class="argument">$trailer</span>, string  <span class="argument">$cartel</span>) : void</pre>
+                <p><em>Metodo que actualiza una nueva película con todos sus datos</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$idPelicula </td>
+                                <td><p>id de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$pais </td>
+                                <td><p>nombre del pais</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$genero </td>
+                                <td><p>género de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$duracion </td>
+                                <td><p>duracion de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$anEstreno </td>
+                                <td><p>año de estreno de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sinopsis </td>
+                                <td><p>resumen del argumento de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$titulo </td>
+                                <td><p>título de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$director </td>
+                                <td><p>director de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$trailer </td>
+                                <td><p>codigo de youtube para enlazar el tráiler de la película</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$cartel </td>
+                                <td><p>enlace a la imagen del cartel de la película</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://D:/xampp/htdocs/PROYECTO_INTEGRADO/Cine_PI/Proyecto/bdd/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Cine.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Cine.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on June 11th, 2020 at 17:12.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

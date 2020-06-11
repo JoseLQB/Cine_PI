@@ -11,13 +11,14 @@ $(document).ready(function () {
             proyecciones(json);
         }
     });
+
+    //Genera la información de cada proyección que podrán ver todos los usuarios
     function proyeccionesUser(json){
         var li = $("<li>");
         li.attr("class", "my-1 proy").html("<hr><b>Proyecciones:</b>");
         $(".list").append(li);
         json.forEach(e =>{
             if(e.idPelicula ==url2[1]){
-                //Información al usuario
                 var p = $("<p>");
                 p.attr("class", "my-1 proy").html(e.fechaProyeccion + ' - <img class="reloj" src="../assets/images/reloj.png" alt=""> - ' + e.horaProyeccion);
                 $(li).append(p);
@@ -25,6 +26,7 @@ $(document).ready(function () {
             }
         });
     }
+
     //Genera la información de cada proyección
     function proyecciones(json) {
         json.forEach(e => {

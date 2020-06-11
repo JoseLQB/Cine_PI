@@ -1,20 +1,47 @@
 <?php 
+    /**
+     * Proyecciones
+     * Clase Proyecciones
+     * 
+     *
+     * @package      bdd
+     * @author       Jose Luis Quintanilla Blanco
+     * @copyright    Jose Luis Quintanilla Blanco - 2020
+     */
 require_once("CineDB.php");
-/**
- * Proyecciones
- * @author Jose Luis Quintanilla Blanco
- *
- * Description: Esta clase contiene los métodos que manejan todo lo referente a los datos de cada proyección
- */
+    /**
+     * Esta clase contiene los métodos que manejan todo lo referente a los datos de cada proyección.
+    */
 class Proyecciones{
 
+    /** @var $idProyeccion id de la proyección */
     public $idProyeccion;
+
+    /** @var $idSala id de la sala */
     public $idSala;
+
+    /** @var $idPelicula id de la película */
     public $idPelicula;
+    
+    /** @var $fechaProyeccion fecha de la proyección */
     public $fechaProyeccion;
+    
+    /** @var $horaProyeccion hora de la proyección */
     public $horaProyeccion;
+    
+    /** @var $codTarifa código de la tarifa */
     public $codTarifa;
 
+    /**
+     * Constructor de calse. Recibe los parámetros necesarios para construir el objeto Proyecciones
+     * 
+     * @param int $idProyeccion id de la de la proyección
+     * @param int $idSala id de la sala
+     * @param int $idPelicula id de la película
+     * @param mixed $fechaProyeccion fecha en la que se emite la proyección
+     * @param mixed $horaProyeccion hora a la que se emite la proyeccion
+     * @param string $codTarifa codigo de la tarifa
+     */
     function __construct($idProyeccion, $idSala, $idPelicula, $fechaProyeccion, $horaProyeccion, $codTarifa){
         $this->idProyeccion = $idProyeccion;
         $this->idSala = $idSala;
@@ -23,6 +50,12 @@ class Proyecciones{
         $this->horaProyeccion = $horaProyeccion;
         $this->codTarifa = $codTarifa;
     }
+
+    /**
+     * Devuelve un objeto proyecciones con los datos necesarios de cada proyeccion
+     *
+     * @return object
+     */
     public static function getProyecciones(){
         $conexion = CineDB::conectar();
         $query = "SELECT * FROM proyecciones";
@@ -34,6 +67,12 @@ class Proyecciones{
         }
         return $tarifas;
     }
+    
+    /**
+     * Devuelve el objeto proyecciones a partir de su id, este contiene todos los datos de una las tarifa 
+     * @param string $idProyeccion Codigo de la proyeccion
+     * @return object
+     */
     public static function getProyeccionesById($idProyeccion){
         $conexion = CineDB::conectar();
         $query = "SELECT * FROM proyecciones";
@@ -47,7 +86,11 @@ class Proyecciones{
         return $tarifas;
     }
 
-    
+    /**
+     * Devuelve una consulta genérica de todos los campos de la tabla proyecciones
+     *
+     * @return object
+     */
     public static function consulta(){
         $conexion = CineDB::conectar();
         $select = "SELECT * FROM proyecciones";
@@ -56,6 +99,13 @@ class Proyecciones{
         return $consulta;
 
     }
+
+    /**
+     * Dado el id de la proyección, devuelve 1 o 0 dependiendo de si esta está repetisa o no
+     *
+     * @param int $id id de la proyeccion
+     * @return int
+     */ 
     public static function consultaIdProy($id){ 
         $consulta = Proyecciones::consulta();
         $repeat = 0;
@@ -65,10 +115,14 @@ class Proyecciones{
             }
         }
         return $repeat;
-
     }
 
-
+    /**
+     * Dado el id de la proyección, devuelve el título de la película proyectada
+     *
+     * @param int $id id de la proyección
+     * @return array
+     */  
     public static function getTitulo($id){  
         $consulta = Proyecciones::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -80,7 +134,12 @@ class Proyecciones{
         return $titulo;
     }
 
-
+    /**
+     * Dado el id de la proyección, devuelve la fecha de la proyección
+     *
+     * @param int $id id de la proyección
+     * @return array
+     */ 
     public static function getFechaProyeccion($id){  
         $consulta = Proyecciones::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -91,6 +150,13 @@ class Proyecciones{
         }
         return $fecha;
     }
+
+    /**
+     * Dado el id de la pelicula proyectada, devuelve la fecha de la proyección
+     *
+     * @param int $id id de la película
+     * @return array
+     */ 
     public static function getFechaProyeccionByPro($id){  
         $consulta = Proyecciones::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -101,6 +167,13 @@ class Proyecciones{
         }
         return $fecha;
     }
+    
+    /**
+     * Dado el id de la proyección, devuelve la hora de la proyección
+     *
+     * @param int $id id de la proyección
+     * @return array
+     */
     public static function getHoraProyeccionByPro($id){  
         $consulta = Proyecciones::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -111,6 +184,13 @@ class Proyecciones{
         }
         return $fecha;
     }
+    
+    /**
+     * Dado el id de la proyección, devuelve el id de la película proyectada
+     *
+     * @param int $id id de la proyección
+     * @return array
+     */
     public static function getIDPeliByPro($id){  
         $consulta = Proyecciones::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -122,7 +202,18 @@ class Proyecciones{
         return $fecha;
     }
 
-
+    /**
+     * Método que inserta una nueva proyección en la base de datos
+     * 
+     * @param int $idProyeccion id de la de la proyección
+     * @param int $idSala id de la sala
+     * @param int $idPelicula id de la película
+     * @param mixed $fechaProyeccion fecha en la que se emite la proyección
+     * @param mixed $horaProyeccion hora a la que se emite la proyeccion
+     * @param string $codTarifa codigo de la tarifa
+     * 
+     * @return void
+     */
     public static function nuevaProyeccion($idProyeccion, $idSala,  $idPelicula, $fechaProyeccion, $horaProyeccion, $codTarifa){
         $conexion = CineDB::conectar();
         $sql = "INSERT INTO proyecciones(idProyeccion, idSala, idPelicula, fechaProyeccion, horaProyeccion, codTarifa) VALUES(:idProyeccion, :idSala, :idPelicula, :fechaProyeccion, :horaProyeccion, :codTarifa)";
@@ -136,8 +227,13 @@ class Proyecciones{
         $sentencia->execute();
     }
 
-
-    //Borra proyecciones de una película en concreto a partir de una id
+    /**
+     * Método que elimina una proyección de la base de datos
+     * 
+     * @param int $idPelicula id de la película
+     * 
+     * @return void
+     */
     public static function delete($idPelicula){
         $conexion = CineDB::conectar();
         $sql1 = "DELETE FROM reserva WHERE idProyeccion IN (SELECT `idProyeccion` FROM `proyecciones` WHERE  idPelicula =  :idPelicula)";
@@ -154,6 +250,14 @@ class Proyecciones{
         $sentencia->execute();
     }
 
+    /**
+     * Método que, dado el id de la película y el id de la proyección, elimina una proyección
+     * 
+     * @param int $idPelicula id de la película
+     * @param int $idProyeccion id de la de la proyección
+     * 
+     * @return void
+     */
     public static function deletebyProy($idPelicula, $idProyeccion){
         $conexion = CineDB::conectar();
         $sql1 = "DELETE FROM reserva WHERE idProyeccion IN (SELECT `idProyeccion` FROM `proyecciones` WHERE  idPelicula =  :idPelicula)";
@@ -170,6 +274,18 @@ class Proyecciones{
         $sentencia->execute();
     }
 
+    /**
+     * Método que actualiza una proyección en la base de datos con los datos nuevos
+     * 
+     * @param int $idProyeccion id de la de la proyección
+     * @param int $idSala id de la sala
+     * @param int $idPelicula id de la película
+     * @param mixed $fechaProyeccion fecha en la que se emite la proyección
+     * @param mixed $horaProyeccion hora a la que se emite la proyeccion
+     * @param string $codTarifa codigo de la tarifa
+     * 
+     * @return void
+     */
 
     public static function update($idProyeccion, $idSala,  $idPelicula, $fechaProyeccion, $horaProyeccion, $codTarifa){
         $conexion = CineDB::conectar();
@@ -190,18 +306,5 @@ class Proyecciones{
         $sentencia->bindParam(':codTarifa', $codTarifa);
         $sentencia->execute();    
     }
-
-    //Funciones para calcular el aforo disponible en una sala
-
-
 }
-
-
-/*
-SELECT COUNT(idUsuario) FROM `reserva` WHERE idProyeccion = 111
-El resultado de esta consulta se restará al número de aforo de cada sala para obtener el total
-
-
-
-*/
 ?>

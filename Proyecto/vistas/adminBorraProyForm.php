@@ -20,9 +20,11 @@ $conexion = CineDB::conectar(); ?>
 
 <body class="admin">
     <?php
-
     if (isset($_POST["delete"])) {
         Proyecciones::deletebyProy($_GET["varID"], $_POST["idPr"]);
+    }
+    if(isset($_POST["edit"])){
+        Proyecciones::update($_POST["idProyeccion"], $_POST["idSala"], $_GET["varID"], $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
     }
 
     ?>

@@ -1,20 +1,29 @@
 <?php 
+    /**
+     * Reservas
+     * Clase Reserva
+     * 
+     *
+     * @package      bdd
+     * @author       Jose Luis Quintanilla Blanco
+     * @copyright    Jose Luis Quintanilla Blanco - 2020
+     */
 require_once("CineDB.php");
 require_once("Cine.php");
 require_once("Proyecciones.php");
 
-/**
- * Reserva
- * @author Jose Luis Quintanilla Blanco
- *
- * Description: Esta clase contiene los métodos que manejan todo lo referente a los datos de cada reserva
- */
+    /**
+     * Esta clase contiene los métodos que manejan todo lo referente a los datos de cada reserva.
+     */
 class Reserva{
 
-
-    
-    //Funciones para calcular el aforo disponible en una sala
-
+    /**
+     * Dado el id de la proyección, retorna los id de la sala de esa proyección
+     * 
+     * @param int $idProyeccion id de la proyección
+     * 
+     * @return array
+     */
     public static function getSala($idProyeccion){
         $conexion = CineDB::conectar();
         $sql = "SELECT idSala FROM proyecciones WHERE idProyeccion = $idProyeccion";
@@ -22,6 +31,13 @@ class Reserva{
         return $consulta;
     }
 
+    /**
+     * Dado el id de la sala, retorna el aforo que pertenece a la sala
+     * 
+     * @param int $idSala
+     * 
+     * @return array
+     */
     public static function getAforo($idSala){
         $conexion = CineDB::conectar();
         $sql = "SELECT aforo FROM salas WHERE  idSala = $idSala";
@@ -29,6 +45,13 @@ class Reserva{
         return $consulta;
     }
 
+    /**
+     * Retorna una consulta del total de proyecciones dada una id de esa proyección
+     * 
+     * @param int $idProyeccion
+     * 
+     * @return array
+     */
     public static function getResto($idProyeccion){
         $conexion = CineDB::conectar();
         $sql= "SELECT count(idProyeccion) FROM reserva WHERE idProyeccion = $idProyeccion";
@@ -37,9 +60,15 @@ class Reserva{
 
     }
 
-    //Función que agrega una compra, se activa cada vez que el usuario realiza una compra
-
-    
+    /**
+     * Inserta una nueva reserva cuando el usuario realiza la compra a partir del id de este, el id de la proyección y la cantidad de tickets adquiridos
+     * 
+     * @param int $idUsuario
+     * @param int $idProyeccion
+     * @param int $cantidad
+     * 
+     * @return void
+     */
     public static function nuevaProyeccion($idUsuario, $idProyeccion,$cantidad){
         $cantidad = (int)$cantidad;
         $conexion = CineDB::conectar();
@@ -52,10 +81,13 @@ class Reserva{
         }
     }
 
-
-
-    //Devuelve un array con las sesiones disponibles que ha comprado un usuario
-
+    /**
+     * Devuelve las proyecciones reservadas por un usuario sin que estas se repitan
+     * 
+     * @param int $idUsuario
+     * 
+     * @return array
+     */
     public static function getProyecciones($idUsuario){
         $conexion = CineDB::conectar();
         $sql = "SELECT DISTINCT(idProyeccion) from reserva WHERE idUsuario = $idUsuario";
@@ -63,7 +95,13 @@ class Reserva{
         return $consulta;    
     }
 
-    ////Devuelve el id de la pelicula a la que pertenece una proyección
+    /**
+     * Devuelve el id de la pelicula a la que pertenece una proyección
+     * 
+     * @param array $arrIDProyeccion
+     * 
+     * @return int
+     */
     public static function getIDPelis($arrIDProyeccion){
         $conexion = CineDB::conectar();
         foreach ($$arrIDProyeccion as $k) {
@@ -74,6 +112,14 @@ class Reserva{
         return $consulta;
     }
 
+    /**
+     * Dados el id de la proyección y el id del usuario devuelve el número de proyecciones
+     * 
+     * @param int $idProyeccion
+     * @param int $idUsuario
+     * 
+     * @return array
+     */
     public static function getProyeccionesCompradas($idProyeccion, $idUsuario){
         $conexion = CineDB::conectar();
         $sql = "SELECT COUNT(idProyeccion) FROM reserva WHERE idProyeccion = $idProyeccion AND idUsuario = $idUsuario";
@@ -81,11 +127,6 @@ class Reserva{
         return $consulta;
     }
 
-    //Función que permite al usuario valorar una película
 
 }
-/*
-echo "-dasdasdada-";
-var_dump( Reserva::getProyecciones(24));
-var_dump(Reserva::getIDPelis(44));*/
 ?>

@@ -1,24 +1,53 @@
 <?php 
-
+    /**
+     * Cine
+     * Clase Cartelera
+     * 
+     *
+     * @package      bdd
+     * @author       Jose Luis Quintanilla Blanco
+     * @copyright    Jose Luis Quintanilla Blanco - 2020
+     */
 require_once("CineDB.php");
-/**
- * Cartelera
- * @author Jose Luis Quintanilla Blanco
- *
- * Description: Esta clase contiene los métodos que manejan todo lo referente a los datos de cada película
- */
-class Cartelera{    
+    /**
+     * Esta clase contiene los métodos que manejan todo lo referente a los datos de cada película.
+     */
+class Cartelera{  
+    /** @var $Pelicula id de la película */  
     public $idPelicula;
+    /** @var $pais país de origen de la película */
     public $pais;
+    /** @var $genero género de la película */
     public $genero;
+    /** @var $duracion duración de la película */
     public $duracion;
+    /** @var $anEstreno año de estreno de la película */
     public $anEstreno;
+    /** @var $sinopsis sinopsis de la película */
     public $simopsis;
+    /** @var $título título de la película */
     public $titulo;
+    /** @var $director director de la película */
     public $director;
+    /** @var $trailer código que completa la url del tráiler de la película */
     public $trailer;
+    /** @var $carte url del cartel de la película */
     public $cartel;
 
+    /**
+     * Constructor de calse. Recibe los parámetros necesarios para construir el objeto Cartelera
+     * 
+     * @param int $idPelicula id de la película
+     * @param string $pais nombre del pais
+     * @param string $genero género de la película
+     * @param int $duracion duracion de la película
+     * @param int $anEstreno año de estreno de la película
+     * @param string $simopsis resumen del argumento de la película
+     * @param string $titulo título de la película
+     * @param string $director director de la película
+     * @param string $trailer codigo de youtube para enlazar el tráiler de la película
+     * @param string $cartel enlace a la imagen del cartel de la película
+     */
     function __construct($idPelicula, $pais, $genero, $duracion, $anEstreno, $simopsis, $titulo, $director, $trailer, $cartel){
         $this->idPelicula = $idPelicula;
         $this->pais = $pais;
@@ -32,7 +61,11 @@ class Cartelera{
         $this->cartel = $cartel;
     }
 
-    //Consulta genérica de todos los campos de la tabla
+    /**
+     * Devuelve una consulta genérica de todos los campos de la tabla películas
+     *
+     * @return object
+     */
     public static function consulta(){
         $conexion = CineDB::conectar();
         $select = "SELECT * FROM pelicula";
@@ -42,6 +75,11 @@ class Cartelera{
 
     }
 
+    /**
+     * Devuelve un objeto películas con los datos necesario para construir la cartelera
+     *
+     * @return object
+     */
     public static function creaListado(){
         $conexion = CineDB::conectar();
         $query = "SELECT * FROM pelicula";
@@ -53,8 +91,12 @@ class Cartelera{
         return $cartel;
     }
 
-    //--Métodos para mostrar los datos uno a uno
-
+    /**
+     * Dado el id de la película, devuelve el título de esta
+     *
+     * @param int $id id de la película
+     * @return array
+     */
     public static function getTitulo($id){  
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -65,6 +107,13 @@ class Cartelera{
         }
         return $titulo;
     }
+
+    /**
+     * Dado el id de la pelícla, devuelve la duración de esta
+     *
+     * @param int $id id de la película
+     * @return array
+     */
     public static function getDuracion($id){  
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -75,8 +124,13 @@ class Cartelera{
         }
         return $duracion;
     }
-
-    
+  
+    /**
+     * Dado el id de la pelícla, devuelve el cartel de esta
+     *
+     * @param int $id id de la película
+     * @return array
+     */  
     public static function getCartel($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -87,6 +141,13 @@ class Cartelera{
         }
         return $cartel;
     }
+
+    /**
+     * Dado el id de la pelícla, devuelve la fecha de esta
+     *
+     * @param int $id id de la película
+     * @return array
+     */
     public static function getFecha($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -97,6 +158,13 @@ class Cartelera{
         return $fecha;
     }
     
+    
+    /**
+     * Dado el id de la pelícla, devuelve el género de esta
+     *
+     * @param int $id id de la película
+     * @return array
+     */
     public static function getGenero($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -107,6 +175,12 @@ class Cartelera{
         return $fecha;
     }
 
+    /**
+     * Dado el id de la pelícla, devuelve el enlace del tráiler de esta
+     *
+     * @param int $id id de la película
+     * @return array
+     */
     public static function getTrailer($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -116,6 +190,13 @@ class Cartelera{
         }
         return $trailer;
     }
+
+    /**
+     * Dado el id de la pelícla, devuelve la sinopsis de esta
+     *
+     * @param int $id id de la película
+     * @return array
+     */
     public static function getSinopsis($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -125,6 +206,13 @@ class Cartelera{
         }
         return $sinopsis;
     }
+    
+    /**
+     * Dado el id de la pelícla, devuelve el pais de origen de esta
+     *
+     * @param int $id id de la película
+     * @return array
+     */
     public static function getPais($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -134,6 +222,13 @@ class Cartelera{
         }
         return $pais;
     }
+    
+    /**
+     * Dado el id de la pelícla, devuelve el director de esta
+     *
+     * @param int $id id de la película
+     * @return array
+     */
     public static function getDirector($id){ 
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -144,6 +239,13 @@ class Cartelera{
         return $director;
     }
 
+
+    /**
+     * Dado el titulo de la pelícla, devuelve el id de esta
+     *
+     * @param int $titulo id de la película
+     * @return array
+     */
     public static function getIDbyTitle($titulo){
         $consulta = Cartelera::consulta();
         while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
@@ -154,7 +256,12 @@ class Cartelera{
         return $id;
     }
 
-    //Saca la media de cada película a partir de su id
+    /**
+     * Dado el id de la pelícla, devuelve la media de esta
+     *
+     * @param int $id id de la película
+     * @return int
+     */
     public static function getMedia($id){
         $conexion = CineDB::conectar();
         $sql="SELECT AVG(valoracion) FROM valoracion WHERE idPelicula =$id";
@@ -166,6 +273,22 @@ class Cartelera{
         }
     }
     
+    /**
+     * Metodo que inserta una nueva película con todos sus datos
+     * 
+     * @param int $idPelicula id de la película
+     * @param string $pais nombre del pais
+     * @param string $genero género de la película
+     * @param int $duracion duracion de la película
+     * @param int $anEstreno año de estreno de la película
+     * @param string $sinopsis resumen del argumento de la película
+     * @param string $titulo título de la película
+     * @param string $director director de la película
+     * @param string $trailer codigo de youtube para enlazar el tráiler de la película
+     * @param string $cartel enlace a la imagen del cartel de la película
+     * 
+     * @return void
+     */
     public static function nuevaPelicula($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
         $conexion = CineDB::conectar();
         $sql = "INSERT INTO pelicula(idPelicula, pais, genero, duracion, anEstreno, sinopsis, titulo, director, trailer, cartel) VALUES(:idPelicula, :pais, :genero, :duracion, :anEstreno, :sinopsis, :titulo, :director, :trailer, :cartel)";
@@ -182,7 +305,14 @@ class Cartelera{
         $sentencia->bindParam(':cartel', $cartel);
         $sentencia->execute();
     }
-    //Elimina a un usuario a partir de su id
+
+    /**
+     * Metodo que elimina una película a partir del id de esta
+     * 
+     * @param int $idPelicula id de la película
+     * 
+     * @return void
+     */
     public static function delete($idPelicula){
         $conexion = CineDB::conectar();
         $sql = "DELETE FROM pelicula WHERE idPelicula =  :idPelicula";
@@ -190,7 +320,23 @@ class Cartelera{
         $sentencia->bindParam(':idPelicula', $idPelicula);
         $sentencia->execute();
     }
-    //Modifica a un usuario pasándole a la función los nuevos datos
+
+    /**
+     * Metodo que actualiza una nueva película con todos sus datos
+     * 
+     * @param int $idPelicula id de la película
+     * @param string $pais nombre del pais
+     * @param string $genero género de la película
+     * @param int $duracion duracion de la película
+     * @param int $anEstreno año de estreno de la película
+     * @param string $sinopsis resumen del argumento de la película
+     * @param string $titulo título de la película
+     * @param string $director director de la película
+     * @param string $trailer codigo de youtube para enlazar el tráiler de la película
+     * @param string $cartel enlace a la imagen del cartel de la película
+     * 
+     * @return void
+     */
     public static function update($idPelicula, $pais,  $genero, $duracion, $anEstreno, $sinopsis, $titulo, $director, $trailer, $cartel){
         $conexion = CineDB::conectar();
         $sql = "UPDATE pelicula SET 
@@ -218,11 +364,5 @@ class Cartelera{
         $sentencia->execute();
         
     }
-
-
 }
-
-
-
-
 ?>

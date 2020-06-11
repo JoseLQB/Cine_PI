@@ -36,9 +36,5 @@ $(document).ready(function(){
 			ul.append(li2);	
 		});
 	}
-	function infoTarifas(){
-		
-
-	}
 
 });
