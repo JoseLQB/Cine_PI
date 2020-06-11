@@ -18,15 +18,15 @@ if (!isset($_SESSION["usuario"])) {
 
 <body class="csartelera">
     <?php include_once("../inc/nav.php") ?><br><br>
-    <?php 
-    
-                      
+    <?php
+
+
     if (isset($_POST["val"])) {
         $confirm = Valoraciones::getConfirm($_SESSION["id"], $_POST["idPeli"]);
         if ($confirm == 0) {
-            Valoraciones::insertaValoracion($_SESSION["id"],$_POST["idPeli"], $_POST["valoracion"]);
+            Valoraciones::insertaValoracion($_SESSION["id"], $_POST["idPeli"], $_POST["valoracion"]);
         } else if ($confirm == 1) {
-            Valoraciones::update($_SESSION["id"],$_POST["idPeli"], $_POST["valoracion"]);
+            Valoraciones::update($_SESSION["id"], $_POST["idPeli"], $_POST["valoracion"]);
         }
     }
     ?>
@@ -42,8 +42,6 @@ if (!isset($_SESSION["usuario"])) {
                  <li class='my-1'>" . Cartelera::getTitulo(Proyecciones::getIDPeliByPro($k[0])) . "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>Cantidad: " . Reserva::getProyeccionesCompradas($k[0], $_SESSION["id"])[0] . "<br>" . Proyecciones::getFechaProyeccionByPro($k[0]) . "&nbsp;&nbsp;  &nbsp; -&nbsp; " . Proyecciones::getHoraProyeccionByPro($k[0]);
                     }
                     ?>
-
-
                 </ul>
             </div>
             <div class="p-md-4 col-lg-4">
@@ -74,9 +72,9 @@ if (!isset($_SESSION["usuario"])) {
                     <input type="hidden" name="idPeli" value="<?php echo Cartelera::getIDbyTitle($v)  ?>">
                     </form>
                 <?php
-                }
-        
-      
+                                    }
+
+
                 ?>
             </div>
         </div>

@@ -1,5 +1,11 @@
 <?php 
 require_once("CineDB.php");
+/**
+ * Cartelera
+ * @author Jose Luis Quintanilla Blanco
+ *
+ * Description: Esta clase contiene los métodos necesarios para calvular las valoraciones
+ */
 class Valoraciones{
 
     //Devuelve un la nota puesta por un usuario a una película
@@ -54,6 +60,4 @@ class Valoraciones{
         $sentencia->execute();
     }
 }
-echo Valoraciones::getConfirm(24,32);
-echo Valoraciones::getVal(24,32)[0];
 ?>

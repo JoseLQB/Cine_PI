@@ -19,6 +19,13 @@ $conexion = CineDB::conectar(); ?>
 </head>
 
 <body class="admin">
+    <?php
+
+    if (isset($_POST["delete"])) {
+        Proyecciones::deletebyProy($_GET["varID"], $_POST["idPr"]);
+    }
+
+    ?>
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
@@ -29,7 +36,6 @@ $conexion = CineDB::conectar(); ?>
 
                     require_once("../bdd/Proyecciones.php");
                     $var = Proyecciones::getProyecciones();
-                    //var_dump($var);
                     foreach ($var as $key) {
                         if ($key->idPelicula == $_GET["varID"]) {
                             echo "<h5>Proyección nº " . $key->idProyeccion . ":</h5> Sala " . $key->idSala . ". Fecha: " . $key->fechaProyeccion . ". Hora: " . $key->horaProyeccion . ". Tarifa activa: " . $key->codTarifa;
@@ -38,11 +44,11 @@ $conexion = CineDB::conectar(); ?>
                             <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
 
                                 <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
-                                <button type="submit" name="delete" class="btn btn-danger btn-sm">Eliminar</button></form>
+                                <button type="submit" name="delete" class="btn btn-danger btn-block">Eliminar</button></form>
                             <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
 
                                 <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
-                                <button type="submit" name="update" class="btn btn-success btn-sm">Actualizar</button></form><br><?php
+                                <button type="submit" name="update" class="btn btn-success btn-block">Actualizar</button></form><br><?php
 
                                                                                                                                 }
                                                                                                                             }
@@ -57,9 +63,7 @@ $conexion = CineDB::conectar(); ?>
         </div>
     </div>
     <?php
-    if (isset($_POST["delete"])) {
-        Proyecciones::deletebyProy($_GET["varID"], $_POST["idPr"]);
-    } else if (isset($_POST["update"])) {
+    if (isset($_POST["update"])) {
 
         foreach ($var as $key) {
             if ($key->idProyeccion == $_POST["idPr"]) {
@@ -125,13 +129,6 @@ $conexion = CineDB::conectar(); ?>
         }
     }
 
-    $fetch = 0;
-    if (isset($_POST["edit"])) {
-        Proyecciones::update($_POST["idProyeccion"], $_POST["idSala"], $_GET["varID"], $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
-        $fetch = 1;
-    } else if ($fetch == 1) {
-        echo '<center><h3><font color="green">¡Elemento actualizado!</font></h3></center><br>';
-    }
     ?>
 </body>
 

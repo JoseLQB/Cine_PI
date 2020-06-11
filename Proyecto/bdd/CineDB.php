@@ -1,5 +1,11 @@
 <?php 
 
+/**
+ * CineDB
+ * @author Jose Luis Quintanilla Blanco
+ *
+ * Description: Esta clase incluye el método que devuelve la conexión con la base de datos
+ */
 class CineDB{
     public static function conectar(){
         try{

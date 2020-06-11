@@ -1,7 +1,12 @@
 <?php 
 
 require_once("CineDB.php");
-
+/**
+ * Cartelera
+ * @author Jose Luis Quintanilla Blanco
+ *
+ * Description: Esta clase contiene los métodos que manejan todo lo referente a los datos de cada película
+ */
 class Cartelera{    
     public $idPelicula;
     public $pais;
@@ -46,26 +51,6 @@ class Cartelera{
             $cartel[]= new Cartelera($registro["idPelicula"], $registro["pais"], $registro["genero"], $registro["duracion"], $registro["anEstreno"], $registro["sinopsis"], $registro["titulo"], $registro["director"], $registro["trailer"], $registro["cartel"]);     
         }
         return $cartel;
-    }
-
-    public static function getListado(){
-        $consulta = Cartelera::consulta();
-        while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            echo"<ul><li>".$reg["idPelicula"].  " -- ". $reg["titulo"]."</li></ul>";
-        }
-    }
-    
-    public static function getIDs(){
-        $consulta = Cartelera::consulta();
-        while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            echo $reg["idPelicula"];
-        }
-    }
-    public static function getTitulos(){
-        $consulta = Cartelera::consulta();
-        while ($reg = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            echo $reg["titulo"];
-        }
     }
 
     //--Métodos para mostrar los datos uno a uno

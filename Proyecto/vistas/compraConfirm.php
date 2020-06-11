@@ -79,17 +79,17 @@ require_once("../bdd/Reserva.php"); ?>
                 <div class="invalid-feedback">Es necesario que introduzcas tu nombre </div>
               </div>
               <div class="col-md-6 mb-3"> <label for="cc-number">Número de la tarjeta</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                <input type="text" class="form-control" id="cc-number" placeholder="" pattern="[0-9]{16}" title="Número de tarjeta" required="">
                 <div class="invalid-feedback"> Es necesario que introduzcas el número de tu tarjeta </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-3 mb-3"> <label for="cc-expiration">Caducidad</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                <input type="month" class="form-control" id="cc-expiration" value="2019-08" required="">
                 <div class="invalid-feedback"> Es necesario introducir la fecha de caducidad </div>
               </div>
               <div class="col-md-3 mb-3"> <label for="cc-expiration">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                <input type="text" class="form-control" id="cc-cvv" pattern="[0-9]{3}" title="Número de seguridad" placeholder="" required="">
                 <div class="invalid-feedback"> Número de seguridad requerido </div>
               </div>
             </div>

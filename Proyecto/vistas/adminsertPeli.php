@@ -65,22 +65,23 @@ $conexion = CineDB::conectar(); ?>
                     </form>
                     <div id="msg_error" class="alert alert-danger" role="alert" style="display: none"></div>
                     <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>
-                </article>
-            </div>
-        </div>
-    </div>
+                
     <?php
-    $fetch = 0;
-    if (isset($_POST["insert"])&& isset($_POST["titulo"])) {
+    $fetch=0;
+    if (isset($_POST["insert"])&& isset($_POST["titulo"])&& isset($_POST["cartel"])&& isset($_POST["trailer"])) {
+        $fetch = 2;
         Cartelera::nuevaPelicula("", $_POST["pais"], $_POST["sinopsis"], $_POST["duracion"], $_POST["ano"], $_POST["genero"], $_POST["titulo"], $_POST["director"], $_POST["trailer"], $_POST["cartel"]);
         $fetch = 1;
-    } else {
-        echo "<font color='red'>Introduce todos los datos</font>";
+    } 
+    if($fetch==2) {
+        echo '<div id="msg_error" class="alert alert-danger" role="alert">Introduce todos los datos</div>';
+    }else if($fetch == 1){
+        echo '<div id="msg_ok" class="alert alert-success" role="alert"><center>Nuevo título insertado</center></div>';
     }
-    if($fetch == 1){
-        echo '<center><h3><font color="green">¡Nuevo título insertado!</font></h3></center><br>';
-    }
-    ?><br><br>
+    ?></article>
+    </div>
+</div>
+</div><br><br>
 </body>
 
 </html>

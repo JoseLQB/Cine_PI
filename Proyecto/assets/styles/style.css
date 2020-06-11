@@ -1,13 +1,19 @@
 /* ---- Estilos de la cartelera ---- */
 
 .recuadro{
-    background-color: rgb(177, 177, 177);
+    background: rgb(197, 193, 193);
+    background: -moz-linear-gradient(left, rgb(177, 174, 174) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgb(197, 193, 193)), color-stop(50%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+    background: -webkit-linear-gradient(left, rgb(197, 193, 193) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: -o-linear-gradient(left, rgb(197, 193, 193) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: -ms-linear-gradient(left, rgb(197, 193, 193) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: linear-gradient(to right, rgb(197, 193, 193) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
 }
 
 .logocabecera{
     width: 40px;
     height: 30px;
-    
     filter: invert(100%);
 }
 .box-shadow:hover{
@@ -45,6 +51,7 @@
 
 .imgCarro{
     border: rgb(48, 48, 48) 5px solid;
+    object-fit: cover;
 }
 
 .rowCont{
@@ -90,7 +97,8 @@ iframe{
 /* ---- Estilos de la sección del administrador ---- */
 
 .admin{
-    background: url("../images/fondoAdmin.png");
+    /**background: url("../images/fondoAdmin.png");*/
+    background: black;
 }
 .cont1{
     background-color: gray;
@@ -111,7 +119,7 @@ iframe{
     background-color: beige;
 }
 
-/* ---- Estilos contactos*/
+/* ---- Estilos contactos ---- */
 
 .phone{
     width: 25px;
@@ -121,8 +129,14 @@ iframe{
     width: 27px;
     padding-bottom: 2px;
 }
-.form{
+.formu{
     width: 35px;
+}
+
+/* ---- Estilos contactos ---- */
+.icoReg{
+    width: 35px;
+    padding-bottom: 3px;
 }
 
 /* ---- Estilos del nav superior ---- */
@@ -161,7 +175,6 @@ button:focus {
 .goPerfil:visited {
     color:white;
 }
-
 
 /* ---- Estilos del footer ---- */
 

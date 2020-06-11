@@ -26,14 +26,14 @@
         ?>
       </ul>
       <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-        <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
+        <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"></a></li>
 
         <!--Formulario de login-->
         <?php
         if (!isset($_SESSION["usuario"])) { ?>
           <li class="dropdown order-1">
-            <a href="registro.php">Registrarse</a>&nbsp &nbsp
-            <a href="login.php" class="btn btn-primary" href="#" role="button">Login</a>
+            <a href="registro.php" class="btn btn-light" role="button">Registrarse</a>&nbsp &nbsp
+            <a href="login.php" class="btn btn-success" href="#" role="button"><i class="fa fa-address-book-o"></i>&nbsp Login</a>
             <ul class="dropdown-menu dropdown-menu-right mt-2">
               <li class="px-3 py-9">
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">

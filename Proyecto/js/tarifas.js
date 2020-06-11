@@ -33,9 +33,11 @@ $(document).ready(function(){
 			var b = $("<b>").text(e.nombre + ": " + e.precio + "€");
 			li1.append(b);
 			var li2 =$("<li>").attr("class", "list-group-item").text(e.descripcion);
-			ul.append(li2);
-			
+			ul.append(li2);	
 		});
+	}
+	function infoTarifas(){
+		
 
 	}
 

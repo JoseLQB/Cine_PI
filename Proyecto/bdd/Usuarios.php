@@ -1,5 +1,11 @@
 <?php 
     require_once("CineDB.php");
+    /**
+     * Usuario
+     * @author Jose Luis Quintanilla Blanco
+     *
+     * Description: Esta clase contiene los métodos que manejan todo lo referente a los datos de los usuarios
+     */
     class Usuario{
         
         public $id;

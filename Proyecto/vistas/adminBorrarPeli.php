@@ -43,7 +43,7 @@ $conexion = CineDB::conectar(); ?>
 
     <?php
     }
-    
+
     $fetch0 = 2;
     if (isset($_POST["deleteConfirm"])) {
         Proyecciones::delete($_POST["id"]);

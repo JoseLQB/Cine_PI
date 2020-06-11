@@ -25,7 +25,6 @@ if (!isset($_SESSION["usuario"])) {
 
 <body>
   <?php include_once("../inc/nav.php") ?><br><br>
-
   <div class="container">
     <div class="row mb-3"></div>
     <div class="row">

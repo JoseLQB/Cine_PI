@@ -3,6 +3,12 @@
 require_once("CineDB.php");
 
 class Tarifas{
+    /**
+     * Tarifa
+     * @author Jose Luis Quintanilla Blanco
+     *
+     * Description: Esta clase contiene los métodos que manejan todo lo referente a los datos de cada tarifa
+     */
 
     public $id;
     public $nombre;

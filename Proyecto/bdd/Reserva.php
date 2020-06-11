@@ -3,6 +3,12 @@ require_once("CineDB.php");
 require_once("Cine.php");
 require_once("Proyecciones.php");
 
+/**
+ * Reserva
+ * @author Jose Luis Quintanilla Blanco
+ *
+ * Description: Esta clase contiene los métodos que manejan todo lo referente a los datos de cada reserva
+ */
 class Reserva{
 
 
