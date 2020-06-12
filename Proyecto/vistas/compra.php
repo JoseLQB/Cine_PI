@@ -55,7 +55,7 @@ require_once("../bdd/Cine.php");?>
           </div>
         </div>
         <div class="col-md-4"><br><br><img class="img-fluid d-block" alt="Cartel" src="<?php echo Cartelera::getCartel($id); ?>" /><br><br>
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Comprar ticket</button><br><br> </div><br><br>
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#myModal">Comprar ticket</button><br><br> </div><br><br>
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@ if (isset($_SESSION["usuario"])) {
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+          <button type="button" class="btn btn-light" data-dismiss="modal">Volver</button>
         </div>
       </div>
 
@@ -96,7 +96,7 @@ if (isset($_SESSION["usuario"])) {
           <h4 class="modal-title">Si quieres comprar entradas para <?php echo  $titulo ?> <a href="login.php"> accede con tu cuenta</a> o <a href="registro.php"> regístrate</a>.</h4>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+          <button type="button" class="btn btn-light" data-dismiss="modal">Volver</button>
         </div>
       </div>
 

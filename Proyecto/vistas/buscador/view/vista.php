@@ -15,57 +15,90 @@ require_once "../model/Funciones.php";
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="../../../assets/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../../../assets/styles/style.css">
 </head>
 
 <body class="admin">
+<script src="../js/efectos.js"></script>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="menu" style="background:black" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" href="../../../vistas/muestra.php"><h4 class="titulo">CINES PI &nbsp<img src="../../../assets/images/pilogo.png" class="logocabecera" alt=""> </h4> </a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+      &#9776;
+    </button>
+    <style>
+      .yellow:hover{
+        color: #FCA311;
+      }
+      .titulo{
+        color: #FCA311;
+        margin-top: 5px;
+      }
+    </style>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="../../../vistas/muestra.php" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="../../../vistas/tarifas.php" class="nav-link ">Tarifas</a></li>
+        <li class="nav-item"><a href="../../../vistas/contacto.php" class="nav-link">Contacto</a></li>
+        <li class="nav-item"><a href="../../../vistas/ubicacion.php" class="nav-link">Ubicación</a></li>
+        <?php
 
-    <script src="../js/efectos.js"></script>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " id="menu" role="navigation">
-        <div class="container">
-            <a class="navbar-brand" href="../../muestra.php">CINES PI  <img src="../../../assets/images/pilogo.png" class="logocabecera" alt=""></a>
-            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                &#9776;
-            </button>
-            <div class="collapse navbar-collapse" id="exCollapsingNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item"><a href="../../muestra.php" class="nav-link">Inicio</a></li>
-                    <li class="nav-item"><a href="../../tarifas.php" class="nav-link">Tarifas</a></li>
-                    <li class="nav-item"><a href="../../contacto.php" class="nav-link">Contacto</a></li>
-                    <li class="nav-item"><a href="../../ubicacion.php" class="nav-link">Ubicación</a></li>
-                    <?php
+        if (isset($_SESSION["admin"])) {
+          if ($_SESSION["admin"] == 1) {
+        ?>
+            <li class="nav-item"><a href="../../../vistas/administracion.php" class="nav-link">Panel de administración</a></li>
 
-                    if (isset($_SESSION["admin"])) {
-                        if ($_SESSION["admin"] == 1) {
-                    ?>
-                            <li class="nav-item"><a href="../../administracion.php" class="nav-link">Panel de administración</a></li>
+        <?php
 
-                    <?php
+          }
+        }
 
-                        }
-                    }
+        ?>
+      </ul>
+      <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+        <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"></a></li>
 
-                    ?>
-                </ul>
-                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-                    <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
+        <!--Formulario de login-->
+        <?php
+        if (!isset($_SESSION["usuario"])) { ?>
+          <li class="dropdown order-1">
+            <a href="registro.php" class="btn btn-light" role="button">Registrarse</a>&nbsp &nbsp
+            <a href="login.php" class="btn btn-warning" href="#" role="button"><i class="fa fa-address-book-o"></i>&nbsp Login</a>
+            <ul class="dropdown-menu dropdown-menu-right mt-2">
+              <li class="px-3 py-9">
+                <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+                  <div class="form-group">
+                    <input id="emailInput" placeholder="Email" name="usuario" class="form-control form-control-sm" type="text" required="">
+                  </div>
+                  <div class="form-group">
+                    <input id="passwordInput" placeholder="Password" name="pass" class="form-control form-control-sm" type="text" required="">
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" name="login" class="btn btn-primary btn-block" value="Aceptar">
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </li>
+        <?php
+        } else { ?>
+          <li class="dropdown order-1">
+            <span class="navbar-brand"> Hola <a href="perfilUsuario.php" class="goPerfil yellow"><?php echo $_SESSION["usuario"] ?></a> </span>
+            <a href="../../../vistas/logoff.php" class="yellow">Cerrar Sesion</a>
 
-                    <!--Formulario de login-->
-                 
-                        <li class="dropdown order-1">
-                            <span class="navbar-brand">Hola <?php echo $_SESSION["usuario"] ?> </span>
-                            <a href="../../logoff.php">Cerrar Sesion</a>
+          </li>
+        <?php
 
-                        </li>
-                 
+        }
 
-                    ?>
-                </ul>
-            </div>
-        </div>
-    </nav><br><br><br>
+        ?>
+      </ul>
+    </div>
+  </div>
+</nav><br><br><br>
 
 
 
@@ -108,53 +141,49 @@ require_once "../model/Funciones.php";
         <br><br>
     </section>
 
-    <footer class="page-footer font-small blue pt-4 footer-busca">
+    
+<footer class="page-footer font-small blue pt-4" style="background:black">
 
-        <div class="container-fluid text-center text-md-left footcent">
+<div class="container-fluid text-center text-md-left footcent" style="background:#14213D">
 
-            <div class="row">
-    <div class="col-md-6 mt-md-0 mt-3"><br>
+  <div class="row">
+    <div class="col-md-6 mt-md-0 mt-3" ><br>
       <h5 class="text-uppercase">CINES PI <img src="../../../assets/images/pilogo.png" class="logocabecera" alt=""></h5>
       <p>Web desarrollada como proyecto integrado de 2º de DAW para el <a id="linkies" href="https://iespoligonosur.org" target="_blank">IES Polígono Sur</a>.</p>
 
-    </div> <hr class="clearfix w-100 d-md-none pb-3">
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">Links de interés</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <table>
-                                <tr>
-                                    <td><a href="https://github.com/JoseLQB/Cine_PI" target="_blank">GitHub </a></td>
-                                    <td><img class="gitLogo" src="../assets/images/github.png" alt=""></td>
-                                </tr>
-                        </li>
-                        <li>
-                            <tr>
-                                <td><a href="https://twitter.com/QBHeller" target="_blank">Twitter</a></td>
-                                <td><img class="ttLogo" src="../assets/images/twitter.png" alt=""></td>
-                            </tr>
-                        </li>
-                        <li>
-                            <tr>
-                                <td><a href="https://github.com/JoseLQB" target="_blank"> Instagram </a></td>
-                                <td><img class="gitLogo" src="../assets/images/insta.png" alt=""></td>
-                            </tr>
-                        </li>
-                        <li>
-                            <tr>
-                                <td><a href="https://github.com/JoseLQB" target="_blank"> Facebook </a></td>
-                                <td><img class="gitLogo" src="../assets/images/fb.png" alt=""></td>
-                            </tr>
-                            </table>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://github.com/JoseLQB">Jose Luis Quintanilla Blanco</a>
-        </div>
-    </footer>
+    </div>
+    <hr class="clearfix w-100 d-md-none pb-3">
+    <div class="col-md-3 mb-md-0 mb-3">
+      <h5 class="text-uppercase">Links de interés</h5>
+      <ul class="list-unstyled">
+        <li>
+          <table>
+          <tr>
+            <td><a href="https://github.com/JoseLQB/Cine_PI" target="_blank">GitHub  </a></td>
+            <td><img class="gitLogo" src="../../../assets/images/github.png" alt=""></td>
+        </tr>
+        </li>
+        <li>
+          <tr>
+            <td><a href="https://github.com/JoseLQB" target="_blank"> Instagram  </a></td>
+            <td><img class="gitLogo" src="../../../assets/images/insta.png"  alt=""></td>
+        </tr>
+        </li>
+        <li>
+          <tr>
+            <td><a href="https://github.com/JoseLQB" target="_blank"> Facebook </a></td>
+            <td><img class="gitLogo"  src="../../../assets/images/fb.png"  alt=""></td>
+        </tr>
+        </table>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer-copyright text-center py-3">© 2020 Copyright:
+  <a href="https://github.com/JoseLQB">Jose Luis Quintanilla Blanco</a>
+</div>
+</footer>
 </body>
 
 </html>

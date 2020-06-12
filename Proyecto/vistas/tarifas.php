@@ -13,7 +13,7 @@ session_start(); ?>
 
 <body>
   <?php include_once("../inc/nav.php"); ?><br><br>
-  <section>
+  <section class="justify-content-around" id="centro"><br>
     <div class="container">
     </div>
   </section><br><br>

@@ -13,11 +13,10 @@ session_start();
   <script src="../js/cartelera.js"></script>
 </head>
 
-<body class="cartelera">
+<body class="cartelera"><br>
   <?php include_once("../inc/nav.php") ?><br><br>
   <div class="py-12">
     <div class="container">
-      <!-------- Slider publicitario -------->
       <div class="row slider">
         <div class="col-md-12 text-warning text-center  d-flex flex-row-reverse">
           <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
@@ -30,20 +29,20 @@ session_start();
               <div class="carousel-item active">
                 <div class="carousel-caption">
                   <div class="opa">
-                    <h4 class="textCarro">Próximos estrenos</h4>
+                    <h4 class="textCarro">Bienvenidos al cine</h4>
                   </div>
                   <div class="opa"><b>
-                      <p class="textCarro">Muy pronto podrás disfrutar de nuevas películas en nuestro cine</p>
+                      <p class="textCarro">Te damos la bienvenida a nuestra web, donde podrás adquirir tus entradas con total seguridad y disfrutar de una gran selección de la mejores películas de todos los tiempos</p>
                     </b></div>
-                </div><img class="d-block w-100 mx-auto imgCarro" src="../assets/images/estrenos.jpg" width="1000" height="400">
+                </div><img class="d-block w-100 mx-auto imgCarro" src="../assets/images/cine.jpg" width="1000" height="400">
               </div>
               <div class="carousel-item "> <img class="d-block w-100 mx-auto imgCarro" src="../assets/images/anime.jpg" width="1200" height="400">
                 <div class="carousel-caption">
                   <div class="opa">
-                    <h4 class="textCarro">Maratón de anime clásico</h4>
+                    <h4 class="textCarro">Nuestra cartelera</h4>
                   </div>
                   <div class="opa"><b>
-                      <p class="textCarro">El mes de agosto haremos un maratón con las mejores películas clásicas de animación japonesa</p>
+                      <p class="textCarro">Tenemos a tu disposición una selección de películas que se irán rotando. Muy pronto también tendremos estrenos</p>
                     </b></div>
                 </div>
               </div>
@@ -64,6 +63,7 @@ session_start();
     </div>
   </div>
   <section id="centro">
+    <!--Contenido generado con jquery-->
   </section>
 </body>
 <?php include_once("../inc/footer.php"); ?>

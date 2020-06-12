@@ -1,14 +1,10 @@
 /* ---- Estilos de la cartelera ---- */
 
 .recuadro{
-    background: rgb(197, 193, 193);
-    background: -moz-linear-gradient(left, rgb(177, 174, 174) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgb(197, 193, 193)), color-stop(50%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
-    background: -webkit-linear-gradient(left, rgb(197, 193, 193) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
-    background: -o-linear-gradient(left, rgb(197, 193, 193) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
-    background: -ms-linear-gradient(left, rgb(197, 193, 193) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
-    background: linear-gradient(to right, rgb(197, 193, 193) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
+    background: #14213D;
+    background-color: #14213D;
+    background-image: url(../images/fondoCuadro.png);
+    border:black 6px solid;
 }
 
 .logocabecera{
@@ -17,10 +13,10 @@
     filter: invert(100%);
 }
 .box-shadow:hover{
-    -webkit-box-shadow: 0px 0px 13px 6px rgba(41,36,41,1);
-    -moz-box-shadow: 0px 0px 13px 6px rgba(41,36,41,1);
-    box-shadow: 0px 0px 13px 6px rgba(41,36,41,1);
-    transition-duration: 0.3s;
+    -webkit-box-shadow: 0px 0px 13px 6px #feffc2;
+    -moz-box-shadow: 0px 0px 13px 6px #feffc2;
+    box-shadow: 0px 0px 13px 6px #feffc2;
+    transition-duration: 0.2s;
 }
 
 .box-shadow:hover .zoom {
@@ -46,11 +42,11 @@
 .opa{
     background-color: whitesmoke;
     opacity: 0.8; 
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .imgCarro{
-    border: rgb(48, 48, 48) 5px solid;
+    border:#14213D 6px solid;
     object-fit: cover;
 }
 
@@ -63,6 +59,10 @@
 
 
 /* ---- Estilos generales ---- */
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
 
 .backConf{
     background: url("../images/fondo.jpg");
@@ -141,6 +141,8 @@ iframe{
 
 /* ---- Estilos del nav superior ---- */
 
+
+
 button:focus {
     outline: 0;
 }
@@ -167,6 +169,7 @@ button:focus {
     top: 0; 
     width: 100%;
     transition: top 0.3s; 
+    font-family: 'Hind Siliguri', sans-serif;
 }     
 .goPerfil:link {
     color:white;
@@ -174,6 +177,10 @@ button:focus {
 
 .goPerfil:visited {
     color:white;
+}
+
+.titulo{
+    font-family: 'Righteous', cursive;
 }
 
 /* ---- Estilos del footer ---- */

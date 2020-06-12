@@ -30,6 +30,7 @@ if (!isset($_SESSION["cantidad"])) {
         unset($_SESSION["cantidad"]);
 
         ?> <div class="col-md-6 order-md-2 intConf">
+            <br>
             <h4 class="d-flex justify-content-between mb-3"> <span class="text-muted"><b>Tu compra</b></span> <span class="badge badge-secondary badge-pill"></span> </h4>
             <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between">
