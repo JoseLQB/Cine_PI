@@ -57,7 +57,7 @@ session_start();
                 <div class="form-group col-md-6"> <input type="text" class="form-control" id="poblacion" placeholder="Población" name="pob"> </div>
               </div>
               <div class="form-group"> <textarea class="form-control" id="mensaje" rows="4" placeholder="Tu mensaje" name="msg" required></textarea> </div>
-              <button class="btn btn-outline-dark envia" type="submit" name="enviaContacto"><i class="fa fa-send-o"></i>Enviar</button>
+              <button class="btn btn-outline-dark envia" type="submit" name="enviaContacto"> Enviar &nbsp;<i class="fa fa-send-o"></i></button>
             </form>
           </div>
         </div>

@@ -26,6 +26,12 @@ $(document).ready(function () {
         var st = $("<h4>").text("Cines PI");
         ad.append(st);
         st.after(arrayDatos[0]+"<br>"+arrayDatos[1]+" CP: "+ arrayDatos[2]+"<br>"+"Telefono: "+arrayDatos[3]);
+        var ad2 = $("<address>").html("<br><br>");
+        div3.append(ad2);
+        var st2 = $("<h5>").html("¿Cómo llegar? <img class='bus' src='../assets/images/bus.png'>")
+        ad2.append(st2);
+        st2.after("Lineas de autobuses :<br>23, 22, 28, 32");
+
         var div4 = $("<div>");
         div4.attr("class", "col-sm-7");
         div2.append(div4);

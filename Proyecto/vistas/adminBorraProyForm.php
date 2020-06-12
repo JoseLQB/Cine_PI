@@ -79,8 +79,7 @@ $conexion = CineDB::conectar(); ?>
 
                                 <form action="adminBorraProyForm.php?varID=<?php echo $_GET["varID"]; ?>" method="post" class="form_insert">
                                     <div class="form-group">
-                                        <label>ID de la Proyección</label>
-                                        <input type="text" class="form-control" name="idProyeccionBlock" placeholder="" value="<?php echo $key->idProyeccion ?>" required disabled>
+                                        <input type="hidden" class="form-control" name="idProyeccionBlock" placeholder="" value="<?php echo $key->idProyeccion ?>" required disabled>
                                         <input type="hidden" class="form-control" name="idProyeccion" placeholder="" value="<?php echo $key->idProyeccion ?>">
                                     </div>
                                     <div class="form-group">
@@ -92,8 +91,7 @@ $conexion = CineDB::conectar(); ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>ID Pelicula</label>
-                                        <input type="text" name="idPeliculaBlock" class="form-control" placeholder="" value="<?php echo $_GET["varID"] ?>" required disabled>
+                                        <input type="hidden" name="idPeliculaBlock" class="form-control" placeholder="" value="<?php echo $_GET["varID"] ?>" required disabled>
                                         <input type="hidden" name="idPelicula" class="form-control" placeholder="" value="<?php echo $_GET["varID"] ?>">
                                     </div>
                                     <div class="form-group">

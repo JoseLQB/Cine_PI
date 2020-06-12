@@ -75,7 +75,8 @@ if (!isset($_SESSION["usuario"])) {
                                                                                 $cantidad = 0;
                                                                                 ?>
             <input type="number" name="cantidad" min="0" max="<?php echo $total ?>" id="" required> 
-            <br><hr><button type="submit" class="btn btn-secondary btn-sm" name="comprar" data-toggle="modal" data-target="#myModal">Comprar</button></h5>
+            <br><hr><button type="submit" class="btn btn-success" name="comprar" data-toggle="modal" data-target="#myModal"><i class="fa fa-cart-plus"></i>&nbsp;Comprar</button>
+          </h5>
           <?php
           $_SESSION["idPro"] = $_POST["idPr"];
           $_SESSION["titulo"] = $titulo;

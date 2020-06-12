@@ -132,11 +132,28 @@ iframe{
 .formu{
     width: 35px;
 }
-
-/* ---- Estilos contactos ---- */
 .icoReg{
     width: 35px;
     padding-bottom: 3px;
+}
+.rowCont{
+    border-radius: 3px;
+}
+/* ---- Estilos ubicación ---- */
+
+.bus{
+    width: 27px;
+}
+
+/* ---- Estilos tarifas ---- */
+
+
+.contTar{
+    margin-bottom: 580px;
+}
+
+.container{
+    border-radius: 3px;
 }
 
 /* ---- Estilos del nav superior ---- */

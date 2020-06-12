@@ -17,7 +17,7 @@ require_once("../bdd/Reserva.php"); ?>
 
 </head>
 
-<body class="backConf">
+<body class="back-Conf">
   <?php include_once("../inc/nav.php")
   ?> <br><br> <?php
               if (!isset($_SESSION["cantidad"])) {
@@ -28,7 +28,7 @@ require_once("../bdd/Reserva.php"); ?>
     <div class="container ">
       <div class="row intConf">
         <div class="col-md-4 order-md-2 intConf">
-          <h4 class="d-flex justify-content-between mb-3"> <span class="text-muted"><b>Tu compra</b></span> <span class="badge badge-secondary badge-pill"></span> </h4>
+          <h4 class="d-flex justify-content-between mb-3"> <span class="text-muted"><br><b>Tu compra</b></span> <span class="badge badge-secondary badge-pill"></span> </h4>
           <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between">
               <div>
@@ -62,7 +62,7 @@ require_once("../bdd/Reserva.php"); ?>
         </div>
         <div class="col-md-8 order-md-1">
           <form action="../controllers/enviaMails.php" method="POST">
-            <h4 class="mb-3"><b>Datos de tu compra</b></h4>
+            <h4 class="mb-3"><br><b>Datos de tu compra</b></h4>
             <hr class="mb-4">
             <h4 class="mb-3"><b>Forma de pago</b></h4>
             <div class="d-block my-3">
@@ -94,12 +94,12 @@ require_once("../bdd/Reserva.php"); ?>
               </div>
             </div>
             <hr class="mb-4">
-            <button type="submit" name="confComprar" class="btn btn-primary btn-lg btn-block">Confirmar compra</button>
+            <button type="submit" name="confComprar" class="btn btn-outline-success btn-lg"><i class="fa fa-cart-arrow-down"></i> Confirmar compra</button>
           </form>
           <br>
         </div>
       </div>
-    </div><br><br><br>
+    </div><br><br>
   </div>
   <?php
   ?>

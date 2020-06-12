@@ -11,12 +11,10 @@ session_start(); ?>
   <title>Tarifas</title>
 </head>
 
-<body>
+<body  class="backConf">
   <?php include_once("../inc/nav.php"); ?><br><br>
   <section class="justify-content-around" id="centro"><br>
-    <div class="container">
-    </div>
-  </section><br><br>
+  </section><br>
 
 </body>
 

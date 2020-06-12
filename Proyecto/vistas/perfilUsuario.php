@@ -17,6 +17,7 @@ if (!isset($_SESSION["usuario"])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <body class="csartelera">
+  <section class="justify-content-around" id="centro">
     <?php include_once("../inc/nav.php") ?><br><br>
     <?php
 
@@ -79,7 +80,7 @@ if (!isset($_SESSION["usuario"])) {
             </div>
         </div>
     </div><br><br>
-    </div>
+    </div></section>
 </body>
 
 <?php include_once("../inc/footer.php"); ?>

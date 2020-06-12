@@ -10,12 +10,12 @@ session_start(); ?>
   <title>Ubicación</title>
 </head>
 
-<body>
-  <?php include_once("../inc/nav.php"); ?><br>
-  <div class="container ub">
+<body  class="backConf">
+  <?php include_once("../inc/nav.php"); ?><br><br><br>
+  <div class="container ub" style="background-color: white;">
     <div class="py-5">
     </div>
-  </div>
+  </div><br>
 </body>
 
 <?php include_once("../inc/footer.php"); ?>

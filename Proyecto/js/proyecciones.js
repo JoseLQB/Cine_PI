@@ -12,6 +12,11 @@ $(document).ready(function () {
         }
     });
 
+    //Convierte un texto de la forma 2017-01-10 a la forma 10/01/2017
+    function formatoFecha(fecha){
+        return fecha.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
+    }
+    
     //Genera la información de cada proyección que podrán ver todos los usuarios
     function proyeccionesUser(json){
         var li = $("<li>");
@@ -20,7 +25,7 @@ $(document).ready(function () {
         json.forEach(e =>{
             if(e.idPelicula ==url2[1]){
                 var p = $("<p>");
-                p.attr("class", "my-1 proy").html(e.fechaProyeccion + ' - <img class="reloj" src="../assets/images/reloj.png" alt=""> - ' + e.horaProyeccion);
+                p.attr("class", "my-1 proy").html(formatoFecha(e.fechaProyeccion) + ' - <img class="reloj" src="../assets/images/reloj.png" alt=""> - ' + e.horaProyeccion);
                 $(li).append(p);
 
             }
@@ -36,7 +41,7 @@ $(document).ready(function () {
                 form.attr("method", "post");
                 form.attr("action", "compraForm.php?varID="+e.idPelicula);
                 $(".modal-body").append(form);
-                var p =$("<p>").text(e.fechaProyeccion + " " + e.horaProyeccion);
+                var p =$("<p>").html(formatoFecha(e.fechaProyeccion) + ' - <img class="reloj" src="../assets/images/reloj.png" alt=""> - ' + e.horaProyeccion);
                 form.append(p);
                 var p2 =$("<p>")
                 var span = $("<span>");

@@ -68,8 +68,7 @@ $conexion = CineDB::conectar(); ?>
                         <h4 class="card-title mb-4 mt-1 text-center">Estás editando <?php echo '"' . Cartelera::getTitulo($_POST["idOc"]) . '"' ?></h4>
                         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_insert">
                             <div class="form-group">
-                                <label>ID</label>
-                                <input type="text" class="form-control" name="idDis" placeholder="" value="<?php echo $_POST["idOc"] ?>" disabled required>
+                                <input type="hidden" class="form-control" name="idDis" placeholder="" value="<?php echo $_POST["idOc"] ?>" disabled required>
                                 <input type="hidden" class="form-control" name="id" placeholder="" value="<?php echo $_POST["idOc"] ?>" require>
                             </div>
                             <div class="form-group">

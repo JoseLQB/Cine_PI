@@ -14,12 +14,12 @@ $(document).ready(function(){
 	//Devuelve el contenido ordenado del json recibido
 	function infoTarifas(json){
 		var div1 = $("<div>");
-		div1.attr("class", "container");
+		div1.attr("class", "container ").attr("style","background-color: white;").html("<br>");
 		$("section").append(div1);
 		var div2 =$("<div>");
-		div2.attr("class", "row");
+		div2.attr("class", "row ");
 		div1.append(div2);
-		var div3 =$("<div>").attr("class", "col-md-6");
+		var div3 =$("<div>").attr("class", "col-md-6 contTar");
 		div2.append(div3);
 		var h3 = $("<h3>").text("Tarifas");
 		div3.append(h3);
