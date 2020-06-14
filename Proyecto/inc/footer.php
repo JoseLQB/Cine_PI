@@ -1,4 +1,4 @@
-
+<!--Footer con información sobre la web y el desarrollador-->
 <footer class="page-footer font-small blue pt-4" style="background:black">
 
 <div class="container-fluid text-center text-md-left footcent" style="background:#14213D">

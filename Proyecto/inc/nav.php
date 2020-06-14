@@ -21,7 +21,7 @@
         <li class="nav-item"><a href="contacto.php" class="nav-link">Contacto</a></li>
         <li class="nav-item"><a href="ubicacion.php" class="nav-link">Ubicación</a></li>
         <?php
-
+      //Enlace exclusivo para el administrador
         if (isset($_SESSION["admin"])) {
           if ($_SESSION["admin"] == 1) {
         ?>
@@ -37,7 +37,7 @@
       <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
         <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"></a></li>
 
-        <!--Formulario de login-->
+        <!--Formulario para acceder al login-->
         <?php
         if (!isset($_SESSION["usuario"])) { ?>
           <li class="dropdown order-1">

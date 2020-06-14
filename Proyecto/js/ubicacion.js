@@ -39,9 +39,5 @@ $(document).ready(function () {
         mapa.attr("class", "map").attr("src", arrayDatos[4]).attr("width","600").attr("height","450").attr("frameborder","0").attr("style","border:0;").attr("allowfullscreen","").attr("aria-hidden","false").attr("tabindex","0");
         div4.append(mapa);
     }
-
-    function comoLLegar(){
-
-    }
 });
 

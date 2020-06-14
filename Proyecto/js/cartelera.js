@@ -10,8 +10,6 @@ $(document).ready(function () {
     });
 
     ///Genera el contenido de la cartelera para la página principal
-
-
     function cartelera(json){
         var div1 = $("<div>");
         div1.attr("class", "py-4 fuera");

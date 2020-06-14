@@ -16,6 +16,9 @@
 <!--Fuente del nav-->
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Righteous&display=swap" rel="stylesheet">
 
+<!--Fuente del título del slider-->
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
 <!--Enlace al favicon-->
 <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
 

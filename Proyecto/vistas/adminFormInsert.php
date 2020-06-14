@@ -56,8 +56,7 @@ if ($fetch == 1) {
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>ID Pelicula</label>
-                            <input type="text" name="idPelicula" class="form-control" placeholder="" disabled value="<?php echo $_GET["varID"] ?>" required>
+                            <input type="hidden" name="idPelicula" class="form-control" placeholder="" disabled value="<?php echo $_GET["varID"] ?>" required>
                         </div>
                         <div class="form-group">
                             <label>Fecha de la proyección</label>

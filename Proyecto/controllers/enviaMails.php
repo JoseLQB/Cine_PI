@@ -7,7 +7,7 @@ require "mailApi/SMTP.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-
+//Envía mail al admin a través del formulario de contacto
 if(isset($_POST["enviaContacto"])){
     $nombre =$_POST["nombre"];
     $apellidos =$_POST["apellidos"];
@@ -36,6 +36,7 @@ if(isset($_POST["enviaContacto"])){
         header("Location:../vistas/contacto.php?conf=yes");
     }
 
+//Envía mail al usuario con la entrada reservada
 }elseif(isset($_POST["confComprar"])) {
     $oMail = new PHPMailer();
     $oMail->isSMTP();

@@ -29,7 +29,7 @@ session_start();
               <div class="carousel-item active">
                 <div class="carousel-caption">
                   <div class="opa">
-                    <h4 class="textCarro">Bienvenidos al cine</h4>
+                    <h4 class="textCarro1">Bienvenidos al cine</h4>
                   </div>
                   <div class="opa"><b>
                       <p class="textCarro">Te damos la bienvenida a nuestra web, donde podrás adquirir tus entradas con total seguridad y disfrutar de una gran selección de la mejores películas de todos los tiempos</p>
@@ -39,7 +39,7 @@ session_start();
               <div class="carousel-item "> <img class="d-block w-100 mx-auto imgCarro" src="../assets/images/anime.jpg" width="1200" height="400">
                 <div class="carousel-caption">
                   <div class="opa">
-                    <h4 class="textCarro">Nuestra cartelera</h4>
+                    <h4 class="textCarro1">Nuestra cartelera</h4>
                   </div>
                   <div class="opa"><b>
                       <p class="textCarro">Tenemos a tu disposición una selección de películas que se irán rotando. Muy pronto también tendremos estrenos</p>
@@ -49,7 +49,7 @@ session_start();
               <div class="carousel-item"> <img class="d-block w-100 mx-auto imgCarro" src="../assets/images/clint.jpeg" width="1000" height="400">
                 <div class="carousel-caption">
                   <div class="opa">
-                    <h4 class="textCarro">Sorteo de verano</h4>
+                    <h4 class="textCarro1">Sorteo de verano</h4>
                   </div>
                   <div class="opa"><b>
                       <p class="textCarro">Durante todo el mes de julio, todos los usuarios que compren más de dos entradas entrarán en un sorteo de un viaje al desierto de las Termópilas en Almería, donde se rodaron los grandes clásicos del spagetti western</p>
