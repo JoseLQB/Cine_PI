@@ -193,7 +193,7 @@ button:focus {
 	line-height:100px;
 }
 #menu {
-    background-color: #333; 
+    background-color: rgb(0, 0, 0); 
     position: fixed; 
     top: 0; 
     width: 100%;
@@ -247,18 +247,18 @@ footer{
 /* ----------   Buscador admin   --------------- */
 
 .sec-busca{
-    background-image: url("../images/fondoAdmin.png");
+    background-color: #FCA311;
 }
 
 .img-busca{
     border-radius:1%;
 }
 .cont-busca{
-    background-image: url("../images/fondoAdmin.png");
+    background-color: #FCA311;
 }
 
 .admin{
-    background-image: url("../images/fondoAdmin.png");
+    background-color: #FCA311;
 }
 
 .caja1{

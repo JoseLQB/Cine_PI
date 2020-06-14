@@ -16,6 +16,7 @@ $conexion = CineDB::conectar(); ?>
     <title>Insertar película</title>
 </head>
     <div class="container">
+<?php include_once("../inc/navAdmin.php") ?>
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
 <body class="admin"><br><a href="buscador/buscar.php" target="_blank" class=" text-center"><h3>Buscador de ayuda</h3></a>

@@ -17,6 +17,7 @@ $conexion = CineDB::conectar(); ?>
 </head>
 
 <body class="admin">
+<?php include_once("../inc/navAdmin.php") ?>
     <?php
     $fetch = 0;
     if (isset($_POST["delete"])) { ?>

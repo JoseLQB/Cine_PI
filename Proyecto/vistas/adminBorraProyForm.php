@@ -19,6 +19,7 @@ $conexion = CineDB::conectar(); ?>
 </head>
 
 <body class="admin">
+<?php include_once("../inc/navAdmin.php") ?>
     <?php
     if (isset($_POST["delete"])) {
         Proyecciones::deletebyProy($_GET["varID"], $_POST["idPr"]);

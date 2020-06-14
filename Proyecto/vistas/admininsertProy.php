@@ -16,6 +16,7 @@ $conexion = CineDB::conectar(); ?>
 </head>
 
 <body class="admin">
+<?php include_once("../inc/navAdmin.php") ?>
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
