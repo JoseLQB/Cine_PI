@@ -26,7 +26,7 @@ require_once("../bdd/CineDB.php"); ?>
                         </div>
                         <div class="form-group">
                             <label>Contraseña</label>
-                            <input type="password" name="pass" class="form-control" placeholder="Contraseña">
+                            <input type="password" name="pass" class="form-control" placeholder="Contraseña" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" title="La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.">
                         </div>
                         <div class="form-group">
                             <label>Repite la contraseña</label>

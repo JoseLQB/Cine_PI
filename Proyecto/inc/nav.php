@@ -16,7 +16,7 @@
     </style>
     <div class="collapse navbar-collapse" id="exCollapsingNavbar">
       <ul class="nav navbar-nav">
-        <li class=""><a href="muestra.php" class="nav-link">Inicio</a></li>
+        <li class=""><a href="muestra.php" class="nav-link btn-menu">Inicio</a></li>
         <li class="nav-item"><a href="tarifas.php" class="nav-link ">Tarifas</a></li>
         <li class="nav-item"><a href="contacto.php" class="nav-link">Contacto</a></li>
         <li class="nav-item"><a href="ubicacion.php" class="nav-link">Ubicación</a></li>
