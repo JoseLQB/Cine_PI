@@ -20,7 +20,7 @@ if (!isset($_SESSION["usuario"]) || ($_SESSION["admin"] == 0)) {
       <div class="row">
         <div class="col-sm-12">
           <br><a href="buscador/buscar.php" target="_blank" class=" text-center">
-            <h3>Buscador de ayuda</h3>
+            <h3> Buscador de ayuda  <i class="fa fa-search"></i></h3>
           </a>
           <br>
           <h1 class=" text-center">ADMINISTRACIÓN DE CARTELERA</h1>
@@ -31,13 +31,13 @@ if (!isset($_SESSION["usuario"]) || ($_SESSION["admin"] == 0)) {
       </div><br>
       <div class="row">
         <div class="col-sm-4 text-center">
-          <a href="adminsertPeli.php"><button type="button" class="btn btn-primary btn-lg">Insertar Película</button></a>
+          <a href="adminsertPeli.php"><button type="button" class="btn btn-primary btn-lg"><i class="fa fa-file-movie-o"></i>&nbsp;Insertar Película</button></a>
         </div>
         <div class="col-sm-4 text-center">
-          <a href="adminBorrarPeli.php"><button type="button" class="btn btn-primary btn-lg">Borrar | Actualizar</button></a>
+          <a href="adminBorrarPeli.php"><button type="button" class="btn btn-primary btn-lg"><i class="fa fa-wrench"></i>&nbsp;Borrar | Actualizar</button></a>
         </div>
         <div class="col-sm-4 text-center">
-          <a href="adminListado.php"><button type="button" class="btn btn-primary btn-lg">Ver Listado</button></a>
+          <a href="adminListado.php"><button type="button" class="btn btn-primary btn-lg"><i class="fa fa-list-ul"></i>&nbsp;Ver Listado </button></a>
         </div>
       </div><br><br>
       <hr><br>
@@ -53,13 +53,13 @@ if (!isset($_SESSION["usuario"]) || ($_SESSION["admin"] == 0)) {
       </div><br>
       <div class="row">
         <div class="col-sm-4 text-center">
-          <a href="admininsertProy.php"><button type="button" class="btn btn-primary btn-lg">Insertar Proyeccón</button></a>
+          <a href="admininsertProy.php"><button type="button" class="btn btn-primary btn-lg"><i class="fa fa-file-movie-o"></i>&nbsp;Insertar Proyeccón</button></a>
         </div>
         <div class="col-sm-4 text-center">
-          <a href="adminBorraProy.php"><button type="button" class="btn btn-primary btn-lg">Borrar | Actualizar</button></a>
+          <a href="adminBorraProy.php"><button type="button" class="btn btn-primary btn-lg"><i class="fa fa-wrench"></i>&nbsp;Borrar | Actualizar</button></a>
         </div>
         <div class="col-sm-4 text-center">
-          <a href="adminListadoProy.php"><button type="button" class="btn btn-primary btn-lg">Ver Todas</button></a>
+          <a href="adminListadoProy.php"><button type="button" class="btn btn-primary btn-lg"><i class="fa fa-list-ul"></i>&nbsp;Ver Todas</button></a>
         </div>
       </div><br><br>
       <hr><br>

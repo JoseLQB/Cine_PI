@@ -43,9 +43,9 @@ require_once("../bdd/CineDB.php"); ?>
                     <?php
                     if (isset($_POST["regis"]) && $_POST["usuario"] != "" && $_POST["pass"] != "" && $_POST["passc"] != "") {
                         $usuario = $_POST["usuario"];
-                        $pass = $_POST["pass"];
+                        $pass = md5($_POST["pass"]);
                         $mail = $_POST["mail"];
-                        $passc = $_POST["passc"];
+                        $passc = md5($_POST["passc"]);
                         $conn = CineDB::conectar();
                         if ($pass == $passc) {
                             try {

@@ -19,7 +19,7 @@ $conexion = CineDB::conectar(); ?>
 <?php include_once("../inc/navAdmin.php") ?>
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
-<body class="admin"><br><a href="buscador/buscar.php" target="_blank" class=" text-center"><h3>Buscador de ayuda</h3></a>
+<body class="admin"><br><a href="buscador/buscar.php" target="_blank" class=" text-center"><h3>Buscador de ayuda &nbsp;<i class="fa fa-search"></i></h3></a>
                 <article class="card-body">
                     <h4 class="card-title mb-4 mt-1 text-center">Inserta los datos de la película</h4>
                     <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_insert">
@@ -84,5 +84,7 @@ $conexion = CineDB::conectar(); ?>
 </div>
 </div><br><br>
 </body>
+
+<?php include_once("../inc/footer.php"); ?>
 
 </html>

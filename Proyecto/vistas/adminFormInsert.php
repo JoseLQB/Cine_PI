@@ -18,36 +18,46 @@ $conexion = CineDB::conectar(); ?>
 
 <?php
 $fetch = 0;
+$insert = "";
 if (isset($_POST["insert"])) {
     $fetch = 2;
-    $comprueba = Proyecciones::consultaIdProy($_POST["idProyeccion"]);
+    //Esto soluciona un error que cometí al crear la base de datos y creaba un conflicto a la hora de introducir la id de la proyección
+    $comprueba = 0;
     if ($comprueba == 0) {
-        Proyecciones::nuevaProyeccion($_POST["idProyeccion"], $_POST["idSala"], $_GET["varID"], $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
+
+        $arr = Proyecciones::getProyecciones();
+        var_dump($arr);
+        $max = 0;
+        foreach ($arr as $key) {
+            if ($key->idProyeccion >= $max) {
+                $max = $key->idProyeccion + 1;
+            }
+        }
+        Proyecciones::nuevaProyeccion($max, $_POST["idSala"], $_GET["varID"], $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
         $fetch = 1;
+        $insert = '<div id="msg_ok" class="alert alert-danger" role="alert" >Ha habido un problema</div>';
     } else {
-        echo "<center><h3><font color='red'>Ya existe una proyección con esa ID</font></center><br>";
+        $mensaje = "Errror";
     }
 }
 if ($fetch == 1) {
-    echo '<center><h3><font color="green">¡Nueva proyección insertada!</font></h3></center><br>';
+    $insert = '<div id="msg_ok" class="alert alert-success" role="alert" >Proyección insertada</div>';
 }
 ?>
 
 <body class="admin">
-<?php include_once("../inc/navAdmin.php") ?>
+    <?php include_once("../inc/navAdmin.php") ?>
     <div class="container">
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
                 <article class="card-body">
-                    <h4 class="card-title mb-4 mt-1 text-center">Inserta una proyección para la película <?php
-                                                                                                            $titulo = Cartelera::getTitulo($_GET["varID"]);
-                                                                                                            echo '"' . $titulo . '"' ?></h4>
+                    <h4 class="card-title mb-4 mt-1 text-center"><?php echo $insert ?>Inserta una proyección para la película <?php
+                                                                                                                                $titulo = Cartelera::getTitulo($_GET["varID"]);
+                                                                                                                                echo '"' . $titulo . '"' ?></h4>
 
                     <form action="adminFormInsert.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_insert">
-                        <div class="form-group">
-                            <label>ID de la Proyección</label>
-                            <input type="text" class="form-control" name="idProyeccion" placeholder="" required>
-                        </div>
+
+                        <label for=""></label>
                         <div class="form-group">
                             <label>Sala</label>
                             <select name="idSala">
@@ -87,5 +97,7 @@ if ($fetch == 1) {
         </div>
     </div><br><br>
 </body>
+
+<?php include_once("../inc/footer.php"); ?>
 
 </html>

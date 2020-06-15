@@ -29,7 +29,7 @@ class Valoraciones{
     }
 
     /**
-     * Devuelve 1 o 0 dependiendo de si existe un usuario en la tabla valoraciones
+     * Devuelve 1 o 0 dependiendo de si existe un usuario en la tabla valoraciones para que no se repitan y tanto la media como a la hora de aparecer en la vista no haya conflicto
      * 
      * @param int $idUsuario id del usuario
      * @param int $idPelicula id de la película
@@ -37,7 +37,7 @@ class Valoraciones{
      */
     public static function getConfirm($idUsuario, $idPelicula){
         $conexion = CineDB::conectar();
-        $sql = "SELECT * FROM valoracion WHERE idPelicula = $idPelicula";
+        $sql = "SELECT * FROM valoracion WHERE idPelicula = $idPelicula AND $idUsuario = $idUsuario";
         $consulta= $conexion->query($sql)->fetch();
         $confirm = 0;
         if($consulta>0){
@@ -63,10 +63,10 @@ class Valoraciones{
         $sql = "UPDATE valoracion SET 
                 idUsuario = :idUsuario,
                 idPelicula = :idPelicula,
-                valoracion = :valoracion WHERE idPelicula = $idPelicula";
+                valoracion = :valoracion WHERE idPelicula = $idPelicula AND idUsuario = $idUsuario";
         $sentencia = $conexion->prepare($sql);
-        $sentencia->bindParam(':idPelicula', $idPelicula);
         $sentencia->bindParam(':idUsuario', $idUsuario);
+        $sentencia->bindParam(':idPelicula', $idPelicula);
         $sentencia->bindParam(':valoracion', $valoracion);
         $sentencia->execute();
         

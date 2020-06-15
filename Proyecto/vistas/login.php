@@ -57,8 +57,8 @@ require("../bdd/CineDB.php");
                             $sql = "SELECT * FROM usuarios WHERE nombre = :usuarios AND pass= :pass";
                             $resultado = $conn->prepare($sql);
                             $login = $_POST["usuario"];
-                            $pass = $_POST["pass"];
-                            $pass = $pass;
+                            $pass = md5($_POST["pass"]);
+                            echo $pass;
                             $resultado->bindValue(":usuarios", $login);
                             $resultado->bindValue(":pass", $pass);
                             $resultado->execute();
@@ -75,7 +75,7 @@ require("../bdd/CineDB.php");
                             } else {
                     ?> <br>
                                 <div id="msg_error" class="alert alert-danger" role="alert">
-                                    <center>El nombre de usuario ya existe</center>
+                                    <center>Ususario y/o contraseña incorrecto/s</center>
                                 </div>
 
                     <?php

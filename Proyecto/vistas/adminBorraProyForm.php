@@ -51,11 +51,11 @@ $conexion = CineDB::conectar(); ?>
                             <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
 
                                 <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
-                                <button type="submit" name="update" class="btn btn-success btn-block">Actualizar</button></form><br><?php
+                                <button type="submit" name="update"  class="btn btn-success btn-block">Actualizar</button></form><br><?php
 
                                                                                                                                 }
                                                                                                                             }
-                                                                                                                                    ?>
+                    $r=$_GET["varID"]?>
                     <hr>
                     </ul>
                     <a href="administracion.php">Volver a administración</a><br>
@@ -64,21 +64,20 @@ $conexion = CineDB::conectar(); ?>
                 </article>
             </div>
         </div>
-    </div>
+    </div><br>
     <?php
     if (isset($_POST["update"])) {
 
         foreach ($var as $key) {
             if ($key->idProyeccion == $_POST["idPr"]) {
     ?>
-
                 <div class="container">
                     <div class="row d-flex justify-content-around mt-5">
                         <div class="card col-md-6 col-md-offset-6">
                             <article class="card-body">
-                                <h4 class="card-title mb-4 mt-1 text-center">Actualizando la proyección número <?php echo $key->idProyeccion ?></h4>
+                                <h4 class="card-title mb-4 mt-1 text-center" >Actualizando la proyección número <?php echo $key->idProyeccion ?></h4>
 
-                                <form action="adminBorraProyForm.php?varID=<?php echo $_GET["varID"]; ?>" method="post" class="form_insert">
+                                <form action="adminBorraProyForm.php?varID=<?php echo $r; ?>" method="post" class="form_insert">
                                     <div class="form-group">
                                         <input type="hidden" class="form-control" name="idProyeccionBlock" placeholder="" value="<?php echo $key->idProyeccion ?>" required disabled>
                                         <input type="hidden" class="form-control" name="idProyeccion" placeholder="" value="<?php echo $key->idProyeccion ?>">
@@ -92,8 +91,8 @@ $conexion = CineDB::conectar(); ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="hidden" name="idPeliculaBlock" class="form-control" placeholder="" value="<?php echo $_GET["varID"] ?>" required disabled>
-                                        <input type="hidden" name="idPelicula" class="form-control" placeholder="" value="<?php echo $_GET["varID"] ?>">
+                                        <input type="hidden" name="idPeliculaBlock" class="form-control" placeholder="" value="<?php echo $r ?>" required disabled>
+                                        <input type="hidden" name="idPelicula" class="form-control" placeholder="" value="<?php echo $r ?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Fecha de la proyección</label>
@@ -132,5 +131,7 @@ $conexion = CineDB::conectar(); ?>
 
     ?>
 </body>
+
+<?php include_once("../inc/footer.php"); ?>
 
 </html>

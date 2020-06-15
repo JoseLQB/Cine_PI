@@ -52,36 +52,66 @@ if (!isset($_SESSION["usuario"])) {
 
                         </div>
                     </div>
-                    <img class="img-fluid d-block" src="https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,643,1000_AL_.jpg">
+                    <img class="img-fluid d-block" src="../assets/images/fondoVoto.jpg">
                 </div>
-                <div class="col-md-4"><?php
+                <div class="p-4 col-md-4"><?php
                                         //Controla que, en caso de que haya comprado varias sesiones de la misma película solo aparezca una para votar
                                         $cont = 0;
                                         $tituloNoRepeat = [];
-
+                                        //Genera el formulario con todas las películas para votar.
                                         foreach ($arrayReservas as $k) {
                                             $titulo = Cartelera::getTitulo(Proyecciones::getIDPeliByPro($k[0]));
                                             $tituloNoRepeat[$cont] = $titulo;
                                             $cont++;
-                                        }
-                                        $lista_simple = array_values(array_unique($tituloNoRepeat));
+                                            //Solo se pueden votar las películas que ya se han visto
+                                            if (Proyecciones::getFechaProyeccionByPro($k[0])> date("Y-m-d")) {
+                                                echo "<h4>".$titulo."</h4>";?>
+                                                <form action='perfilUsuario.php' method='post'>
+                                                <div class="form-group">
+                                                    <label for="">Nota</label>
+                                                    <input type="number" disabled name="valoracion" min="0" max="10" class="form-control" placeholder="Todavía no puedes votar esta película">
+                                                </div>
+                                                <button type="submit" disabled name="val" class="btn mt-4 btn-block btn-outline-dark p-2"><b>Valorar</b></button><hr>
+                                                <input type="hidden" name="idPeli" value="<?php echo Cartelera::getIDbyTitle($titulo)  ?>">
+
+                                                </form>
+                                                
+                                                <?php
+
+                                            } else{
+                                                echo "<h4>".$titulo."</h4>";?>
+                                                <form action='perfilUsuario.php' method='post'>
+                                                <div class="form-group">
+                                                    <label for="">Nota</label>
+                                                    <input type="number" name="valoracion" min="0" max="10" class="form-control" placeholder="<?php echo Valoraciones::getVal($_SESSION["id"], Cartelera::getIDbyTitle($titulo))[0]; ?>">
+                                                </div>
+                                                <button type="submit" name="val" class="btn mt-4 btn-block btn-outline-dark p-2"><b>Valorar</b></button><hr>
+                                                <input type="hidden" name="idPeli" value="<?php echo Cartelera::getIDbyTitle($titulo)  ?>">
+
+                                                </form>
+                                                
+                                                <?php
+                                            }
+                                        }/*
+                                       $lista_simple = array_values(array_unique($tituloNoRepeat));
                                         foreach ($lista_simple as $v) {
                                             echo "<form action='perfilUsuario.php' method='post'><br><h4 class=''>" . $v
                                         ?></h4>
                         <!--disabled-->
                         <div class="form-group"> <label>Nota</label> <input type="number" 
-                        <?php /* Solo se podrá votar a partir del día que se emite la película */ 
-                        if (Proyecciones::getFechaProyeccionByPro($k[0]) > date("Y-m-d")) {
+                        <?php // Solo se podrá votar a partir del día que se emite la película 
+                        
+                        if (Proyecciones::getFechaProyeccionByPro($k[0])> date("Y-m-d")) {
                             echo "disabled";
                         } ?> 
                         name="valoracion" min="0" max="10" class="form-control" placeholder="<?php echo Valoraciones::getVal($_SESSION["id"], Cartelera::getIDbyTitle($v))[0]; ?>"> </div> <button type="submit" name="val" class="btn mt-4 btn-block btn-outline-dark p-2"><b>Valorar</b></button>
                         <input type="hidden" name="idPeli" value="<?php echo Cartelera::getIDbyTitle($v)  ?>">
                         </form>
                     <?php
-                                        }
+                    }
 
 
-                    ?>
+                    */?>
                 </div>
             </div>
         </div><br><br>

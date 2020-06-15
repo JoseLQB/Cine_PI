@@ -121,8 +121,8 @@ require_once "../model/Funciones.php";
             <li class="dropdown order-1">
               <span class="navbar-brand"><svg class="bi bi-film" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" style="margin-top: -5px;" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0h8v6H4V1zm8 8H4v6h8V9zM1 1h2v2H1V1zm2 3H1v2h2V4zM1 7h2v2H1V7zm2 3H1v2h2v-2zm-2 3h2v2H1v-2zM15 1h-2v2h2V1zm-2 3h2v2h-2V4zm2 3h-2v2h2V7zm-2 3h2v2h-2v-2zm2 3h-2v2h2v-2z" />
-                </svg> Hola <a href="perfilUsuario.php" class="goPerfil yellow"><?php echo $_SESSION["usuario"] ?></a> </span>
-              <a href="logoff.php" class="yellow">Cerrar Sesion</a>
+                </svg> Hola <a href="../../perfilUsuario.php" class="goPerfil yellow"><?php echo $_SESSION["usuario"] ?></a> </span>
+              <a href="../../logoff.php" class="yellow">Cerrar Sesion</a>
 
             </li>
           <?php
@@ -133,7 +133,7 @@ require_once "../model/Funciones.php";
         </ul>
       </div>
     </div>
-  </nav><br><br><br><br><br>
+  </nav><br><br><br><br>
 
 
 
@@ -157,7 +157,7 @@ require_once "../model/Funciones.php";
         <br>
         <br>
         <div class="col-md-2 text-center">
-          <input type="submit" class="btn btn-primary btn-block" value="Buscar"><br>
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-search"></i>&nbsp;Buscar</button><br>
         </div>
         <div class="offset-2"></div>
         </form>

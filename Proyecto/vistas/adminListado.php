@@ -37,4 +37,6 @@ $conexion = CineDB::conectar(); ?>
     </div><br><br>
 </body>
 
+<?php include_once("../inc/footer.php"); ?>
+
 </html>

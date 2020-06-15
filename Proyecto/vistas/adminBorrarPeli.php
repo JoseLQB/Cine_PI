@@ -138,9 +138,9 @@ $conexion = CineDB::conectar(); ?>
             <div class="row d-flex justify-content-around mt-5">
                 <div class="card col-md-6 col-md-offset-6">
                     <article class="card-body"><br><a href="buscador/buscar.php" target="_blank" class=" text-center">
-                            <h3>Buscador de ayuda</h3>
+                            <h3>Buscador de ayuda &nbsp;<i class="fa fa-search"></i></h3><br>
                         </a>
-                        <h5>Películas:</h5>
+                        <h5>Películas:</h5><br>
                         <?php
                         $lista  = Cartelera::creaListado();
                         ?> <div class="row"><?php
@@ -168,5 +168,7 @@ $conexion = CineDB::conectar(); ?>
         </div><br><br>
 
 </body><br><br>
+
+<?php include_once("../inc/footer.php"); ?>
 
 </html>

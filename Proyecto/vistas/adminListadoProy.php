@@ -22,12 +22,12 @@ $conexion = CineDB::conectar(); ?>
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
                 <article class="card-body">
-                    <h4>Peliculas con poyecciones</h4>
+                    <h4>Peliculas con poyecciones</h4><br>
                     <?php
                     $lista  = Cartelera::creaListado();
                     ?> <ul><?php
                     foreach ($lista as $k) {
-                       echo "<li>".$k->idPelicula . " - ".$k->titulo."</a></li>";
+                       echo "<li>".$k->idPelicula . " - ".$k->titulo."</a></li><br>";
                     }
 
                     ?><hr></ul>
@@ -38,5 +38,7 @@ $conexion = CineDB::conectar(); ?>
         </div>
     </div><br><br>
 </body>
+
+<?php include_once("../inc/footer.php"); ?>
 
 </html>

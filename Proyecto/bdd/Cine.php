@@ -84,11 +84,13 @@ class Cartelera{
         $conexion = CineDB::conectar();
         $query = "SELECT * FROM pelicula";
         $consulta = $conexion->query($query);
+        
         while($registro = $consulta->fetch(PDO::FETCH_ASSOC)){
 
             $cartel[]= new Cartelera($registro["idPelicula"], $registro["pais"], $registro["genero"], $registro["duracion"], $registro["anEstreno"], $registro["sinopsis"], $registro["titulo"], $registro["director"], $registro["trailer"], $registro["cartel"]);     
         }
         return $cartel;
+
     }
 
     /**
