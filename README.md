@@ -2,8 +2,7 @@
 
 Cine PI es una aplicación web que se divide en dos partes; una permite la realización de reservas online de un cine a un usuario normal, y otra para un administrador que se encarga de administrar todos los contenidos de la web.
 La aplicación ha sido desarrollada como proyecto integrado de Desarrollo de Aplicaciones Web (DAW) para el IES Polígono Sur (Sevilla). 
-
-![enter image description here](https://i.ibb.co/QfnDDg5/portadawe.png)
+<p align="center"><img src="https://i.ibb.co/QfnDDg5/portadawe.png" aling="center"></p>
 
 
 
