@@ -26,7 +26,7 @@ $conexion = CineDB::conectar(); ?>
                     $lista  = Cartelera::creaListado();
                     ?> <ul><?php
                     foreach ($lista as $k) {
-                       echo "<li><a href='adminFormInsert.php?varID=".$k->idPelicula." '>".$k->idPelicula . " - ".$k->titulo."</a></li><br>";
+                       echo "<li><a href='adminFormInsert.php?varID=".$k->idPelicula." '>".$k->titulo."</a></li><br>";
                     }
 
                     ?><hr></ul>

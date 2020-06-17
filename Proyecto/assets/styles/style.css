@@ -4,13 +4,24 @@
     background: #14213D;
     background-color: #14213D;
     background-image: url(../images/fondoCuadro.png);
-    border:black 6px solid;
+    border:black 1.9px solid;
 }
-
+.card-pelis{
+    background-color: black;
+    color: white;
+}
+.zoom{
+    border-radius: 0px;
+}
 .logocabecera{
     width: 40px;
     height: 30px;
     filter: invert(100%);
+}
+
+.box-shadow{
+    border:black 1px solid;
+
 }
 .box-shadow:hover{
     -webkit-box-shadow: 0px 0px 13px 6px #feffc2;
@@ -29,6 +40,11 @@
     -moz-transform: scale(1.8);
     -o-transform: scale(1.8);
     transform: scale(1.8);
+}
+
+.card-pelis:hover{
+    background-color: white;
+    color: black;
 }
 
 
@@ -50,11 +66,12 @@
 .opa{
     background-color: whitesmoke;
     opacity: 0.8; 
-    border-radius: 10px;
+    border-radius: 3px;
+    border:#14213D 2px solid;
 }
 
 .imgCarro{
-    border:#14213D 6px solid;
+    border:#14213D 2px solid;
     object-fit: cover;
 }
 
@@ -84,7 +101,7 @@ body{
 }
 .img{
     width: 370px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 iframe{
     width: 550px;
@@ -95,6 +112,12 @@ iframe{
 .map{
     width: 300px;
     height: 300px;
+}
+
+
+.card{
+    border:black 0.5px solid;
+
 }
 
 
@@ -112,18 +135,18 @@ iframe{
 }
 .cont1{
     background-color: gray;
-    border-radius: 5px;
+    border-radius:3px;
 }
 
 /* ---- Estilos del buscador del admin ---- */
 
 .sec-busca{
     background-color: beige;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .img{
-    border-radius:1%;
+    border-radius:2px;
 }
 .cont-busca{
     background-color: beige;
@@ -147,7 +170,11 @@ iframe{
     padding-bottom: 3px;
 }
 .rowCont{
-    border-radius: 3px;
+    border-radius: 2px;
+}
+.contF{
+    
+    border:#14213D 1px solid;
 }
 /* ---- Estilos ubicación ---- */
 
@@ -157,13 +184,16 @@ iframe{
 
 /* ---- Estilos tarifas ---- */
 
-
+.tar{
+    
+    border:#14213D 1px solid;
+}
 .contTar{
     margin-bottom: 580px;
 }
 
 .container{
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 /* ---- Estilos del nav superior ---- */
@@ -333,4 +363,3 @@ footer{
         display: block;
     }
 }
-

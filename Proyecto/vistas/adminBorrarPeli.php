@@ -146,7 +146,7 @@ $conexion = CineDB::conectar(); ?>
                         ?> <div class="row"><?php
                                             foreach ($lista as $k) {
                                             ?><?php
-                                                echo "<div class='col-md-6'>" . $k->idPelicula . " - " . $k->titulo . "</div>";
+                                                echo "<div class='col-md-6'>".$k->titulo . "</div>";
                                                 ?>
                             <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_borra">
 

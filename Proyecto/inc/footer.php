@@ -31,6 +31,12 @@
             <td><a href="https://github.com/JoseLQB" target="_blank"> Facebook </a></td>
             <td><img class="gitLogo"  src="../assets/images/fb.png"  alt=""></td>
         </tr>
+        <li>
+          <tr>
+            <td><a href=../../Documentación/documentacion/index.html target="_blank"> Documentación  </a></td>
+            <td><img class="gitLogo" src="../assets/images/docuIco.png"  alt=""></td>
+        </tr>
+        </li>
         </table>
         </li>
       </ul>

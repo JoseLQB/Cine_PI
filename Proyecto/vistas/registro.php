@@ -15,7 +15,7 @@ require_once("../bdd/CineDB.php"); ?>
             <div class="card col-md-6 col-md-offset-6">
                 <article class="card-body">
                     <h4 class="card-title mb-4 mt-1 text-center">Registro <img class="icoReg" src="../assets/images/icoReg.png" alt=""></h4>
-                    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_registro">
+                    <form action="../controllers/enviaMails.php" method="post" class="form_registro">
                         <div class="form-group">
                             <label>Nombre de usuario</label>
                             <input type="text" class="form-control" name="usuario" placeholder="Nombre" require>
@@ -41,11 +41,11 @@ require_once("../bdd/CineDB.php"); ?>
                     <div id="msg_ok" class="alert alert-danger" role="alert" style="display: none"></div>
 
                     <?php
-                    if (isset($_POST["regis"]) && $_POST["usuario"] != "" && $_POST["pass"] != "" && $_POST["passc"] != "") {
-                        $usuario = $_POST["usuario"];
-                        $pass = md5($_POST["pass"]);
-                        $mail = $_POST["mail"];
-                        $passc = md5($_POST["passc"]);
+                    if (isset($_COOKIE["usuario"])) {
+                        $usuario = $_COOKIE["usuario"];
+                        $pass = md5($_COOKIE["pass"]);
+                        $mail = $_COOKIE["mail"];
+                        $passc = md5($_COOKIE["passc"]);
                         $conn = CineDB::conectar();
                         if ($pass == $passc) {
                             try {

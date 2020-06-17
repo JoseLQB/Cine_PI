@@ -12,7 +12,7 @@ session_start(); ?>
 
 <body  class="backConf">
   <?php include_once("../inc/nav.php"); ?><br><br><br>
-  <div class="container ub" style="background-color: white;">
+  <div class="container ub contF" style="background-color: white;">
     <div class="py-5">
     </div>
   </div><br>

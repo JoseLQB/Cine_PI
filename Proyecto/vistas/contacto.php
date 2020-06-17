@@ -20,7 +20,7 @@ session_start();
   <?php include_once("../inc/nav.php") ?><br><br>
   <section class="justify-content-around" id="centro">
     <div class="py-3">
-      <div class="container">
+      <div class="container contF">
         <div class="row rowCont">
           <div class="col-md-8 p-4">
             <h1>Contacta con nosotros</h1>

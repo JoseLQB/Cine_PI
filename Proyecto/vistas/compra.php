@@ -16,15 +16,15 @@ require_once("../bdd/Cine.php");?>
 <body class="backConf">
 <?php include_once("../inc/nav.php") ?><br><br>
   </div><div class="container ">
-      <div class="row mb-3" ></div>
-      <div class="row intConf" >
+      <div class="row mb-3 "  ></div>
+      <div class="row intConf contF" >
         <div class="p-4 col-lg-8" >
           <h4 class="mb-3"> <?php
             $id = $_GET["varID"];
             $titulo = Cartelera::getTitulo($id);
             echo "<h3>" . $titulo . " (" . Cartelera::getFecha($id) . ")</h3>";
             ?></h4>
-          <ul class="list">
+          <ul class="list"><hr>
             <li class="my-1">Género 
             <?php
             echo  Cartelera::getGenero($id) ;
@@ -55,7 +55,7 @@ require_once("../bdd/Cine.php");?>
           </div>
         </div>
         <div class="col-md-4"><br><br><img class="img-fluid d-block" alt="Cartel" src="<?php echo Cartelera::getCartel($id); ?>" /><br><br>
-  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#myModal">Comprar ticket</button><br><br> </div><br><br>
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-money"></i>&nbsp; Comenzar la compra</button><br><br> </div><br><br>
       </div>
     </div>
   </div>

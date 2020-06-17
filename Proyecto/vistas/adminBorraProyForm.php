@@ -48,7 +48,7 @@ $conexion = CineDB::conectar(); ?>
 
                                 <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
                                 <button type="submit" name="delete" class="btn btn-danger btn-block">Eliminar</button></form>
-                            <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
+                            <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>#hh" method="post" class="form_borra">
 
                                 <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
                                 <button type="submit" name="update"  class="btn btn-success btn-block">Actualizar</button></form><br><?php
@@ -63,14 +63,14 @@ $conexion = CineDB::conectar(); ?>
                     <!--  <a href='compra.php?varID=".$reg["idPelicula"].-->
                 </article>
             </div>
-        </div>
+        </div><span id="hh"></span>
     </div><br>
     <?php
     if (isset($_POST["update"])) {
 
         foreach ($var as $key) {
             if ($key->idProyeccion == $_POST["idPr"]) {
-    ?>
+    ?>          
                 <div class="container">
                     <div class="row d-flex justify-content-around mt-5">
                         <div class="card col-md-6 col-md-offset-6">

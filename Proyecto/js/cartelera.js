@@ -26,7 +26,7 @@ function cartelera(json){
         div3.attr("class", "col-md-3 p-3");
         div12.append(div3);
         var div4 = $("<div>");
-        div4.attr("class", "card box-shadow");
+        div4.attr("class", "card box-shadow card-pelis");
         div3.append(div4);
         var a1 = $("<a>");
         a1.attr("href", "compra.php?varID=" + e.idPelicula);

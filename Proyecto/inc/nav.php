@@ -1,7 +1,7 @@
 <script src="../js/efectos.js"></script>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="menu" style="background:black" role="navigation">
   <div class="container">
-    <a class="navbar-brand " href="muestra.php"><h3 class="titulo">CINES PI &nbsp<img src="../assets/images/pilogo.png" class="logocabecera" alt=""> </h3> </a>
+    <a class="navbar-brand " href="muestra.php"><h2 class="titulo">CINES PI &nbsp<img src="../assets/images/pilogo.png" class="logocabecera" alt=""> </h2> </a>
     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
       &#9776;
     </button>
