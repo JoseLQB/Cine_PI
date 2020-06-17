@@ -53,12 +53,10 @@ require("../bdd/CineDB.php");
                         $conn = CineDB::conectar();
                         try {
                             $conexion = CineDB::conectar();
-
                             $sql = "SELECT * FROM usuarios WHERE nombre = :usuarios AND pass= :pass";
                             $resultado = $conn->prepare($sql);
                             $login = $_POST["usuario"];
                             $pass = md5($_POST["pass"]);
-                            echo $pass;
                             $resultado->bindValue(":usuarios", $login);
                             $resultado->bindValue(":pass", $pass);
                             $resultado->execute();

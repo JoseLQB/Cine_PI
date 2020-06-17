@@ -75,7 +75,16 @@ class Tarifas{
     }
 
 
-
+    public static function update($codTarifa, $precio){
+        $conexion = CineDB::conectar();
+        $sql = "UPDATE tarifas SET 
+                precio = :precio
+                WHERE codTarifa = :codTarifa";
+        $sentencia = $conexion->prepare($sql);
+        $sentencia->bindParam(':precio', $precio);
+        $sentencia->bindParam(':codTarifa', $codTarifa);
+        $sentencia->execute();    
+    }
 
 }
 

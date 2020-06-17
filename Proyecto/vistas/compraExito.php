@@ -35,8 +35,9 @@ if (!isset($_SESSION["cantidad"])) {
             <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between">
                     <div>
-                        <h6 class="my-0"><b> <?php
-                                                echo $_SESSION["titulo"]; ?></b></h6> <small class="text-muted">Número de sala: <?php echo $_SESSION["sala"] ?></small>
+                        <h6 class="my-0"><b>
+                                <?php
+                                echo $_SESSION["titulo"]; ?></b></h6> <small class="text-muted">Número de sala: <?php echo $_SESSION["sala"] ?></small>
                     </div> <span class="text-muted"></span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between">
@@ -67,9 +68,11 @@ if (!isset($_SESSION["cantidad"])) {
 
                     </b> </li>
             </ul><br>
-        <a href="muestra.php"><h3>VOLVER</h3></a><br><br>
+            <a href="muestra.php">
+                <h3>VOLVER</h3>
+            </a><br><br>
         </div>
-        </div>
+    </div>
     </div>
 </body>
 <?php include_once("../inc/footer.php") ?>

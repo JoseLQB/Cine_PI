@@ -5,8 +5,7 @@ if (!isset($_SESSION["usuario"]) || ($_SESSION["admin"] == 0)) {
     header("location:muestra.php");
 }
 require_once("../bdd/Cine.php");
-require_once("../bdd/Proyecciones.php");
-$conexion = CineDB::conectar(); ?>
+require_once("../bdd/Proyecciones.php");?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +25,6 @@ if (isset($_POST["insert"])) {
     if ($comprueba == 0) {
 
         $arr = Proyecciones::getProyecciones();
-        var_dump($arr);
         $max = 0;
         foreach ($arr as $key) {
             if ($key->idProyeccion >= $max) {
@@ -51,9 +49,11 @@ if ($fetch == 1) {
         <div class="row d-flex justify-content-around mt-5">
             <div class="card col-md-6 col-md-offset-6">
                 <article class="card-body">
-                    <h4 class="card-title mb-4 mt-1 text-center"><?php echo $insert ?>Inserta una proyección para la película <?php
-                                                                                                                                $titulo = Cartelera::getTitulo($_GET["varID"]);
-                                                                                                                                echo '"' . $titulo . '"' ?></h4>
+                    <h4 class="card-title mb-4 mt-1 text-center">
+                        <?php echo $insert ?>Inserta una proyección para la película
+                        <?php
+                        $titulo = Cartelera::getTitulo($_GET["varID"]);
+                        echo '"' . $titulo . '"' ?></h4>
 
                     <form action="adminFormInsert.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_insert">
 

@@ -4,8 +4,7 @@ session_start();
 if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
     header("location:muestra.php");
 }
-require_once("../bdd/Cine.php");
-$conexion = CineDB::conectar(); ?>
+require_once("../bdd/Cine.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 

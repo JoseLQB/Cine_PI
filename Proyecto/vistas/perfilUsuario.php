@@ -37,10 +37,10 @@ if (!isset($_SESSION["usuario"])) {
                     <h4 class="mb-3">Entradas adquiridas</h4>
                     <ul class="">
                         <?php
+                        //Devuelve todo el historial de reservas del usuario
                         $arrayReservas = Reserva::getProyecciones($_SESSION["id"]);
                         foreach ($arrayReservas as $k) {
-                            echo "
-                 <li class='my-1'>" . Cartelera::getTitulo(Proyecciones::getIDPeliByPro($k[0])) . "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>Cantidad: " . Reserva::getProyeccionesCompradas($k[0], $_SESSION["id"])[0] . "<br>" . Proyecciones::getFechaProyeccionByPro($k[0]) . "&nbsp;&nbsp;  &nbsp; -&nbsp; " . Proyecciones::getHoraProyeccionByPro($k[0]);
+                            echo "<li class='my-1'>" . Cartelera::getTitulo(Proyecciones::getIDPeliByPro($k[0])) . "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>Cantidad: " . Reserva::getProyeccionesCompradas($k[0], $_SESSION["id"])[0] . "<br>" . Proyecciones::getFechaProyeccionByPro($k[0]) . "&nbsp;&nbsp;  &nbsp; -&nbsp; " . Proyecciones::getHoraProyeccionByPro($k[0]);
                         }
                         ?>
                     </ul>
@@ -64,7 +64,7 @@ if (!isset($_SESSION["usuario"])) {
                         $titulo = Cartelera::getTitulo(Proyecciones::getIDPeliByPro($k[0]));
                         $tituloNoRepeat[$cont] = $titulo;
                         $cont++;
-                        //Solo se pueden votar las películas que ya se han visto
+                        //Solo se pueden votar las películas que ya se han visto, si aun no ha llegado el día de emisión el formulario aparecerá deshabilitado
                         if (Proyecciones::getFechaProyeccionByPro($k[0]) > date("Y-m-d")) {
                             echo "<h4>" . $titulo . "</h4>"; ?>
                             <form action='perfilUsuario.php' method='post'>
@@ -77,7 +77,8 @@ if (!isset($_SESSION["usuario"])) {
                                 <input type="hidden" name="idPeli" value="<?php echo Cartelera::getIDbyTitle($titulo)  ?>">
                             </form>
                         <?php
-                        } else {
+                        
+                        }else {
                             echo "<h4>" . $titulo . "</h4>"; ?>
                             <form action='perfilUsuario.php' method='post'>
                                 <div class="form-group">
@@ -87,9 +88,7 @@ if (!isset($_SESSION["usuario"])) {
                                 <button type="submit" name="val" class="btn mt-4 btn-block btn-outline-dark p-2"><b>Valorar</b></button>
                                 <hr>
                                 <input type="hidden" name="idPeli" value="<?php echo Cartelera::getIDbyTitle($titulo)  ?>">
-
                             </form>
-
                     <?php
                         }
                     } ?>

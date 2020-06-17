@@ -16,7 +16,7 @@
         <li>
           <table>
           <tr>
-            <td><a href="https://github.com/JoseLQB/Cine_PI" target="_blank">GitHub  </a></td>
+            <td><a href="https://github.com/JoseLQB/Cine_PI/tree/master/Proyecto" target="_blank">GitHub  </a></td>
             <td><img class="gitLogo" src="../assets/images/github.png" alt=""></td>
         </tr>
         </li>

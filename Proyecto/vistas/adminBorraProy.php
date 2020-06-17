@@ -3,8 +3,7 @@ session_start();
 if (!isset($_SESSION["usuario"])|| ($_SESSION["admin"] ==0)) {
     header("location:muestra.php");
 }
-require_once("../bdd/Cine.php");
-$conexion = CineDB::conectar(); ?>
+require_once("../bdd/Cine.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +26,10 @@ $conexion = CineDB::conectar(); ?>
                     foreach ($lista as $k) {
                        echo "<li><a href='adminBorraProyForm.php?varID=".$k->idPelicula." '>".$k->titulo."</a></li><br>";
                     }
-                    ?><hr></ul>
+
+                    ?><hr>
+                <li><a href="adminTarifas.php">Editar tarifas</a></li>    
+                </ul>
                     <a href="administracion.php">Volver</a>
                   <!--  <a href='compra.php?varID=".$reg["idPelicula"].-->
                 </article>

@@ -9,7 +9,7 @@ session_start();
 
   <title>Contacto</title>
 
-  <script src="../js/validaciones.js"></script>
+  <script src="../js/contacto.js"></script>
 
 </head>
 <style>
@@ -39,11 +39,6 @@ session_start();
           </div>
           <div class="col-md-7 p-4">
 
-            <?php if (isset($_GET["conf"])) {
-              echo "<center><h3 class='mb-3' style='color:green'>Mensaje enviado con éxito</h3></center>";
-            } else {
-              echo "";
-            } ?>
             <h3 class="mb-3"><img class="formu" src="../assets/images/form.png" alt="">&nbsp;Formulario de contacto</h3>
             <form id="formContact" action="../controllers/enviaMails.php" method="POST">
               <div class="form-row">
@@ -57,7 +52,12 @@ session_start();
                 <div class="form-group col-md-6"> <input type="text" class="form-control" id="poblacion" placeholder="Población" name="pob"> </div>
               </div>
               <div class="form-group"> <textarea class="form-control" id="mensaje" rows="4" placeholder="Tu mensaje" name="msg" required></textarea> </div>
-              <button class="btn btn-outline-dark envia" type="submit" name="enviaContacto"> Enviar &nbsp;<i class="fa fa-send-o"></i></button>
+              <button class="btn btn-outline-dark envia" id='envia' type="submit" name="enviaContacto"> Enviar &nbsp;<i class="fa fa-send-o"></i></button>
+            <?php if (isset($_GET["conf"])) {
+              echo "<center><h3 class='mb-3' id='effectForm' style='color:green'>¡Mensaje enviado con éxito, felicidades!</h3></center>";
+            } else {
+              echo "";
+            } ?>
             </form>
           </div>
         </div>

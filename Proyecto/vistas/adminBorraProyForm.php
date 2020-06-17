@@ -5,8 +5,7 @@ if (!isset($_SESSION["usuario"])) {
     header("location:muestra.php");
 }
 require_once("../bdd/Cine.php");
-require_once("../bdd/Proyecciones.php");
-$conexion = CineDB::conectar(); ?>
+require_once("../bdd/Proyecciones.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,13 +18,21 @@ $conexion = CineDB::conectar(); ?>
 </head>
 
 <body class="admin">
-<?php include_once("../inc/navAdmin.php") ?>
+    <?php include_once("../inc/navAdmin.php") ?>
     <?php
+    $fetch = 0;
+    $men = "";
     if (isset($_POST["delete"])) {
         Proyecciones::deletebyProy($_GET["varID"], $_POST["idPr"]);
-    }
-    if(isset($_POST["edit"])){
+        $fetch = 1;
+    }else if (isset($_POST["edit"])) {
         Proyecciones::update($_POST["idProyeccion"], $_POST["idSala"], $_GET["varID"], $_POST["fechaProyeccion"], $_POST["horaProyeccion"], $_POST["codTarifa"]);
+        $fetch = 2;
+    }
+    if($fetch == 1){
+        $men = '<div id="msg_error" class="alert alert-danger" role="alert" ><center>Proyección eliminada</center></div>';
+    }else if($fetch ==2){
+        $men = '<div id="msg_error" class="alert alert-success" role="alert" ><center>Proyección actualizada</center></div>';
     }
 
     ?>
@@ -34,6 +41,7 @@ $conexion = CineDB::conectar(); ?>
             <div class="card col-md-6 col-md-offset-6">
                 <article class="card-body">
                     <h4>Estas son las proyecciones de <?php echo '"' . Cartelera::getTitulo($_GET["varID"]) . '"' ?></h4>
+                    <?php echo $men;?>
                     <hr>
                     <?php
 
@@ -45,17 +53,19 @@ $conexion = CineDB::conectar(); ?>
 
                     ?>
                             <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>" method="post" class="form_borra">
-
                                 <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
-                                <button type="submit" name="delete" class="btn btn-danger btn-block">Eliminar</button></form>
+                                <button type="submit" name="delete" class="btn btn-danger btn-block">Eliminar</button>
+                            </form>
                             <form action="adminBorraProyForm.php?<?php echo "varID=" . $_GET["varID"]; ?>#hh" method="post" class="form_borra">
-
                                 <input type="hidden" name="idPr" value="<?php echo $key->idProyeccion ?>">
-                                <button type="submit" name="update"  class="btn btn-success btn-block">Actualizar</button></form><br><?php
+                                <button type="submit" name="update" class="btn btn-success btn-block">Actualizar</button>
+                            </form><br>
+                    <?php
 
-                                                                                                                                }
-                                                                                                                            }
-                    $r=$_GET["varID"]?>
+                        }
+                    }
+                    $r = $_GET["varID"]
+                    ?>
                     <hr>
                     </ul>
                     <a href="administracion.php">Volver a administración</a><br>
@@ -70,12 +80,12 @@ $conexion = CineDB::conectar(); ?>
 
         foreach ($var as $key) {
             if ($key->idProyeccion == $_POST["idPr"]) {
-    ?>          
+    ?>
                 <div class="container">
                     <div class="row d-flex justify-content-around mt-5">
                         <div class="card col-md-6 col-md-offset-6">
                             <article class="card-body">
-                                <h4 class="card-title mb-4 mt-1 text-center" >Actualizando la proyección número <?php echo $key->idProyeccion ?></h4>
+                                <h4 class="card-title mb-4 mt-1 text-center">Actualizando la proyección número <?php echo $key->idProyeccion ?></h4>
 
                                 <form action="adminBorraProyForm.php?varID=<?php echo $r; ?>" method="post" class="form_insert">
                                     <div class="form-group">

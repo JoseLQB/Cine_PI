@@ -86,6 +86,7 @@ require_once "../model/Funciones.php";
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../../admininsertProy.php">Nueva proyección</a>
               <a class="dropdown-item" href="../../adminBorraProy.php">Editar proyección</a>
+              <a class="dropdown-item" href="../../adminTarifas.php">Editar tarifas</a>
             </div>
           </li>
 

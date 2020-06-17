@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["usuario"])) {
-    header("location:muestra.php");
+  header("location:muestra.php");
 }
 require_once("../bdd/Cine.php");
 require_once("../bdd/Proyecciones.php");
@@ -19,11 +19,12 @@ require_once("../bdd/Reserva.php"); ?>
 
 <body class="back-Conf">
   <?php include_once("../inc/nav.php")
-  ?> <br><br> <?php
-              if (!isset($_SESSION["cantidad"])) {
-                $_SESSION["cantidad"]  = $_POST["cantidad"];
-              }
-              ?>
+  ?> <br><br>
+  <?php
+  if (!isset($_SESSION["cantidad"])) {
+    $_SESSION["cantidad"]  = $_POST["cantidad"];
+  }
+  ?>
   <div>
     <div class="container ">
       <div class="row intConf">
@@ -32,8 +33,9 @@ require_once("../bdd/Reserva.php"); ?>
           <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between">
               <div>
-                <h6 class="my-0"><b> <?php
-                                      echo $_SESSION["titulo"]; ?></b></h6> <small class="text-muted">Número de sala: <?php echo $_SESSION["sala"] ?></small>
+                <h6 class="my-0"><b>
+                    <?php
+                    echo $_SESSION["titulo"]; ?></b></h6> <small class="text-muted">Número de sala: <?php echo $_SESSION["sala"] ?></small>
               </div> <span class="text-muted"></span>
             </li>
             <li class="list-group-item d-flex justify-content-between">

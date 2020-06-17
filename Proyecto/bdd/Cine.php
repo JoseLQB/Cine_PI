@@ -90,7 +90,7 @@ class Cartelera{
             $cartel[]= new Cartelera($registro["idPelicula"], $registro["pais"], $registro["genero"], $registro["duracion"], $registro["anEstreno"], $registro["sinopsis"], $registro["titulo"], $registro["director"], $registro["trailer"], $registro["cartel"]);     
         }
         return $cartel;
-
+        
     }
 
     /**

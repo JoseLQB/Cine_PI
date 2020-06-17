@@ -5,8 +5,7 @@ if (!isset($_SESSION["usuario"]) || ($_SESSION["admin"] == 0)) {
     header("location:muestra.php");
 }
 require_once("../bdd/Cine.php");
-require_once("../bdd/Proyecciones.php");
-$conexion = CineDB::conectar(); ?>
+require_once("../bdd/Proyecciones.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +16,7 @@ $conexion = CineDB::conectar(); ?>
 </head>
 
 <body class="admin">
-<?php include_once("../inc/navAdmin.php") ?>
+    <?php include_once("../inc/navAdmin.php") ?>
     <?php
     $fetch = 0;
     if (isset($_POST["delete"])) { ?>
@@ -143,22 +142,24 @@ $conexion = CineDB::conectar(); ?>
                         <h5>Películas:</h5><br>
                         <?php
                         $lista  = Cartelera::creaListado();
-                        ?> <div class="row"><?php
-                                            foreach ($lista as $k) {
-                                            ?><?php
-                                                echo "<div class='col-md-6'>".$k->titulo . "</div>";
-                                                ?>
-                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_borra">
+                        ?> <div class="row">
+                            <?php
+                            foreach ($lista as $k) {
+                            ?>
+                                <?php
+                                echo "<div class='col-md-6'>" . $k->titulo . "</div>";
+                                ?>
+                                <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_borra">
 
-                                <input type="hidden" name="idOc" value="<?php echo $k->idPelicula ?>">
-                                <button type="submit" name="delete" class="btn btn-danger btn-block">Eliminar</button></form>&nbsp; &nbsp; &nbsp;
-                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_borra">
+                                    <input type="hidden" name="idOc" value="<?php echo $k->idPelicula ?>">
+                                    <button type="submit" name="delete" class="btn btn-danger btn-block">Eliminar</button></form>&nbsp; &nbsp; &nbsp;
+                                <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form_borra">
 
-                                <input type="hidden" name="idOc" value="<?php echo $k->idPelicula ?>">
-                                <button type="submit" name="update" class="btn btn-warning btn-block">Actualizar</button></form><br><br><?php
-                                                                                                                                    }
+                                    <input type="hidden" name="idOc" value="<?php echo $k->idPelicula ?>">
+                                    <button type="submit" name="update" class="btn btn-warning btn-block">Actualizar</button></form><br><br><?php
+                                                                                                                                        }
 
-                                                                                                                                        ?></div>
+                                                                                                                                            ?></div>
                         <hr>
                         <a href="administracion.php">Volver</a>
 
@@ -166,7 +167,6 @@ $conexion = CineDB::conectar(); ?>
                 </div>
             </div>
         </div><br><br>
-
 </body><br><br>
 
 <?php include_once("../inc/footer.php"); ?>

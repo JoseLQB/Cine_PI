@@ -1,5 +1,6 @@
 $(document).ready(function () {
     direccion();
+    abrir();
 
     function direccion() {
 
@@ -30,7 +31,7 @@ $(document).ready(function () {
         div3.append(ad2);
         var st2 = $("<h5>").html("¿Cómo llegar? <img class='bus' src='../assets/images/bus.png'>")
         ad2.append(st2);
-        st2.after("Lineas de autobuses :<br>23, 22, 28, 32");
+        st2.after("Lineas de autobuses :<br><a href='https://reddelineas.tussam.es/?linea=21&lang=es' rel='pop-up'>21</a>, <a href='https://reddelineas.tussam.es/?linea=22&lang=es' rel='pop-up'>22</a>, <a href='https://reddelineas.tussam.es/?linea=28&lang=es' rel='pop-up'>28</a>, <a href='https://reddelineas.tussam.es/?linea=32&lang=es' rel='pop-up'>32</a>");
 
         var div4 = $("<div>");
         div4.attr("class", "col-sm-7");
@@ -41,3 +42,15 @@ $(document).ready(function () {
     }
 });
 
+
+
+//Abre un pop up con la información del autobús
+function abrir() {
+	$("a[rel='pop-up']").click(function () {
+        var left  = ($(window).width()/2)-(900/2),
+       top   = ($(window).height()/2)-(600/2),
+
+      	nueva=window.open(this.href, 'Popup',"width=900, height=600, top="+top+", left="+left);
+      	return false;
+    });
+}
