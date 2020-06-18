@@ -66,6 +66,7 @@ class Proyecciones{
             $tarifas[]= new Proyecciones($registro["idProyeccion"], $registro["idSala"], $registro["idPelicula"], $registro["fechaProyeccion"], $registro["horaProyeccion"], $registro["codtarifa"]);  
         }
         return $tarifas;
+        $conexion = null;
     }
     
     /**
@@ -84,6 +85,7 @@ class Proyecciones{
             }  
         }
         return $tarifas;
+        $conexion = null;
     }
 
     /**
@@ -97,6 +99,7 @@ class Proyecciones{
         $consulta= $conexion->query($select);
 
         return $consulta;
+        $conexion = null;
 
     }
 
@@ -225,6 +228,7 @@ class Proyecciones{
         $sentencia->bindParam(':horaProyeccion', $horaProyeccion);
         $sentencia->bindParam(':codTarifa', $codTarifa);
         $sentencia->execute();
+        $conexion = null;
     }
 
     /**
@@ -248,6 +252,7 @@ class Proyecciones{
         $sentencia1->execute();
         $sentencia2->execute();
         $sentencia->execute();
+        $conexion = null;
     }
 
     /**
@@ -272,6 +277,7 @@ class Proyecciones{
         $sentencia1->execute();
         $sentencia2->execute();
         $sentencia->execute();
+        $conexion = null;
     }
 
     /**
@@ -305,6 +311,8 @@ class Proyecciones{
         $sentencia->bindParam(':horaProyeccion', $horaProyeccion);
         $sentencia->bindParam(':codTarifa', $codTarifa);
         $sentencia->execute();    
+        
+        $conexion = null;
     }
 }
 ?>

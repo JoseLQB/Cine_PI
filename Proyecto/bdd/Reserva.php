@@ -29,6 +29,7 @@ class Reserva{
         $sql = "SELECT idSala FROM proyecciones WHERE idProyeccion = $idProyeccion";
         $consulta =  $conexion->query($sql)->fetchAll()[0];
         return $consulta;
+        $conexion = null;
     }
 
     /**
@@ -43,6 +44,7 @@ class Reserva{
         $sql = "SELECT aforo FROM salas WHERE  idSala = $idSala";
         $consulta =  $conexion->query($sql)->fetchAll()[0];
         return $consulta;
+        $conexion = null;
     }
 
     /**
@@ -57,6 +59,7 @@ class Reserva{
         $sql= "SELECT count(idProyeccion) FROM reserva WHERE idProyeccion = $idProyeccion";
         $consulta =  $conexion->query($sql)->fetchAll()[0];
         return $consulta;
+        $conexion = null;
 
     }
 
@@ -78,6 +81,7 @@ class Reserva{
             $sentencia->bindParam(':idUsuario', $idUsuario);
             $sentencia->bindParam(':idProyeccion', $idProyeccion);
             $sentencia->execute();
+            $conexion = null;
         }
     }
 
@@ -92,7 +96,8 @@ class Reserva{
         $conexion = CineDB::conectar();
         $sql = "SELECT DISTINCT(idProyeccion) from reserva WHERE idUsuario = $idUsuario";
         $consulta =  $conexion->query($sql)->fetchAll();
-        return $consulta;    
+        return $consulta; 
+        $conexion = null;   
     }
 
     /**
@@ -110,6 +115,7 @@ class Reserva{
             
         }
         return $consulta;
+        $conexion = null;
     }
 
     /**
@@ -125,6 +131,7 @@ class Reserva{
         $sql = "SELECT COUNT(idProyeccion) FROM reserva WHERE idProyeccion = $idProyeccion AND idUsuario = $idUsuario";
         $consulta =  $conexion->query($sql)->fetchAll()[0];
         return $consulta;
+        $conexion = null;
     }
 
 

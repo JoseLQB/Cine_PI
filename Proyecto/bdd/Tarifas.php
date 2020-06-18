@@ -54,6 +54,7 @@ class Tarifas{
             $tarifas[]= new Tarifas($registro["codTarifa"], $registro["nombre"], $registro["precio"], $registro["descripcion"]);
         }
         return $tarifas;
+        $conexion = null;
     }
 
     /**
@@ -72,6 +73,7 @@ class Tarifas{
             }
         }
         return $tarifas;
+        $conexion = null;
     }
 
 
@@ -83,7 +85,8 @@ class Tarifas{
         $sentencia = $conexion->prepare($sql);
         $sentencia->bindParam(':precio', $precio);
         $sentencia->bindParam(':codTarifa', $codTarifa);
-        $sentencia->execute();    
+        $sentencia->execute();  
+        $conexion = null;  
     }
 
 }

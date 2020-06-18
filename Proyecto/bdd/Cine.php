@@ -90,6 +90,7 @@ class Cartelera{
             $cartel[]= new Cartelera($registro["idPelicula"], $registro["pais"], $registro["genero"], $registro["duracion"], $registro["anEstreno"], $registro["sinopsis"], $registro["titulo"], $registro["director"], $registro["trailer"], $registro["cartel"]);     
         }
         return $cartel;
+        $conexion = null;
         
     }
 
@@ -272,6 +273,7 @@ class Cartelera{
             return $consulta;
         }else{
             return "5";
+            $conexion = null;
         }
     }
     
@@ -306,6 +308,7 @@ class Cartelera{
         $sentencia->bindParam(':trailer', $trailer);
         $sentencia->bindParam(':cartel', $cartel);
         $sentencia->execute();
+        $conexion = null;
     }
 
     /**
@@ -321,6 +324,7 @@ class Cartelera{
         $sentencia = $conexion->prepare($sql);
         $sentencia->bindParam(':idPelicula', $idPelicula);
         $sentencia->execute();
+        $conexion = null;
     }
 
     /**
@@ -364,6 +368,7 @@ class Cartelera{
         $sentencia->bindParam(':trailer', $trailer);
         $sentencia->bindParam(':cartel', $cartel);
         $sentencia->execute();
+        $conexion = null;
         
     }
 }

@@ -45,7 +45,7 @@ require_once("../bdd/Reserva.php"); ?>
             </li>
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
-                <h6 class="my-0"><b>Tarifa</b></h6> <small>ESPECTADOR</small>
+                <h6 class="my-0"><b>Tarifa</b></h6> <small><?php echo $_SESSION["tarifa"]?></small>
               </div> <span class="text-success"><?php echo $_SESSION["precio"] ?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between">

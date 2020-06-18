@@ -50,13 +50,23 @@
          */
         public static function getUsuaios(){
             $conexion = CineDB::conectar();
-            $query = "SELECT * from USUARIO";
+            $query = "SELECT * from usuarios";
             $consulta = $conexion->query($query);
             $usuarios = [];
             while($registro = $consulta->fetch(PDO::FETCH_ASSOC)){
                 $usuarios = new Usuario($registro["idUsuario"], $registro["nombre"], $registro["mail"], $registro["pass"], $registro["admin"]);
             }
             return $usuarios;
+            $conexion = null;
+        }
+        public static function usuarios(){
+            $conexion = CineDB::conectar();
+            $select = "SELECT nombre FROM usuarios";
+            $consulta= $conexion->query($select);
+    
+            return $consulta;
+            $conexion = null;
+    
         }
 
 

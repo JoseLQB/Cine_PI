@@ -40,7 +40,7 @@ class Valoraciones{
         $sql = "SELECT * FROM valoracion WHERE idPelicula = $idPelicula AND $idUsuario = $idUsuario";
         $consulta= $conexion->query($sql)->fetch();
         $confirm = 0;
-        if($consulta>0){
+        if(sizeof($consulta)>0){
             foreach ($consulta as $k) {
                 if($idUsuario == $k){
                     $confirm = 1;

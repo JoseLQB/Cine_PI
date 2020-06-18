@@ -18,7 +18,7 @@ require_once("../bdd/Tarifas.php"); ?>
     $men = "";
     $fetch = 0;
     if(isset($_POST["editTar"])){
-        Tarifas::update($_POST["codTar"], (int)$_POST["precio"]);
+        Tarifas::update($_POST["codTar"], $_POST["precio"]);
         $fetch=1;
     }
     if($fetch == 1){
@@ -45,7 +45,7 @@ require_once("../bdd/Tarifas.php"); ?>
                                         <?php echo $k->nombre ?>
                                     </label>
                                     <input type="hidden" name="codTar" value="<?php echo $k->id ?>">
-                                    <input class="form-control" id="precio" name="precio" type="text" pattern="^[0-9]+([,][0-9]+)?$" required placeholder="<?php echo $k->precio ?>" title="Solo se admiten números"/>
+                                    <input class="form-control" id="precio" name="precio" type="text" pattern="^[0-9]+([.][0-9]+)?$" required placeholder="<?php echo $k->precio ?>" title="Solo se admiten números"/>
                                 </div>
                                 <div class="form-group">
                                     <div>

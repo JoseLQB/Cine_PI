@@ -27,7 +27,7 @@ require_once("../bdd/Cine.php"); ?>
                     foreach ($lista as $k) {
                        echo "<li>".$k->idPelicula . " - ".$k->titulo."</a></li><br>";
                     }
-
+                    
                     ?><hr></ul>
                     <a href="administracion.php">Volver</a>
                   <!--  <a href='compra.php?varID=".$reg["idPelicula"].-->
