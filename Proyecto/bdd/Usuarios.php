@@ -59,6 +59,7 @@
             return $usuarios;
             $conexion = null;
         }
+        
         public static function usuarios(){
             $conexion = CineDB::conectar();
             $select = "SELECT nombre FROM usuarios";
@@ -66,7 +67,6 @@
     
             return $consulta;
             $conexion = null;
-    
         }
 
 

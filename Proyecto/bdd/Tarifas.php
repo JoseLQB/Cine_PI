@@ -85,8 +85,8 @@ class Tarifas{
         $sentencia = $conexion->prepare($sql);
         $sentencia->bindParam(':precio', $precio);
         $sentencia->bindParam(':codTarifa', $codTarifa);
-        $sentencia->execute();  
-        $conexion = null;  
+        $sentencia->execute();    
+        $conexion = null;
     }
 
 }

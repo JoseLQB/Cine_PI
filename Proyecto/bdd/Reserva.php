@@ -81,8 +81,8 @@ class Reserva{
             $sentencia->bindParam(':idUsuario', $idUsuario);
             $sentencia->bindParam(':idProyeccion', $idProyeccion);
             $sentencia->execute();
-            $conexion = null;
         }
+        $conexion = null;
     }
 
     /**

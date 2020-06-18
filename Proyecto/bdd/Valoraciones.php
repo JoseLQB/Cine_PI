@@ -26,6 +26,7 @@ class Valoraciones{
         $sql = "SELECT valoracion FROM valoracion WHERE idUsuario = $idUsuario AND idPelicula = $idPelicula";
         $consulta= $conexion->query($sql)->fetch();
         return $consulta;
+        $conexion = null;
     }
 
     /**
@@ -48,6 +49,7 @@ class Valoraciones{
             }
         }
         return $confirm;
+        $conexion = null;
     }
     
     /**
@@ -69,6 +71,7 @@ class Valoraciones{
         $sentencia->bindParam(':idPelicula', $idPelicula);
         $sentencia->bindParam(':valoracion', $valoracion);
         $sentencia->execute();
+        $conexion = null;
         
     }
 
@@ -89,6 +92,7 @@ class Valoraciones{
         $sentencia->bindParam(':idPelicula', $idPelicula);
         $sentencia->bindParam(':valoracion', $valoracion);
         $sentencia->execute();
+        $conexion = null;
     }
 }
 ?>
