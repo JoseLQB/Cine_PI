@@ -32,4 +32,14 @@ Web oficial: [http://www.omdbapi.com/](http://www.omdbapi.com/)
 Para el envío automático de emails, se ha utilizado la api PHPMaier.
 Repositorio de la api: [https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
+## Enlaces de interés:
+
+ - [Manual de ususario](https://github.com/JoseLQB/Cine_PI/blob/master/Manuales/Manual%20de%20usuario%20%20-%20CinePi%20-%20Jose%20Luis%20Quintanilla%20Blanco.pdf)
+ - [Manual de implantación](https://github.com/JoseLQB/Cine_PI/blob/master/Manuales/Manual%20de%20usuario%20%20-%20CinePi%20-%20Jose%20Luis%20Quintanilla%20Blanco.pdf)
+ - [Documentación](http://ec2-18-204-14-47.compute-1.amazonaws.com/Cine_PI/Documentaci%C3%B3n/documentacion/index.html)
+
+#
+**Autor**: Jose Luis Quintanilla Blanco :dog:
+
+
 
