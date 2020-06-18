@@ -39,7 +39,7 @@ Repositorio de la api: [https://github.com/PHPMailer/PHPMailer](https://github.c
  - [Documentación](http://ec2-18-204-14-47.compute-1.amazonaws.com/Cine_PI/Documentaci%C3%B3n/documentacion/index.html)
 
 #
-**Autor**: Jose Luis Quintanilla Blanco :dog:
+**Autor**: Jose Luis Quintanilla Blanco :dog: :guitar:
 
 
 
