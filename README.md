@@ -35,7 +35,7 @@ Repositorio de la api: [https://github.com/PHPMailer/PHPMailer](https://github.c
 ## Enlaces de interés:
 
  - [Manual de ususario](https://github.com/JoseLQB/Cine_PI/blob/master/Manuales/Manual%20de%20usuario%20%20-%20CinePi%20-%20Jose%20Luis%20Quintanilla%20Blanco.pdf)
- - [Manual de implantación](https://github.com/JoseLQB/Cine_PI/blob/master/Manuales/Manual%20de%20usuario%20%20-%20CinePi%20-%20Jose%20Luis%20Quintanilla%20Blanco.pdf)
+ - [Manual de implantación](https://github.com/JoseLQB/Cine_PI/blob/master/Manuales/Manual%20de%20Implantaci%C3%B3n%20-%20CinesPI%20-%20Jose%20Luis%20Quintanilla%20Blanco.pdf)
  - [Documentación](http://ec2-18-204-14-47.compute-1.amazonaws.com/Cine_PI/Documentaci%C3%B3n/documentacion/index.html)
 
 #
